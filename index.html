@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ENGLISH WITH AI BAYAN – Advanced</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root{
+      /* тёмно-зелёная тема */
+      --blue-main:#004d40;
+      --blue-soft:#00796b;
+      --gold:#ffd54f;
+      --bg:#f3f7f5;
+      --topicColor:#004d40;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    body{
+      background:var(--bg);
+      color:#09342d;
+    }
+
+    /* HEADER WITH GIRL LOGO */
+    header{
+      background:linear-gradient(90deg,#004d40,#00796b);
+      color:#fff;
+      padding:10px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-shadow:0 2px 6px rgba(0,0,0,.2);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-img{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid var(--gold);
+      background:white;
+    }
+
+    .brand-text h1{
+      font-size:18px;
+      letter-spacing:.04em;
+    }
+
+    .brand-text span{
+      font-size:12px;
+      opacity:.9;
+    }
+
+    .top-info{
+      font-size:13px;
+      text-align:right;
+    }
+    .top-info strong{color:var(--gold);}
+
+    main{
+      padding:16px;
+      max-width:1300px;
+      margin:0 auto;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:14px;
+      box-shadow:0 4px 14px rgba(0,0,0,.08);
+      padding:20px;
+    }
+
+    .hidden{display:none !important;}
+
+    .section-title{
+      font-size:18px;
+      margin-bottom:10px;
+      font-weight:600;
+    }
+    .muted{
+      color:#5f7170;
+      font-size:12px;
+    }
+
+    .field-label{
+      font-size:14px;
+      margin-bottom:4px;
+    }
+
+    .text-input{
+      width:100%;
+      padding:10px 12px;
+      border-radius:10px;
+      border:1px solid #c5d4cf;
+      margin-bottom:14px;
+      font-size:14px;
+    }
+    .text-input:focus{
+      outline:none;
+      border-color:var(--blue-soft);
+      box-shadow:0 0 0 2px rgba(0,121,107,.2);
+    }
+
+    .btn{
+      border:none;
+      border-radius:10px;
+      padding:10px 18px;
+      font-size:14px;
+      font-weight:600;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+    }
+    .btn-primary{
+      background:var(--blue-soft);
+      color:#fff;
+    }
+    .btn-primary:hover{background:#00695c;}
+    .btn-ghost{
+      background:#e0f2f1;
+      color:#004d40;
+    }
+    .btn-ghost:hover{background:#cde7e5;}
+
+    .login-note{
+      font-size:12px;
+      color:#5f7170;
+      margin-top:10px;
+      line-height:1.4;
+    }
+
+    .error{
+      margin-top:10px;
+      color:#b00020;
+      font-size:13px;
+    }
+
+    /* SCREENS */
+    #loginScreen{
+      max-width:520px;
+      margin:40px auto;
+    }
+
+    #mainMenuScreen{
+      display:grid;
+      grid-template-columns:2fr 1.2fr;
+      gap:16px;
+    }
+    @media(max-width:960px){
+      #mainMenuScreen{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .tag{
+      display:inline-block;
+      padding:2px 6px;
+      border-radius:999px;
+      background:#e0f2f1;
+      font-size:11px;
+      color:#004d40;
+    }
+
+    .top-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:12px;
+    }
+
+    .stars-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      padding:4px 8px;
+      border-radius:999px;
+      background:#fff9e5;
+      border:1px solid #ffe082;
+      font-size:12px;
+    }
+    .star-icon{color:#ffb300;}
+
+    .topics-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:8px;
+    }
+    @media(max-width:700px){
+      .topics-grid{grid-template-columns:1fr;}
+    }
+
+    .topic-card{
+      border-radius:12px;
+      border:1px solid #cfe2dd;
+      padding:10px 12px;
+      background:#f4fbf8;
+      cursor:pointer;
+      transition:.15s;
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .topic-card:hover{
+      background:#e1f3ec;
+      transform:translateY(-1px);
+    }
+    .topic-card-title{
+      font-size:14px;
+      font-weight:600;
+    }
+    .topic-card-sub{
+      font-size:11px;
+      color:#5c6f6b;
+    }
+
+    /* AI PANEL */
+    #aiPanel{
+      background:#fff;
+      border-radius:14px;
+      padding:14px;
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      min-height:260px;
+    }
+    #aiPanel h3{
+      font-size:15px;
+      margin-bottom:4px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:6px;
+    }
+    #aiLimit{
+      font-size:11px;
+    }
+    .chat-note{
+      font-size:11px;
+      color:#5c6f6b;
+    }
+    .chat-box{
+      flex:1;
+      border-radius:10px;
+      border:1px solid #cfe2dd;
+      padding:8px;
+      background:#f4fbf8;
+      font-size:13px;
+      overflow-y:auto;
+      max-height:260px;
+    }
+    .chat-msg{
+      margin-bottom:6px;
+      line-height:1.4;
+    }
+    .chat-msg strong{color:#004d40;}
+    #aiQuestion{
+      width:100%;
+      min-height:60px;
+      resize:vertical;
+      border-radius:10px;
+      border:1px solid #c5d4cf;
+      padding:8px;
+      font-size:13px;
+      margin-top:4px;
+    }
+    #aiQuestion:focus{
+      outline:none;
+      border-color:var(--blue-soft);
+      box-shadow:0 0 0 2px rgba(0,121,107,.17);
+    }
+    .chat-actions{
+      display:flex;
+      justify-content:flex-end;
+      margin-top:4px;
+    }
+
+    /* TOPIC SCREEN */
+    #topicScreen{
+      max-width:1000px;
+      margin:0 auto;
+    }
+    .topic-header{
+      border-radius:16px 16px 0 0;
+      padding:14px 16px;
+      background:linear-gradient(90deg,var(--topicColor),#00796b);
+      color:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .topic-header-main{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .topic-header-title{
+      font-size:18px;
+      font-weight:600;
+    }
+    .topic-header-tag{
+      font-size:11px;
+      opacity:.9;
+    }
+    .topic-header-buttons{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+    }
+    .btn-topic{
+      border:none;
+      border-radius:999px;
+      padding:6px 12px;
+      font-size:12px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .btn-topic.back{
+      background:#ffffff;
+      color:var(--topicColor);
+    }
+    .btn-topic.menu{
+      background:rgba(255,255,255,.15);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.5);
+    }
+
+    .topic-body{
+      background:#fff;
+      border-radius:0 0 16px 16px;
+      box-shadow:0 4px 14px rgba(0,0,0,.08);
+      padding:16px;
+    }
+
+    .grammar-box{
+      background:#e6f4f1;
+      border-left:4px solid var(--topicColor);
+      padding:10px 12px;
+      border-radius:10px;
+      margin-bottom:12px;
+      font-size:14px;
+      line-height:1.5;
+    }
+    .grammar-box strong{color:#004d40;}
+    .formula{
+      font-family:"Consolas","Courier New",monospace;
+      background:#d0ebe4;
+      padding:3px 6px;
+      border-radius:6px;
+      margin-right:4px;
+      display:inline-block;
+      margin-top:4px;
+    }
+    .examples{
+      margin-top:8px;
+      font-size:13px;
+    }
+    .examples li{
+      margin-left:18px;
+      margin-bottom:2px;
+    }
+    .grammar-ru{
+      margin-top:10px;
+      font-size:13px;
+      color:#1e3a36;
+    }
+
+    .exercises{
+      margin-top:12px;
+    }
+    .exercise-block{
+      border-radius:12px;
+      background:#f4fbf8;
+      padding:10px 12px;
+      margin-bottom:10px;
+      border:1px solid #cfe2dd;
+    }
+    .exercise-title{
+      font-size:14px;
+      font-weight:600;
+      margin-bottom:6px;
+    }
+    .question-row{
+      font-size:13px;
+      margin-bottom:6px;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:6px;
+    }
+    .question-text{
+      flex:1 1 160px;
+    }
+    .options{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      align-items:center;
+    }
+    .options label{
+      background:#ffffff;
+      border-radius:999px;
+      border:1px solid #c2d5cf;
+      padding:2px 8px;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:3px;
+    }
+    .options input[type="radio"]{
+      accent-color:var(--topicColor);
+    }
+    .mark{
+      width:18px;
+      text-align:center;
+      font-size:16px;
+      font-weight:700;
+    }
+    .mark.correct{color:#2e7d32;}
+    .mark.wrong{color:#c62828;}
+    .exercise-footer{
+      margin-top:6px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:8px;
+    }
+    .exercise-footer small{
+      font-size:11px;
+      color:#5c6f6b;
+    }
+
+    /* TEACHER */
+    #teacherScreen{
+      margin-top:20px;
+    }
+    .top-buttons{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-bottom:8px;
+    }
+    .table-wrapper{
+      overflow-x:auto;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:13px;
+      margin-top:10px;
+    }
+    th,td{
+      border:1px solid #cfe2dd;
+      padding:6px 8px;
+      text-align:left;
+      white-space:nowrap;
+    }
+    th{
+      background:#e0f2f1;
+      font-weight:600;
+    }
+
+    @media print{
+      header, #loginScreen, #mainMenuScreen, #teacherScreen{
+        display:none !important;
+      }
+      body{
+        background:#fff;
+      }
+      #topicScreen{
+        display:block !important;
+        margin:0;
+        padding:0;
+      }
+      .topic-body{
+        box-shadow:none;
+        border-radius:0;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img src="logo.png" alt="AI Bayan" class="logo-img">
+    <div class="brand-text">
+      <h1>ENGLISH WITH AI BAYAN</h1>
+      <span>Advanced · 30 grammar topics</span>
+    </div>
+  </div>
+  <div class="top-info" id="topInfo">Not logged in</div>
+</header>
+
+<main>
+  <!-- LOGIN -->
+  <section id="loginScreen" class="card">
+    <h2 class="section-title">Login</h2>
+    <p class="muted" style="margin-bottom:10px">
+      Enter your <strong>Name</strong> and <strong>Code</strong>. Ask your teacher for the code.
+    </p>
+
+    <label class="field-label" for="loginName">Name</label>
+    <input id="loginName" class="text-input" type="text" placeholder="Your name" />
+
+    <label class="field-label" for="loginCode">Code</label>
+    <input id="loginCode" class="text-input" type="password" placeholder="Student or teacher code" />
+
+    <div style="display:flex;gap:8px;margin-top:4px">
+      <button class="btn btn-primary" onclick="handleLogin()">Login</button>
+      <button class="btn btn-ghost" onclick="backToLogin()">Reset</button>
+    </div>
+
+    <div id="loginError" class="error hidden"></div>
+  </section>
+
+  <!-- MAIN MENU (STUDENT) -->
+  <section id="mainMenuScreen" class="hidden">
+    <section class="card">
+      <div class="top-row">
+        <div>
+          <h2 class="section-title" style="margin-bottom:4px;">Advanced grammar topics</h2>
+          <div id="menuInfo" class="muted"></div>
+        </div>
+        <div>
+          <span class="stars-badge">
+            <span class="star-icon">⭐</span>
+            Stars: <span id="menuStars">0</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="topics-grid" id="menuTopics"></div>
+    </section>
+
+    <aside id="aiPanel">
+      <div>
+        <h3>
+          AI Bayan
+          <span id="aiLimit"></span>
+        </h3>
+        <p class="chat-note">
+          Ask AI Bayan about advanced grammar, vocabulary or translation. 1 question per day.
+        </p>
+      </div>
+
+      <div id="chatBox" class="chat-box"></div>
+
+      <div>
+        <textarea id="aiQuestion"
+                  placeholder="Write your question and press Enter or click Ask..."
+        ></textarea>
+        <div class="chat-actions">
+          <button class="btn btn-primary" id="askBtn">Ask AI Bayan</button>
+        </div>
+        <p class="chat-note">
+          In future, your teacher will see your questions and answers in the journal.
+        </p>
+      </div>
+    </aside>
+  </section>
+
+  <!-- TOPIC SCREEN -->
+  <section id="topicScreen" class="hidden">
+    <div class="topic-header">
+      <div class="topic-header-main">
+        <div class="topic-header-title" id="topicHeaderTitle">Topic</div>
+        <div class="topic-header-tag" id="topicHeaderTag"></div>
+      </div>
+      <div class="topic-header-buttons">
+        <button class="btn-topic back" onclick="backToMenu()">← Back</button>
+        <button class="btn-topic menu" onclick="backToMenu()">🏠 Main menu</button>
+        <button class="btn-topic menu" onclick="printCurrentTopic()">🖨 Print</button>
+      </div>
+    </div>
+    <div class="topic-body">
+      <div id="topicRuleContainer"></div>
+      <div id="topicExercisesContainer"></div>
+      <div id="topicStatus" class="muted" style="margin-top:8px;"></div>
+    </div>
+  </section>
+
+  <!-- TEACHER -->
+  <section id="teacherScreen" class="hidden card">
+    <div class="top-buttons">
+      <button class="btn btn-ghost" onclick="backToLogin()">← Back to login</button>
+      <span class="tag">Teacher mode</span>
+    </div>
+    <h2 class="section-title">Teacher dashboard</h2>
+    <p class="muted">
+      Shows data saved in this browser: stars and last login (per code).
+    </p>
+
+    <div class="table-wrapper">
+      <table id="teacherTable">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Stars</th>
+            <th>Last login</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script>
+/* ---------- CLASS RANGES (PIN как в Beginner/Intermediate) ---------- */
+
+const classRanges = [
+  { cls: "3E",  from: 101,  to: 115 },
+  { cls: "4G",  from: 201,  to: 215 },
+  { cls: "5G",  from: 301,  to: 315 },
+  { cls: "5Zh", from: 401,  to: 415 },
+  { cls: "6G",  from: 501,  to: 515 },
+  { cls: "7B",  from: 601,  to: 615 },
+  { cls: "7V",  from: 701,  to: 715 },
+  { cls: "8E",  from: 801,  to: 815 },
+  { cls: "9Zh", from: 901,  to: 915 },
+  { cls: "10A", from: 1001, to: 1015 }
+];
+
+function getClassByCode(num){
+  for (const r of classRanges){
+    if (num >= r.from && num <= r.to){
+      return r.cls;
+    }
+  }
+  return null;
+}
+
+/* ---------- TOPIC COLORS ---------- */
+
+const topicColors = {
+  1:"#1b5e20",
+  2:"#2e7d32",
+  3:"#00695c",
+  4:"#2e7d67",
+  5:"#33691e",
+  6:"#004d40",
+  7:"#00796b",
+  8:"#388e3c",
+  9:"#1b5e46",
+  10:"#00897b",
+  11:"#2e7d32",
+  12:"#00695c",
+  13:"#1b5e20",
+  14:"#2e7d67",
+  15:"#33691e",
+  16:"#004d40",
+  17:"#00796b",
+  18:"#388e3c",
+  19:"#1b5e46",
+  20:"#00897b",
+  21:"#2e7d32",
+  22:"#00695c",
+  23:"#1b5e20",
+  24:"#2e7d67",
+  25:"#33691e",
+  26:"#004d40",
+  27:"#00796b",
+  28:"#388e3c",
+  29:"#1b5e46",
+  30:"#00897b"
+};
+
+/* ---------- TOPICS (30 ADVANCED) ---------- */
+
+const topics = [
+  {
+    id:1,
+    title:"Inversion after negative adverbials",
+    level:"Advanced",
+    explanation:"We use inversion (auxiliary before subject) after negative or limiting adverbials like never, rarely, only then, not until, not only… but also, to make the sentence more formal or emphatic.",
+    ruleRu:"Инверсия после отрицательных/ограничительных наречий (never, rarely, only then, not until…) используется для подчёркивания и делает речь более формальной: вспомогательный глагол ставится перед подлежащим.",
+    formulas:["Never / Rarely / Seldom + AUX + S + V","Not until ... + AUX + S + V","Only then / Only later + AUX + S + V"],
+    examples:[
+      "Never have I seen such a beautiful view.",
+      "Not until he left did she realise her mistake."
+    ],
+    exercises:[]
+  },
+  {
+    id:2,
+    title:"Cleft sentences for emphasis",
+    level:"Advanced",
+    explanation:"Cleft sentences with it is/was or what… is/was allow us to emphasise different parts of the sentence: subject, object, adverbials or the whole idea.",
+    ruleRu:"Cleft-предложения (It is/was…, What … is/was…) помогают выделить нужную часть: «Именно…», «То, что…».",
+    formulas:[
+      "It is/was + X + who/that + clause",
+      "What + clause + is/was + X"
+    ],
+    examples:[
+      "It was my brother who broke the window.",
+      "What I need is a short break."
+    ],
+    exercises:[]
+  },
+  {
+    id:3,
+    title:"Mixed conditionals (advanced use)",
+    level:"Advanced",
+    explanation:"Mixed conditionals connect different times: unreal past cause with present result, or unreal present situation with unreal past result.",
+    ruleRu:"Продвинутые смешанные условные предложения: нереальное прошлое → нереальное настоящее, и нереальное настоящее → нереальное прошлое.",
+    formulas:[
+      "If + Past Perfect, would + V (now result)",
+      "If + Past Simple, would have + V3 (past result)"
+    ],
+    examples:[
+      "If I had listened to you, I wouldn’t be in trouble now.",
+      "If she were more organised, she wouldn’t have missed the flight."
+    ],
+    exercises:[]
+  },
+  {
+    id:4,
+    title:"Advanced modal verbs (deduction & speculation)",
+    level:"Advanced",
+    explanation:"We use must, can’t, may, might, could to talk about deduction and speculation in the present, past and future, often with perfect infinitives.",
+    ruleRu:"Модальные глаголы для сложных предположений о настоящем, прошлом и будущем, включая перфектный инфинитив (must have done, can’t have done и т.д.).",
+    formulas:[
+      "must / can’t / may / might / could + V",
+      "must / can’t / may / might / could + have + V3"
+    ],
+    examples:[
+      "He must have forgotten to call.",
+      "She can’t have finished already."
+    ],
+    exercises:[]
+  },
+  {
+    id:5,
+    title:"Nominalisation and formal style",
+    level:"Advanced",
+    explanation:"Nominalisation means changing verbs or adjectives into nouns to make writing more formal and dense, often used in reports, essays and academic texts.",
+    ruleRu:"Nominalisation – превращение глаголов и прилагательных в существительные для более формального стиля: decide → make a decision, fail → failure.",
+    formulas:[
+      "V → N (decide → decision)",
+      "Adj → N (different → difference)"
+    ],
+    examples:[
+      "There has been a significant increase in pollution.",
+      "The failure to act caused serious problems."
+    ],
+    exercises:[]
+  },
+  {
+    id:6,
+    title:"Reduced relative clauses & participle clauses",
+    level:"Advanced",
+    explanation:"We can reduce relative clauses using participles to make the sentence more concise, especially in written English.",
+    ruleRu:"Сокращённые определительные и причастные обороты: вместо who/which + глагол используем V-ing или V3, особенно в письменной речи.",
+    formulas:[
+      "The man who is standing → The man standing",
+      "The book which was written → The book written"
+    ],
+    examples:[
+      "Students arriving late will not be allowed in.",
+      "The data collected shows an interesting trend."
+    ],
+    exercises:[]
+  },
+  {
+    id:7,
+    title:"Subjunctive and formal wishes",
+    level:"Advanced",
+    explanation:"The subjunctive is used in formal English after verbs like suggest, insist, demand and in fixed expressions like If I were you, So be it.",
+    ruleRu:"Сослагательное наклонение в формальном английском: после suggest, insist, demand, а также в выражениях типа If I were you, Long live…, So be it.",
+    formulas:[
+      "They suggested (that) he go.",
+      "It is important that she be informed."
+    ],
+    examples:[
+      "I insist that he apologise.",
+      "If I were you, I would talk to her."
+    ],
+    exercises:[]
+  },
+  {
+    id:8,
+    title:"Emphatic structures with do / did",
+    level:"Advanced",
+    explanation:"We use do/does/did in affirmative sentences to add emphasis, especially in spoken English, and to contradict or correct someone.",
+    ruleRu:"Служебный do/does/did в утвердительном предложении для подчёркивания: I do understand, He did call you.",
+    formulas:[
+      "S + do/does/did + bare infinitive",
+      "Short emphatic replies: I did, He does."
+    ],
+    examples:[
+      "I do appreciate your help.",
+      "He did tell you about the meeting."
+    ],
+    exercises:[]
+  },
+  {
+    id:9,
+    title:"Advanced phrasal verbs in formal contexts",
+    level:"Advanced",
+    explanation:"Some phrasal verbs are common even in formal English (carry out, point out, put forward, bring about) and often replace one-word verbs.",
+    ruleRu:"Продвинутые фразовые глаголы для «академического» стиля: carry out (conduct), point out (indicate), put forward (propose), bring about (cause).",
+    formulas:[
+      "carry out → conduct",
+      "bring about → cause"
+    ],
+    examples:[
+      "The study was carried out last year.",
+      "The changes brought about a new attitude."
+    ],
+    exercises:[]
+  },
+  {
+    id:10,
+    title:"Hedging and softening in academic English",
+    level:"Advanced",
+    explanation:"Hedging means using cautious language (may, might, tend to, seem, appear, likely) to avoid sounding too direct or too certain.",
+    ruleRu:"Hedging – смягчение высказывания: использование may, might, tend to, seem, appear, likely, it is possible that…, it seems that…",
+    formulas:[
+      "It seems/appears that + clause",
+      "X tends to + V",
+      "It is likely/unlikely that + clause"
+    ],
+    examples:[
+      "It appears that the results support our hypothesis.",
+      "Students tend to perform better with feedback."
+    ],
+    exercises:[]
+  },
+  {
+    id:11,
+    title:"Advanced verb patterns",
+    level:"Advanced",
+    explanation:"Many advanced verbs have specific patterns (V + -ing, V + to V, V + object + to V, V + object + V-ing) and changing the pattern can change the meaning.",
+    ruleRu:"Продвинутые глагольные схемы: remember doing vs remember to do, stop doing vs stop to do, глаголы с объектом и инфинитивом/герундием.",
+    formulas:[
+      "V + -ing / V + to V (remember, stop)",
+      "V + object + to V / V + object + V-ing"
+    ],
+    examples:[
+      "I remember meeting her at the conference.",
+      "He stopped to check his email."
+    ],
+    exercises:[]
+  },
+  {
+    id:12,
+    title:"Future in the past & narrative tenses",
+    level:"Advanced",
+    explanation:"Future in the past is used in stories to talk about things that were in the future at that time (was going to, would), often together with past narrative tenses.",
+    ruleRu:"Future in the past: was going to / would для описания будущего из точки зрения прошлого. Часто используется в рассказах.",
+    formulas:[
+      "was/were going to + V",
+      "would + V (future seen from the past)"
+    ],
+    examples:[
+      "I was going to call you, but I forgot.",
+      "We didn’t know that it would rain."
+    ],
+    exercises:[]
+  },
+  {
+    id:13,
+    title:"Wish / If only (unreal past and present)",
+    level:"Advanced",
+    explanation:"We use wish/if only with past forms to talk about regrets about the present, and with past perfect for regrets about the past.",
+    ruleRu:"Wish / If only: wish + Past Simple → жаль, что сейчас не так; wish + Past Perfect → сожаления о прошлом.",
+    formulas:[
+      "I wish / If only + Past Simple",
+      "I wish / If only + Past Perfect"
+    ],
+    examples:[
+      "I wish I were taller.",
+      "If only I had studied harder!"
+    ],
+    exercises:[]
+  },
+  {
+    id:14,
+    title:"Unreal past with would rather / would sooner / as if",
+    level:"Advanced",
+    explanation:"We use unreal past after would rather/would sooner and as if/as though to describe unreal or imaginary situations.",
+    ruleRu:"После would rather/sooner и as if/as though часто используется «нереальное прошлое» (Past Simple/Perfect), чтобы выразить предпочтение или нереальную ситуацию.",
+    formulas:[
+      "I’d rather + Past Simple",
+      "He talks as if he knew everything."
+    ],
+    examples:[
+      "I’d rather you didn’t tell anyone.",
+      "She looked as if she had seen a ghost."
+    ],
+    exercises:[]
+  },
+  {
+    id:15,
+    title:"Discourse markers and advanced linking words",
+    level:"Advanced",
+    explanation:"Advanced discourse markers organise ideas in writing and speaking: however, nevertheless, on the contrary, in addition, in contrast, on the other hand.",
+    ruleRu:"Продвинутые слова-связки для логики текста: however, nevertheless, on the contrary, in addition, in contrast, on the other hand.",
+    formulas:[
+      "However / Nevertheless / On the contrary",
+      "In addition / Furthermore / Moreover",
+      "In contrast / On the other hand"
+    ],
+    examples:[
+      "However, the results were not as expected.",
+      "In addition, the study highlights several risks."
+    ],
+    exercises:[]
+  },
+  {
+    id:16,
+    title:"Ellipsis and substitution (do so, one/ones, so/neither)",
+    level:"Advanced",
+    explanation:"Ellipsis and substitution avoid repetition: do so, one/ones, so/neither do I, nor do I.",
+    ruleRu:"Ellipsis и substitution: вместо повторения глагола или сущ. используем do so, (the) one/ones, конструкции so do I, neither do I.",
+    formulas:[
+      "do so / do it",
+      "the one / the ones",
+      "So do I / Neither do I"
+    ],
+    examples:[
+      "If you have to leave, do so quietly.",
+      "I like this dress and she likes that one."
+    ],
+    exercises:[]
+  },
+  {
+    id:17,
+    title:"Fronting & thematisation",
+    level:"Advanced",
+    explanation:"Fronting means moving information to the beginning of the sentence for emphasis or style, often in formal or literary English.",
+    ruleRu:"Fronting – вынос информации в начало предложения для подчёркивания: особый порядок слов, часто в письменной/художественной речи.",
+    formulas:[
+      "In the corner stood a tall man.",
+      "What I want to say is this..."
+    ],
+    examples:[
+      "On the table lay a pile of books.",
+      "What I need now is some rest."
+    ],
+    exercises:[]
+  },
+  {
+    id:18,
+    title:"Passive reporting structures",
+    level:"Advanced",
+    explanation:"We use passive reporting structures like It is said that…, He is thought to…, especially in news and formal writing.",
+    ruleRu:"Пассивные конструкции для передачи слухов и мнений: It is said that…, He is thought to…, She is believed to….",
+    formulas:[
+      "It is said/believed/known that + clause",
+      "S is said/believed/known to + V"
+    ],
+    examples:[
+      "It is believed that the project will succeed.",
+      "He is thought to be living abroad."
+    ],
+    exercises:[]
+  },
+  {
+    id:19,
+    title:"Complex noun phrases",
+    level:"Advanced",
+    explanation:"Complex noun phrases with pre-modifiers and post-modifiers are typical of advanced and academic English.",
+    ruleRu:"Сложные именные группы с определениями до и после существительного – типичный признак академического стиля.",
+    formulas:[
+      "[Adj + N + of + N]",
+      "[N + with/without + N/participle]"
+    ],
+    examples:[
+      "A highly sophisticated piece of equipment.",
+      "Students with limited access to resources."
+    ],
+    exercises:[]
+  },
+  {
+    id:20,
+    title:"Non-defining and embedded relative clauses",
+    level:"Advanced",
+    explanation:"Non-defining relative clauses add extra, non-essential information, often written with commas. Embedded clauses appear in the middle of the main clause.",
+    ruleRu:"Неразделительные (non-defining) и «встроенные» (embedded) придаточные предложения добавляют дополнительную информацию и отделяются запятыми.",
+    formulas:[
+      "S, who/which..., V",
+      "Main clause, which..., continues"
+    ],
+    examples:[
+      "My brother, who lives in Canada, is visiting us.",
+      "The results, which were unexpected, changed our plan."
+    ],
+    exercises:[]
+  },
+  {
+    id:21,
+    title:"Advanced conditionals with unless, provided, as long as",
+    level:"Advanced",
+    explanation:"We use conjunctions like unless, provided (that), as long as, in case to add nuance to real and unreal conditionals.",
+    ruleRu:"Продвинутые союзы в условных: unless (=if not), provided (that), as long as, in case – добавляют оттенки значения в реальных и нереальных условиях.",
+    formulas:[
+      "Unless + clause",
+      "Provided (that) / As long as + clause",
+      "In case + clause"
+    ],
+    examples:[
+      "You can go out as long as you finish your homework.",
+      "Take an umbrella in case it rains."
+    ],
+    exercises:[]
+  },
+  {
+    id:22,
+    title:"Inversion in conditionals (Had I known…)",
+    level:"Advanced",
+    explanation:"We can use inversion instead of if in formal conditionals: Had I known…, Were I…, Should you…",
+    ruleRu:"Формальные условные с инверсией без if: Had I known…, Were I…, Should you need any help….",
+    formulas:[
+      "Had + S + V3, S would...",
+      "Were + S + to V / Adj, S would...",
+      "Should + S + V, S will/would..."
+    ],
+    examples:[
+      "Had I known, I would have told you.",
+      "Should you need any help, let me know."
+    ],
+    exercises:[]
+  },
+  {
+    id:23,
+    title:"Advanced reporting verbs and patterns",
+    level:"Advanced",
+    explanation:"Reporting verbs like advise, persuade, accuse, deny, suggest have specific patterns (verb + object + to V, verb + -ing, verb + prep + -ing).",
+    ruleRu:"Продвинутые глаголы речи и их схемы: advise, persuade, accuse, deny, suggest и т.д. – с объектом, инфинитивом, герундием и предлогами.",
+    formulas:[
+      "advise/persuade + object + to V",
+      "accuse + object + of + V-ing",
+      "suggest + V-ing / that + clause"
+    ],
+    examples:[
+      "They persuaded me to apply for the job.",
+      "She denied taking the money."
+    ],
+    exercises:[]
+  },
+  {
+    id:24,
+    title:"Complex prepositions and connectors",
+    level:"Advanced",
+    explanation:"Complex prepositions and connectors like due to, owing to, in spite of, despite, in terms of are common in formal English.",
+    ruleRu:"Сложные предлоги и связки: due to, owing to, in spite of, despite, in terms of – часто используются в формальной речи и письме.",
+    formulas:[
+      "due to / owing to + noun/gerund",
+      "in spite of / despite + noun/gerund"
+    ],
+    examples:[
+      "The match was cancelled due to heavy rain.",
+      "Despite feeling tired, she continued working."
+    ],
+    exercises:[]
+  },
+  {
+    id:25,
+    title:"Collocations and lexical chunks",
+    level:"Advanced",
+    explanation:"Advanced learners use natural collocations and lexical chunks: heavy rain, make a decision, take responsibility, play a role.",
+    ruleRu:"Коллокации (устойчивые сочетания) – важная часть продвинутого уровня: make a decision, take responsibility, play a role, heavy traffic.",
+    formulas:[
+      "verb + noun (make a decision)",
+      "adj + noun (heavy rain)",
+      "verb + prep + noun (take part in)"
+    ],
+    examples:[
+      "We need to make a quick decision.",
+      "She takes full responsibility for the project."
+    ],
+    exercises:[]
+  },
+  {
+    id:26,
+    title:"Perfect aspect nuances (have been doing vs have done)",
+    level:"Advanced",
+    explanation:"Advanced use of the perfect aspect contrasts ongoing activity (have been doing) with completed result (have done).",
+    ruleRu:"Продвинутое различие между Present Perfect и Present Perfect Continuous: длительность процесса vs результат.",
+    formulas:[
+      "have/has been + V-ing",
+      "have/has + V3"
+    ],
+    examples:[
+      "I have been reading this book all week.",
+      "I have read the book – you can have it now."
+    ],
+    exercises:[]
+  },
+  {
+    id:27,
+    title:"Adverbial clauses of concession, purpose and result",
+    level:"Advanced",
+    explanation:"Adverbial clauses with although, even though, so that, in order that, so…that, such…that express contrast, purpose and result.",
+    ruleRu:"Придаточные уступки (although, even though), цели (so that, in order that) и результата (so…that, such…that).",
+    formulas:[
+      "Although / Even though + clause",
+      "so that / in order that + clause",
+      "so + adj/adv + that, such (a/an) + adj + noun + that"
+    ],
+    examples:[
+      "Although it was late, we continued working.",
+      "She spoke so quietly that I could hardly hear her."
+    ],
+    exercises:[]
+  },
+  {
+    id:28,
+    title:"Gradable and non-gradable adjectives with modifiers",
+    level:"Advanced",
+    explanation:"Some adjectives are gradable (very, quite) and some are extreme or non-gradable (absolutely, completely).",
+    ruleRu:"Степени прилагательных: gradable (very tired) vs non-gradable/extreme (absolutely exhausted). Разные усилители.",
+    formulas:[
+      "very / quite / rather + gradable adj",
+      "absolutely / completely / totally + non-gradable adj"
+    ],
+    examples:[
+      "He was very tired after the exam.",
+      "The film was absolutely amazing."
+    ],
+    exercises:[]
+  },
+  {
+    id:29,
+    title:"Combining emphasis: inversion + cleft + fronting",
+    level:"Advanced",
+    explanation:"Advanced users often combine several emphasis tools (inversion, cleft, fronting) in one text to create a strong stylistic effect.",
+    ruleRu:"Сочетание приёмов подчёркивания: инверсия, cleft-предложения, fronting в одном тексте для сильного выразительного эффекта.",
+    formulas:[
+      "Never have I…, It was X who…, On the wall hung…"
+    ],
+    examples:[
+      "Never had I realised how important it was.",
+      "It was only then that I understood the problem."
+    ],
+    exercises:[]
+  },
+  {
+    id:30,
+    title:"Register and style shifting (formal vs informal)",
+    level:"Advanced",
+    explanation:"Advanced learners can shift between formal and informal style, choosing appropriate grammar, vocabulary and structures for each context.",
+    ruleRu:"Умение менять регистр речи: формальный vs неформальный стиль, выбор грамматики и лексики под ситуацию.",
+    formulas:[
+      "formal: request, enquire, assume",
+      "informal: ask, think, suppose"
+    ],
+    examples:[
+      "We regret to inform you that your application was unsuccessful.",
+      "Sorry, but you didn’t get it this time."
+    ],
+    exercises:[]
+  }
+];
+
+/* ---------- STATE & STORAGE ---------- */
+
+let currentUser = null; // {name, code, classLabel, stars, lastLogin}
+let currentTopicId = null;
+
+function todayStr(){
+  return new Date().toISOString().slice(0,10);
+}
+function studentKey(code){
+  return "bayan_adv_student_"+code;
+}
+
+function loadStudent(code,name,classLabel){
+  const key = studentKey(code);
+  let data = null;
+  try{
+    data = JSON.parse(localStorage.getItem(key));
+  }catch(e){
+    data=null;
+  }
+  if(!data){
+    data = {
+      name:name||"",
+      code,
+      classLabel,
+      stars:0,
+      lastLogin:null
+    };
+  }else{
+    if(name) data.name = name;
+    data.classLabel = classLabel;
+  }
+  data.lastLogin = todayStr();
+  localStorage.setItem(key,JSON.stringify(data));
+  return data;
+}
+function saveCurrent(){
+  if(!currentUser) return;
+  const key = studentKey(currentUser.code);
+  localStorage.setItem(key,JSON.stringify(currentUser));
+}
+
+/* ---------- SCREEN SWITCHING ---------- */
+
+function showOnly(id){
+  document.getElementById("loginScreen").classList.add("hidden");
+  document.getElementById("mainMenuScreen").classList.add("hidden");
+  document.getElementById("topicScreen").classList.add("hidden");
+  document.getElementById("teacherScreen").classList.add("hidden");
+  document.getElementById(id).classList.remove("hidden");
+}
+function setTopInfo(html){
+  document.getElementById("topInfo").innerHTML = html;
+}
+
+/* ---------- LOGIN ---------- */
+
+function handleLogin(){
+  const name = document.getElementById("loginName").value.trim();
+  const codeStr = document.getElementById("loginCode").value.trim();
+  const errorEl = document.getElementById("loginError");
+  errorEl.classList.add("hidden");
+  errorEl.textContent = "";
+
+  if(!codeStr){
+    errorEl.textContent = "Enter your code.";
+    errorEl.classList.remove("hidden");
+    return;
+  }
+
+  // Teacher (новый код: 6678)
+  if(codeStr==="6678"){
+    setTopInfo(`Logged in as <strong>TEACHER</strong> · code 6678`);
+    renderTeacherTable();
+    showOnly("teacherScreen");
+    return;
+  }
+
+  const num = Number(codeStr);
+  if(!Number.isInteger(num)){
+    errorEl.textContent = "Code must be a number.";
+    errorEl.classList.remove("hidden");
+    return;
+  }
+  const classLabel = getClassByCode(num);
+  if(!classLabel){
+    errorEl.textContent = "Unknown student code. Ask your teacher.";
+    errorEl.classList.remove("hidden");
+    return;
+  }
+  if(!name){
+    errorEl.textContent = "Enter your name.";
+    errorEl.classList.remove("hidden");
+    return;
+  }
+
+  currentUser = loadStudent(num,name,classLabel);
+  saveCurrent();
+  setTopInfo(
+    `Class <strong>${currentUser.classLabel}</strong> · Student: <strong>${currentUser.name}</strong> (code ${currentUser.code}) · Stars: <strong id="topStars">${currentUser.stars}</strong>`
+  );
+  buildMainMenu();
+  updateTopStars();
+  showOnly("mainMenuScreen");
+}
+
+function backToLogin(){
+  currentUser = null;
+  setTopInfo("Not logged in");
+  document.getElementById("loginCode").value = "";
+  document.getElementById("loginName").value = "";
+  showOnly("loginScreen");
+}
+
+/* ---------- MAIN MENU UI ---------- */
+
+function buildMainMenu(){
+  if(!currentUser) return;
+  document.getElementById("menuInfo").innerHTML =
+    `Class <strong>${currentUser.classLabel}</strong>, student <strong>${currentUser.name}</strong> (code ${currentUser.code})`;
+  document.getElementById("menuStars").textContent = currentUser.stars ?? 0;
+
+  const grid = document.getElementById("menuTopics");
+  grid.innerHTML = "";
+  topics.forEach(t=>{
+    const div = document.createElement("div");
+    div.className = "topic-card";
+    const color = topicColors[t.id] || "#004d40";
+    div.style.borderColor = color+"55";
+    div.style.background = "#f4fbf8";
+    div.innerHTML = `
+      <div class="topic-card-title">${t.id}. ${t.title}</div>
+      <div class="topic-card-sub">${t.level}</div>
+    `;
+    div.addEventListener("click",()=>openTopic(t.id));
+    grid.appendChild(div);
+  });
+
+  // AI Panel init for logged-in student
+  const chat = document.getElementById("chatBox");
+  chat.innerHTML = "";
+  const msg = document.createElement("div");
+  msg.className = "chat-msg";
+  msg.textContent = "You can ask AI Bayan one advanced question per day. Use English if possible.";
+  chat.appendChild(msg);
+  const aiLimitEl = document.getElementById("aiLimit");
+  if(aiLimitEl){
+    aiLimitEl.textContent = "· 1 question per day";
+  }
+
+  const q = document.getElementById("aiQuestion");
+  const btn = document.getElementById("askBtn");
+  if(q && btn){
+    q.disabled = false;
+    btn.disabled = false;
+  }
+}
+
+/* ---------- TOPIC SCREEN ---------- */
+
+function openTopic(id){
+  currentTopicId = id;
+  const t = topics.find(x=>x.id===id);
+  if(!t) return;
+
+  const color = topicColors[id] || "#004d40";
+  document.documentElement.style.setProperty("--topicColor",color);
+
+  document.getElementById("topicHeaderTitle").textContent = `${id}. ${t.title}`;
+  document.getElementById("topicHeaderTag").innerHTML =
+    `<span class="tag">${t.level}</span>`;
+
+  const rc = document.getElementById("topicRuleContainer");
+  rc.innerHTML = "";
+  const gbox = document.createElement("div");
+  gbox.className = "grammar-box";
+  gbox.innerHTML = `
+    <strong>Rule (EN):</strong> ${t.explanation || ""}
+    ${
+      t.formulas && t.formulas.length
+        ? "<div style='margin-top:6px;'>"+
+          t.formulas.map(f=>`<span class="formula">${f}</span>`).join(" ")+
+          "</div>"
+        : ""
+    }
+    ${
+      t.ruleRu
+        ? `<div class="grammar-ru">
+             <strong>Правило (RU):</strong><br>
+             ${t.ruleRu}
+           </div>`
+        : ""
+    }
+  `;
+  rc.appendChild(gbox);
+
+  if(t.examples && t.examples.length){
+    const ul = document.createElement("ul");
+    ul.className = "examples";
+    t.examples.forEach(e=>{
+      const li = document.createElement("li");
+      li.textContent = e;
+      ul.appendChild(li);
+    });
+    rc.appendChild(ul);
+  }
+
+  const ec = document.getElementById("topicExercisesContainer");
+  ec.innerHTML = "";
+  if(!t.exercises || t.exercises.length===0){
+    const p = document.createElement("p");
+    p.className = "muted";
+    p.style.marginTop = "10px";
+    p.textContent = "Exercises for this topic will be added later.";
+    ec.appendChild(p);
+  }else{
+    const wrapper = document.createElement("div");
+    wrapper.className = "exercises";
+    t.exercises.forEach((ex,exIndex)=>{
+      const block = document.createElement("div");
+      block.className = "exercise-block";
+      const title = document.createElement("div");
+      title.className = "exercise-title";
+      title.innerHTML = ex.title;
+      block.appendChild(title);
+
+      ex.questions.forEach((q,qIndex)=>{
+        const row = document.createElement("div");
+        row.className = "question-row";
+        const qText = document.createElement("div");
+        qText.className = "question-text";
+        qText.textContent = `${qIndex+1}) ${q.text}`;
+        row.appendChild(qText);
+
+        const opts = document.createElement("div");
+        opts.className = "options";
+        if(q.options && q.options.length){
+          q.options.forEach((opt,optIndex)=>{
+            const label = document.createElement("label");
+            const radio = document.createElement("input");
+            radio.type = "radio";
+            const gname = `t${id}_e${exIndex}_q${qIndex}`;
+            radio.name = gname;
+            radio.value = optIndex;
+            label.appendChild(radio);
+            label.appendChild(document.createTextNode(" "+opt));
+            opts.appendChild(label);
+          });
+        }
+        row.appendChild(opts);
+
+        const mark = document.createElement("span");
+        mark.className = "mark";
+        mark.id = `mark_t${id}_e${exIndex}_q${qIndex}`;
+        row.appendChild(mark);
+
+        block.appendChild(row);
+      });
+
+      const footer = document.createElement("div");
+      footer.className = "exercise-footer";
+      const small = document.createElement("small");
+      small.textContent = "Each correct answer gives you 1 star. You can check only once.";
+      const btn = document.createElement("button");
+      btn.className = "btn btn-primary";
+      btn.textContent = "Check";
+      btn.addEventListener("click",()=>checkExercise(id,exIndex));
+      footer.appendChild(small);
+      footer.appendChild(btn);
+      block.appendChild(footer);
+
+      wrapper.appendChild(block);
+    });
+    ec.appendChild(wrapper);
+
+    // блокируем уже решённые этим учеником упражнения
+    if(currentUser && t.exercises && t.exercises.length){
+      t.exercises.forEach((ex, idx)=>{
+        const key = `adv_done_t${id}_e${idx}_code${currentUser.code}`;
+        if(localStorage.getItem(key) === "1"){
+          disableExercise(id, idx);
+        }
+      });
+    }
+  }
+
+  document.getElementById("topicStatus").textContent = "";
+  showOnly("topicScreen");
+}
+
+function backToMenu(){
+  if(!currentUser){
+    backToLogin();
+    return;
+  }
+  buildMainMenu();
+  showOnly("mainMenuScreen");
+}
+
+function printCurrentTopic(){
+  if(!currentTopicId) return;
+  window.print();
+}
+
+/* ---------- CHECK EXERCISE (ONE ATTEMPT) ---------- */
+
+function checkExercise(topicId, exIndex){
+  if(!currentUser) return;
+
+  const t = topics.find(x=>x.id===topicId);
+  if(!t) return;
+  const ex = t.exercises[exIndex];
+  if(!ex) return;
+
+  const key = `adv_done_t${topicId}_e${exIndex}_code${currentUser.code}`;
+
+  // уже решал – не даём повторно
+  if(localStorage.getItem(key) === "1"){
+    const statusAlready = document.getElementById("topicStatus");
+    if(statusAlready){
+      statusAlready.textContent = "You have already completed this exercise.";
+    }
+    disableExercise(topicId, exIndex);
+    return;
+  }
+
+  let gained = 0;
+  ex.questions.forEach((q,qIndex)=>{
+    const gname = `t${topicId}_e${exIndex}_q${qIndex}`;
+    const selected = document.querySelector(`input[name="${gname}"]:checked`);
+    const markEl = document.getElementById(`mark_t${topicId}_e${exIndex}_q${qIndex}`);
+    if(!markEl) return;
+    markEl.textContent = "";
+    markEl.classList.remove("correct","wrong");
+
+    if(!selected){
+      markEl.textContent = "•";
+      return;
+    }
+    const chosen = Number(selected.value);
+    if(chosen===q.correct){
+      markEl.textContent="✓";
+      markEl.classList.add("correct");
+      gained++;
+    }else{
+      markEl.textContent="✗";
+      markEl.classList.add("wrong");
+    }
+  });
+
+  // помечаем, что упражнение завершено
+  localStorage.setItem(key, "1");
+
+  const status = document.getElementById("topicStatus");
+  if(gained>0){
+    currentUser.stars += gained;
+    saveCurrent();
+    updateTopStars();
+    if(status){
+      status.textContent = `Exercise completed. You gained ${gained} star(s).`;
+    }
+  }else{
+    if(status){
+      status.textContent = "Exercise completed. No correct answers.";
+    }
+  }
+
+  disableExercise(topicId, exIndex);
+}
+
+/* ---------- DISABLE EXERCISE ---------- */
+
+function disableExercise(topicId, exIndex){
+  const t = topics.find(x=>x.id===topicId);
+  if(!t) return;
+  const ex = t.exercises[exIndex];
+  if(!ex) return;
+
+  // радиокнопки
+  ex.questions.forEach((q,qIndex)=>{
+    const gname = `t${topicId}_e${exIndex}_q${qIndex}`;
+    const inputs = document.querySelectorAll(`input[name="${gname}"]`);
+    inputs.forEach(inp => inp.disabled = true);
+  });
+
+  // кнопка "Check" именно этого блока
+  const blocks = document.querySelectorAll("#topicExercisesContainer .exercise-block");
+  const block = blocks[exIndex];
+  if(block){
+    const btn = block.querySelector("button");
+    if(btn){
+      btn.disabled = true;
+      btn.style.opacity = "0.6";
+      btn.style.cursor = "not-allowed";
+    }
+  }
+}
+
+/* ---------- TEACHER TABLE ---------- */
+
+function renderTeacherTable(){
+  const tbody = document.querySelector("#teacherTable tbody");
+  tbody.innerHTML = "";
+  const allStudents = [];
+  classRanges.forEach(r=>{
+    for(let code=r.from; code<=r.to; code++){
+      const key = studentKey(code);
+      let data = null;
+      try{
+        data = JSON.parse(localStorage.getItem(key));
+      }catch(e){ data=null; }
+      if(data) allStudents.push(data);
+    }
+  });
+  if(allStudents.length===0){
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.colSpan = 5;
+    td.textContent =
+      "No student data in this browser yet. Ask students to log in and work with tasks.";
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+    return;
+  }
+  allStudents.sort((a,b)=>a.code-b.code);
+  allStudents.forEach(s=>{
+    const tr = document.createElement("tr");
+    const cls = document.createElement("td");
+    cls.textContent = s.classLabel || getClassByCode(s.code) || "";
+    const codeTd = document.createElement("td");
+    codeTd.textContent = s.code;
+    const nameTd = document.createElement("td");
+    nameTd.textContent = s.name || "";
+    const starsTd = document.createElement("td");
+    starsTd.textContent = s.stars ?? 0;
+    const loginTd = document.createElement("td");
+    loginTd.textContent = s.lastLogin || "";
+    tr.appendChild(cls);
+    tr.appendChild(codeTd);
+    tr.appendChild(nameTd);
+    tr.appendChild(starsTd);
+    tr.appendChild(loginTd);
+    tbody.appendChild(tr);
+  });
+}
+
+/* ---------- STARS ---------- */
+
+function updateTopStars() {
+  if (!currentUser) return;
+  const topStarsEl = document.getElementById("topStars");
+  if (topStarsEl) {
+    topStarsEl.textContent = currentUser.stars;
+  }
+  const menuStarsEl = document.getElementById("menuStars");
+  if (menuStarsEl) {
+    menuStarsEl.textContent = currentUser.stars;
+  }
+}
+
+/* ---------- AI BAYAN CHAT (1 QUESTION PER DAY) ---------- */
+
+const AI_WORKER_URL = "https://shiny-tree-f78c.aiko030500.workers.dev/";
+
+function canAskAiToday(){
+  if(!currentUser) return false;
+  const key = `adv_ai_last_${currentUser.code}`;
+  const today = todayStr();
+  const last = localStorage.getItem(key);
+  return last !== today;
+}
+
+function setAiAskedToday(){
+  if(!currentUser) return;
+  const key = `adv_ai_last_${currentUser.code}`;
+  localStorage.setItem(key, todayStr());
+}
+
+function appendChatMessage(sender, text){
+  const box = document.getElementById("chatBox");
+  if(!box) return;
+  const msg = document.createElement("div");
+  msg.className = "chat-msg";
+  const strong = document.createElement("strong");
+  strong.textContent = sender+": ";
+  const span = document.createElement("span");
+  span.textContent = text;
+  msg.appendChild(strong);
+  msg.appendChild(span);
+  box.appendChild(msg);
+  box.scrollTop = box.scrollHeight;
+}
+
+async function sendToAiBayan(){
+  const qEl = document.getElementById("aiQuestion");
+  const btn = document.getElementById("askBtn");
+  if(!qEl || !btn) return;
+  const question = qEl.value.trim();
+  if(!question){
+    return;
+  }
+  if(!currentUser){
+    appendChatMessage("System","Please log in as a student first.");
+    return;
+  }
+  if(!canAskAiToday()){
+    appendChatMessage("System","You have already used your question for today. Try again tomorrow.");
+    return;
+  }
+
+  appendChatMessage(currentUser.name || "You", question);
+  qEl.value = "";
+  btn.disabled = true;
+  btn.textContent = "Asking...";
+
+  let aiMsg = "Sorry, there was a problem with AI Bayan. Try again later.";
+  try{
+    const resp = await fetch(AI_WORKER_URL, {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({
+        question,
+        level:"Advanced",
+        student:{
+          name: currentUser.name,
+          code: currentUser.code,
+          classLabel: currentUser.classLabel
+        }
+      })
+    });
+    if(resp.ok){
+      const data = await resp.json().catch(()=>null);
+      if(data){
+        aiMsg = data.answer || data.reply || data.result || data.message || JSON.stringify(data);
+      }else{
+        aiMsg = "AI Bayan sent an empty response.";
+      }
+      setAiAskedToday();
+    }else{
+      aiMsg = "AI Bayan is not available now (server error).";
+    }
+  }catch(e){
+    aiMsg = "AI Bayan is not available now (network error).";
+  }
+
+  appendChatMessage("AI Bayan", aiMsg);
+  btn.disabled = false;
+  btn.textContent = "Ask AI Bayan";
+}
+
+/* ---------- INIT ---------- */
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  const btn = document.getElementById("askBtn");
+  const q = document.getElementById("aiQuestion");
+  if(btn){
+    btn.addEventListener("click", sendToAiBayan);
+  }
+  if(q){
+    q.addEventListener("keydown", (e)=>{
+      if(e.key==="Enter" && !e.shiftKey){
+        e.preventDefault();
+        sendToAiBayan();
+      }
+    });
+  }
+
+  showOnly("loginScreen");
+});
+</script>
+</body>
+</html>
