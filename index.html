@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <title>ENGLISH WITH AI BAYAN – Advanced</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
     :root{
-      /* тёмно-зелёная тема */
-      --blue-main:#004d40;
-      --blue-soft:#00796b;
+      --main:#ff6f00;          /* НАСЫЩЕННЫЙ ОРАНЖЕВЫЙ */
+      --main-dark:#e65100;     /* ТЕМНЫЙ ОРАНЖЕВЫЙ */
+      --soft:#ff8f00;          /* МЯГКИЙ ОРАНЖЕВЫЙ */
       --gold:#ffd54f;
-      --bg:#f3f7f5;
-      --topicColor:#004d40;
+      --bg:#fff9f0;            /* ОЧЕНЬ СВЕТЛЫЙ ОРАНЖЕВЫЙ ФОН */
+      --topicColor:#ff6f00;
     }
 
     *{
@@ -23,18 +24,18 @@
 
     body{
       background:var(--bg);
-      color:#09342d;
+      color:#3a2b1f;
     }
 
-    /* HEADER WITH GIRL LOGO */
+    /* HEADER ------------------------------------------------------------ */
     header{
-      background:linear-gradient(90deg,#004d40,#00796b);
+      background:linear-gradient(90deg,var(--main-dark),var(--main));
       color:#fff;
       padding:10px 24px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      box-shadow:0 2px 6px rgba(0,0,0,.2);
+      box-shadow:0 2px 6px rgba(0,0,0,.25);
     }
 
     .brand{
@@ -44,8 +45,8 @@
     }
 
     .logo-img{
-      width:50px;
-      height:50px;
+      width:52px;
+      height:52px;
       border-radius:50%;
       object-fit:cover;
       border:3px solid var(--gold);
@@ -68,6 +69,7 @@
     }
     .top-info strong{color:var(--gold);}
 
+    /* MAIN -------------------------------------------------------------- */
     main{
       padding:16px;
       max-width:1300px;
@@ -77,7 +79,7 @@
     .card{
       background:#fff;
       border-radius:14px;
-      box-shadow:0 4px 14px rgba(0,0,0,.08);
+      box-shadow:0 4px 14px rgba(0,0,0,.1);
       padding:20px;
     }
 
@@ -89,7 +91,7 @@
       font-weight:600;
     }
     .muted{
-      color:#5f7170;
+      color:#6b5f55;
       font-size:12px;
     }
 
@@ -102,16 +104,18 @@
       width:100%;
       padding:10px 12px;
       border-radius:10px;
-      border:1px solid #c5d4cf;
+      border:1px solid #d6cec7;
       margin-bottom:14px;
       font-size:14px;
+      background:#fffdf8;
     }
     .text-input:focus{
       outline:none;
-      border-color:var(--blue-soft);
-      box-shadow:0 0 0 2px rgba(0,121,107,.2);
+      border-color:var(--soft);
+      box-shadow:0 0 0 2px rgba(255,143,0,.25);
     }
 
+    /* BUTTONS ----------------------------------------------------------- */
     .btn{
       border:none;
       border-radius:10px;
@@ -124,22 +128,19 @@
       justify-content:center;
       gap:6px;
     }
+
     .btn-primary{
-      background:var(--blue-soft);
+      background:var(--main);
       color:#fff;
     }
-    .btn-primary:hover{background:#00695c;}
-    .btn-ghost{
-      background:#e0f2f1;
-      color:#004d40;
-    }
-    .btn-ghost:hover{background:#cde7e5;}
+    .btn-primary:hover{background:var(--main-dark);}
 
-    .login-note{
-      font-size:12px;
-      color:#5f7170;
-      margin-top:10px;
-      line-height:1.4;
+    .btn-ghost{
+      background:#fff3e0;
+      color:var(--main-dark);
+    }
+    .btn-ghost:hover{
+      background:#ffe0b2;
     }
 
     .error{
@@ -148,12 +149,13 @@
       font-size:13px;
     }
 
-    /* SCREENS */
+    /* LOGIN ------------------------------------------------------------- */
     #loginScreen{
       max-width:520px;
       margin:40px auto;
     }
 
+    /* MAIN MENU --------------------------------------------------------- */
     #mainMenuScreen{
       display:grid;
       grid-template-columns:2fr 1.2fr;
@@ -167,11 +169,11 @@
 
     .tag{
       display:inline-block;
-      padding:2px 6px;
+      padding:3px 7px;
       border-radius:999px;
-      background:#e0f2f1;
+      background:#ffe0b2;
       font-size:11px;
-      color:#004d40;
+      color:var(--main-dark);
     }
 
     .top-row{
@@ -189,17 +191,16 @@
       gap:4px;
       padding:4px 8px;
       border-radius:999px;
-      background:#fff9e5;
-      border:1px solid #ffe082;
+      background:#fff8e1;
+      border:1px solid #ffecb3;
       font-size:12px;
     }
-    .star-icon{color:#ffb300;}
+    .star-icon{color:#ffa000;}
 
     .topics-grid{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:10px;
-      margin-top:8px;
     }
     @media(max-width:700px){
       .topics-grid{grid-template-columns:1fr;}
@@ -207,9 +208,9 @@
 
     .topic-card{
       border-radius:12px;
-      border:1px solid #cfe2dd;
+      border:1px solid #ffe0b2;
       padding:10px 12px;
-      background:#f4fbf8;
+      background:#fffdf7;
       cursor:pointer;
       transition:.15s;
       display:flex;
@@ -217,29 +218,22 @@
       gap:4px;
     }
     .topic-card:hover{
-      background:#e1f3ec;
+      background:#fff3e0;
       transform:translateY(-1px);
     }
-    .topic-card-title{
-      font-size:14px;
-      font-weight:600;
-    }
-    .topic-card-sub{
-      font-size:11px;
-      color:#5c6f6b;
-    }
 
-    /* AI PANEL */
+    /* AI PANEL ---------------------------------------------------------- */
     #aiPanel{
       background:#fff;
       border-radius:14px;
       padding:14px;
-      box-shadow:0 2px 10px rgba(0,0,0,.06);
+      box-shadow:0 2px 10px rgba(0,0,0,.07);
       display:flex;
       flex-direction:column;
       gap:8px;
       min-height:260px;
     }
+
     #aiPanel h3{
       font-size:15px;
       margin-bottom:4px;
@@ -248,58 +242,43 @@
       align-items:center;
       gap:6px;
     }
-    #aiLimit{
-      font-size:11px;
-    }
+    #aiLimit{font-size:11px;}
+
     .chat-note{
       font-size:11px;
-      color:#5c6f6b;
+      color:#6b5f55;
     }
+
     .chat-box{
       flex:1;
       border-radius:10px;
-      border:1px solid #cfe2dd;
+      border:1px solid #ffe0b2;
       padding:8px;
-      background:#f4fbf8;
+      background:#fffdf7;
       font-size:13px;
       overflow-y:auto;
-      max-height:260px;
     }
-    .chat-msg{
-      margin-bottom:6px;
-      line-height:1.4;
-    }
-    .chat-msg strong{color:#004d40;}
+
     #aiQuestion{
       width:100%;
       min-height:60px;
       resize:vertical;
       border-radius:10px;
-      border:1px solid #c5d4cf;
+      border:1px solid #ffe0b2;
       padding:8px;
-      font-size:13px;
-      margin-top:4px;
-    }
-    #aiQuestion:focus{
-      outline:none;
-      border-color:var(--blue-soft);
-      box-shadow:0 0 0 2px rgba(0,121,107,.17);
-    }
-    .chat-actions{
-      display:flex;
-      justify-content:flex-end;
-      margin-top:4px;
+      background:#fffdf7;
     }
 
-    /* TOPIC SCREEN */
+    /* TOPIC SCREEN ------------------------------------------------------ */
     #topicScreen{
       max-width:1000px;
       margin:0 auto;
     }
+
     .topic-header{
       border-radius:16px 16px 0 0;
       padding:14px 16px;
-      background:linear-gradient(90deg,var(--topicColor),#00796b);
+      background:linear-gradient(90deg,var(--topicColor),var(--main-dark));
       color:#fff;
       display:flex;
       justify-content:space-between;
@@ -307,200 +286,85 @@
       gap:10px;
       flex-wrap:wrap;
     }
-    .topic-header-main{
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
+
     .topic-header-title{
       font-size:18px;
       font-weight:600;
     }
-    .topic-header-tag{
-      font-size:11px;
-      opacity:.9;
-    }
+
     .topic-header-buttons{
       display:flex;
       gap:6px;
-      flex-wrap:wrap;
     }
+
     .btn-topic{
       border:none;
       border-radius:999px;
       padding:6px 12px;
       font-size:12px;
-      cursor:pointer;
       font-weight:600;
+      cursor:pointer;
     }
+
     .btn-topic.back{
-      background:#ffffff;
+      background:#fff;
       color:var(--topicColor);
     }
+
     .btn-topic.menu{
-      background:rgba(255,255,255,.15);
+      background:rgba(255,255,255,.3);
       color:#fff;
-      border:1px solid rgba(255,255,255,.5);
+      border:1px solid rgba(255,255,255,.4);
     }
 
     .topic-body{
       background:#fff;
       border-radius:0 0 16px 16px;
-      box-shadow:0 4px 14px rgba(0,0,0,.08);
+      box-shadow:0 4px 14px rgba(0,0,0,.1);
       padding:16px;
     }
 
     .grammar-box{
-      background:#e6f4f1;
+      background:#fff7e6;
       border-left:4px solid var(--topicColor);
       padding:10px 12px;
       border-radius:10px;
-      margin-bottom:12px;
       font-size:14px;
-      line-height:1.5;
     }
-    .grammar-box strong{color:#004d40;}
+
     .formula{
-      font-family:"Consolas","Courier New",monospace;
-      background:#d0ebe4;
+      font-family:monospace;
+      background:#ffe0b2;
       padding:3px 6px;
       border-radius:6px;
-      margin-right:4px;
       display:inline-block;
       margin-top:4px;
+      margin-right:4px;
     }
-    .examples{
-      margin-top:8px;
-      font-size:13px;
-    }
+
     .examples li{
       margin-left:18px;
       margin-bottom:2px;
-    }
-    .grammar-ru{
-      margin-top:10px;
       font-size:13px;
-      color:#1e3a36;
     }
 
-    .exercises{
-      margin-top:12px;
-    }
-    .exercise-block{
-      border-radius:12px;
-      background:#f4fbf8;
-      padding:10px 12px;
-      margin-bottom:10px;
-      border:1px solid #cfe2dd;
-    }
-    .exercise-title{
-      font-size:14px;
-      font-weight:600;
-      margin-bottom:6px;
-    }
-    .question-row{
-      font-size:13px;
-      margin-bottom:6px;
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:6px;
-    }
-    .question-text{
-      flex:1 1 160px;
-    }
-    .options{
-      display:flex;
-      flex-wrap:wrap;
-      gap:6px;
-      align-items:center;
-    }
-    .options label{
-      background:#ffffff;
-      border-radius:999px;
-      border:1px solid #c2d5cf;
-      padding:2px 8px;
-      cursor:pointer;
-      display:inline-flex;
-      align-items:center;
-      gap:3px;
-    }
-    .options input[type="radio"]{
-      accent-color:var(--topicColor);
-    }
-    .mark{
-      width:18px;
-      text-align:center;
-      font-size:16px;
-      font-weight:700;
-    }
-    .mark.correct{color:#2e7d32;}
-    .mark.wrong{color:#c62828;}
-    .exercise-footer{
-      margin-top:6px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:8px;
-    }
-    .exercise-footer small{
-      font-size:11px;
-      color:#5c6f6b;
-    }
-
-    /* TEACHER */
-    #teacherScreen{
-      margin-top:20px;
-    }
-    .top-buttons{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-bottom:8px;
-    }
-    .table-wrapper{
-      overflow-x:auto;
-    }
-    table{
-      width:100%;
-      border-collapse:collapse;
-      font-size:13px;
-      margin-top:10px;
-    }
-    th,td{
-      border:1px solid #cfe2dd;
-      padding:6px 8px;
-      text-align:left;
-      white-space:nowrap;
-    }
-    th{
-      background:#e0f2f1;
-      font-weight:600;
-    }
-
+    /* PRINT MODE -------------------------------------------------------- */
     @media print{
       header, #loginScreen, #mainMenuScreen, #teacherScreen{
         display:none !important;
       }
-      body{
-        background:#fff;
-      }
-      #topicScreen{
-        display:block !important;
-        margin:0;
-        padding:0;
-      }
-      .topic-body{
-        box-shadow:none;
-        border-radius:0;
-      }
+      body{ background:#fff; }
+      #topicScreen{ display:block !important; }
+      .topic-body{ box-shadow:none; border-radius:0; }
     }
+
   </style>
 </head>
+
 <body>
 <header>
   <div class="brand">
-    <img src="logo.png" alt="AI Bayan" class="logo-img">
+    <img src="logo.png" class="logo-img" alt="">
     <div class="brand-text">
       <h1>ENGLISH WITH AI BAYAN</h1>
       <span>Advanced · 30 grammar topics</span>
@@ -510,18 +374,17 @@
 </header>
 
 <main>
+
   <!-- LOGIN -->
   <section id="loginScreen" class="card">
     <h2 class="section-title">Login</h2>
-    <p class="muted" style="margin-bottom:10px">
-      Enter your <strong>Name</strong> and <strong>Code</strong>. Ask your teacher for the code.
-    </p>
+    <p class="muted">Enter your Name and Code.</p>
 
     <label class="field-label" for="loginName">Name</label>
-    <input id="loginName" class="text-input" type="text" placeholder="Your name" />
+    <input id="loginName" class="text-input" type="text" placeholder="Your name">
 
     <label class="field-label" for="loginCode">Code</label>
-    <input id="loginCode" class="text-input" type="password" placeholder="Student or teacher code" />
+    <input id="loginCode" class="text-input" type="password" placeholder="Student or teacher code">
 
     <div style="display:flex;gap:8px;margin-top:4px">
       <button class="btn btn-primary" onclick="handleLogin()">Login</button>
@@ -531,12 +394,12 @@
     <div id="loginError" class="error hidden"></div>
   </section>
 
-  <!-- MAIN MENU (STUDENT) -->
+  <!-- MAIN MENU -->
   <section id="mainMenuScreen" class="hidden">
     <section class="card">
       <div class="top-row">
         <div>
-          <h2 class="section-title" style="margin-bottom:4px;">Advanced grammar topics</h2>
+          <h2 class="section-title">Advanced grammar topics</h2>
           <div id="menuInfo" class="muted"></div>
         </div>
         <div>
@@ -550,29 +413,21 @@
       <div class="topics-grid" id="menuTopics"></div>
     </section>
 
+    <!-- AI PANEL -->
     <aside id="aiPanel">
       <div>
         <h3>
           AI Bayan
           <span id="aiLimit"></span>
         </h3>
-        <p class="chat-note">
-          Ask AI Bayan about advanced grammar, vocabulary or translation. 1 question per day.
-        </p>
+        <p class="chat-note">AI chat will be available soon.</p>
       </div>
-
       <div id="chatBox" class="chat-box"></div>
-
       <div>
-        <textarea id="aiQuestion"
-                  placeholder="Write your question and press Enter or click Ask..."
-        ></textarea>
+        <textarea id="aiQuestion" disabled placeholder="AI chat is disabled"></textarea>
         <div class="chat-actions">
-          <button class="btn btn-primary" id="askBtn">Ask AI Bayan</button>
+          <button class="btn btn-primary" id="askBtn" disabled>Ask</button>
         </div>
-        <p class="chat-note">
-          In future, your teacher will see your questions and answers in the journal.
-        </p>
       </div>
     </aside>
   </section>
@@ -580,33 +435,30 @@
   <!-- TOPIC SCREEN -->
   <section id="topicScreen" class="hidden">
     <div class="topic-header">
-      <div class="topic-header-main">
-        <div class="topic-header-title" id="topicHeaderTitle">Topic</div>
-        <div class="topic-header-tag" id="topicHeaderTag"></div>
-      </div>
+      <div class="topic-header-title" id="topicHeaderTitle">Topic</div>
       <div class="topic-header-buttons">
         <button class="btn-topic back" onclick="backToMenu()">← Back</button>
-        <button class="btn-topic menu" onclick="backToMenu()">🏠 Main menu</button>
-        <button class="btn-topic menu" onclick="printCurrentTopic()">🖨 Print</button>
+        <button class="btn-topic menu" onclick="backToMenu()">🏠</button>
+        <button class="btn-topic menu" onclick="window.print()">🖨</button>
       </div>
     </div>
+
     <div class="topic-body">
       <div id="topicRuleContainer"></div>
       <div id="topicExercisesContainer"></div>
-      <div id="topicStatus" class="muted" style="margin-top:8px;"></div>
+      <div id="topicStatus" class="muted"></div>
     </div>
   </section>
 
-  <!-- TEACHER -->
+  <!-- TEACHER SCREEN -->
   <section id="teacherScreen" class="hidden card">
     <div class="top-buttons">
-      <button class="btn btn-ghost" onclick="backToLogin()">← Back to login</button>
+      <button class="btn btn-ghost" onclick="backToLogin()">← Back</button>
       <span class="tag">Teacher mode</span>
     </div>
+
     <h2 class="section-title">Teacher dashboard</h2>
-    <p class="muted">
-      Shows data saved in this browser: stars and last login (per code).
-    </p>
+    <p class="muted">Shows attempt status + stars.</p>
 
     <div class="table-wrapper">
       <table id="teacherTable">
@@ -617,16 +469,17 @@
             <th>Name</th>
             <th>Stars</th>
             <th>Last login</th>
+            <th>Attempts</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
     </div>
   </section>
-</main>
 
+</main>
 <script>
-/* ---------- CLASS RANGES (PIN как в Beginner/Intermediate) ---------- */
+/* ---------- CLASS RANGES (PIN) ---------- */
 
 const classRanges = [
   { cls: "3E",  from: 101,  to: 115 },
@@ -642,71 +495,297 @@ const classRanges = [
 ];
 
 function getClassByCode(num){
-  for (const r of classRanges){
-    if (num >= r.from && num <= r.to){
-      return r.cls;
-    }
+  for(const r of classRanges){
+    if(num >= r.from && num <= r.to) return r.cls;
   }
   return null;
 }
 
-/* ---------- TOPIC COLORS ---------- */
+/* ---------- TOPIC COLORS (30 штук под оранжевую тему) ---------- */
 
 const topicColors = {
-  1:"#1b5e20",
-  2:"#2e7d32",
-  3:"#00695c",
-  4:"#2e7d67",
-  5:"#33691e",
-  6:"#004d40",
-  7:"#00796b",
-  8:"#388e3c",
-  9:"#1b5e46",
-  10:"#00897b",
-  11:"#2e7d32",
-  12:"#00695c",
-  13:"#1b5e20",
-  14:"#2e7d67",
-  15:"#33691e",
-  16:"#004d40",
-  17:"#00796b",
-  18:"#388e3c",
-  19:"#1b5e46",
-  20:"#00897b",
-  21:"#2e7d32",
-  22:"#00695c",
-  23:"#1b5e20",
-  24:"#2e7d67",
-  25:"#33691e",
-  26:"#004d40",
-  27:"#00796b",
-  28:"#388e3c",
-  29:"#1b5e46",
-  30:"#00897b"
+  1:"#f4511e",
+  2:"#fb8c00",
+  3:"#ef6c00",
+  4:"#ff7043",
+  5:"#ff8f00",
+  6:"#ffb300",
+  7:"#f57c00",
+  8:"#e64a19",
+  9:"#ff9100",
+  10:"#ff6f00",
+  11:"#f9a825",
+  12:"#ffb74d",
+  13:"#ffa726",
+  14:"#ff9800",
+  15:"#ffcc80",
+  16:"#ffb300",
+  17:"#fb8c00",
+  18:"#f57c00",
+  19:"#ef6c00",
+  20:"#e65100",
+  21:"#ff7043",
+  22:"#ff6f00",
+  23:"#ff8f00",
+  24:"#ffa000",
+  25:"#ffb300",
+  26:"#ffca28",
+  27:"#ffb74d",
+  28:"#ffa726",
+  29:"#ff9800",
+  30:"#ff6f00"
 };
 
-/* ---------- TOPICS (30 ADVANCED) ---------- */
+/* ---------- TOPICS (ПОКА ПУСТО, В ЧАСТИ 3 ЗАМЕНИМ) ---------- */
 
 const topics = [
   {
     id:1,
     title:"Inversion after negative adverbials",
     level:"Advanced",
-    explanation:"We use inversion (auxiliary before subject) after negative or limiting adverbials like never, rarely, only then, not until, not only… but also, to make the sentence more formal or emphatic.",
-    ruleRu:"Инверсия после отрицательных/ограничительных наречий (never, rarely, only then, not until…) используется для подчёркивания и делает речь более формальной: вспомогательный глагол ставится перед подлежащим.",
-    formulas:["Never / Rarely / Seldom + AUX + S + V","Not until ... + AUX + S + V","Only then / Only later + AUX + S + V"],
+    explanation:"We use inversion (auxiliary + subject) after negative or limiting adverbials like never, seldom, rarely, only then, not until to sound more formal or emphatic.",
+    ruleRu:"После отрицательных или ограничительных наречий (never, seldom, rarely, only then, not until и др.) используем инверсию: вспомогательный глагол + подлежащее, чтобы усилить высказывание.",
+    formulas:[
+      "Never / Rarely / Seldom + AUX + S + V",
+      "Not until + clause + AUX + S + V",
+      "Only then / only later + AUX + S + V"
+    ],
     examples:[
-      "Never have I seen such a beautiful view.",
+      "Never have I seen such chaos.",
       "Not until he left did she realise her mistake."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"1) Affirmative (choose inversion)",
+        questions:[
+          {
+            text:"I have seen such chaos many times.",
+            options:[
+              "Never have I seen such chaos.",
+              "I never have seen such chaos."
+            ],
+            correct:0
+          },
+          {
+            text:"She realised the truth only then.",
+            options:[
+              "Only then did she realise the truth.",
+              "She realised the truth only then she did."
+            ],
+            correct:0
+          },
+          {
+            text:"We noticed the problem only after the test.",
+            options:[
+              "Only after the test did we notice the problem.",
+              "After the test only we noticed the problem."
+            ],
+            correct:0
+          },
+          {
+            text:"I heard such silence before.",
+            options:[
+              "Never before had I heard such silence.",
+              "I had never before heard such silence it."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"2) Negative",
+        questions:[
+          {
+            text:"Я никогда не понимал эту тему.",
+            options:[
+              "Never have I understood this topic.",
+              "I have never understood this topic it."
+            ],
+            correct:0
+          },
+          {
+            text:"Он редко делает ошибки.",
+            options:[
+              "Rarely does he make mistakes.",
+              "He does rarely make mistakes."
+            ],
+            correct:0
+          },
+          {
+            text:"Они почти не замечали опасности.",
+            options:[
+              "Hardly did they notice the danger.",
+              "They did hardly notice the danger."
+            ],
+            correct:0
+          },
+          {
+            text:"Мало я ожидал такого результата.",
+            options:[
+              "Little did I expect such a result.",
+              "I did little expect such a result."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"3) Questions",
+        questions:[
+          {
+            text:"Составь правильный вопрос: you / ever / see / such a storm?",
+            options:[
+              "Have you ever seen such a storm?",
+              "Ever have you seen such a storm?"
+            ],
+            correct:0
+          },
+          {
+            text:"Составь правильный вопрос: she / often / arrive / late?",
+            options:[
+              "Does she often arrive late?",
+              "Often does she arrive late?"
+            ],
+            correct:0
+          },
+          {
+            text:"Составь правильный вопрос: they / rarely / visit / you?",
+            options:[
+              "Do they rarely visit you?",
+              "Rarely do they visit you?"
+            ],
+            correct:0
+          },
+          {
+            text:"Составь правильный вопрос: he / ever / tell / lies?",
+            options:[
+              "Does he ever tell lies?",
+              "Does he never tell lies?"
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"4) Word order",
+        questions:[
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "Not until the end of the lesson did they understand it.",
+              "Did they understand it not until the end of the lesson."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный вариант.",
+            options:[
+              "Only then did she start to cry.",
+              "She started to cry only then did."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный вариант.",
+            options:[
+              "Never before had I heard this story.",
+              "Had I never before heard this story."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный вариант.",
+            options:[
+              "Little did I know about their plan.",
+              "I did little know about their plan."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"5) Build the sentence (inversion)",
+        questions:[
+          {
+            text:"(никогда / я / не видел / такой вид)",
+            options:[
+              "Never have I seen such a view.",
+              "I have never seen such a view it."
+            ],
+            correct:0
+          },
+          {
+            text:"(только тогда / я / понял / ошибку)",
+            options:[
+              "Only then did I understand the mistake.",
+              "I understood only then did the mistake."
+            ],
+            correct:0
+          },
+          {
+            text:"(не раньше чем / он пришёл / мы начали)",
+            options:[
+              "Not until he arrived did we start.",
+              "We started not until he arrived did."
+            ],
+            correct:0
+          },
+          {
+            text:"(редко / он / говорит / публично)",
+            options:[
+              "Rarely does he speak in public.",
+              "He rarely does speak in public."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"6) Translate into English (with inversion)",
+        questions:[
+          {
+            text:"Никогда раньше я не был так занят.",
+            options:[
+              "Never before have I been so busy.",
+              "I have never been so busy before it."
+            ],
+            correct:0
+          },
+          {
+            text:"Только тогда я понял, что она права.",
+            options:[
+              "Only then did I realise that she was right.",
+              "I realised only then that she was right did."
+            ],
+            correct:0
+          },
+          {
+            text:"Редко он соглашается на такие условия.",
+            options:[
+              "Rarely does he agree to such conditions.",
+              "He does rarely agree to such conditions."
+            ],
+            correct:0
+          },
+          {
+            text:"Мало я знал о её планах.",
+            options:[
+              "Little did I know about her plans.",
+              "I knew little about her plans did."
+            ],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
+
   {
     id:2,
     title:"Cleft sentences for emphasis",
     level:"Advanced",
-    explanation:"Cleft sentences with it is/was or what… is/was allow us to emphasise different parts of the sentence: subject, object, adverbials or the whole idea.",
-    ruleRu:"Cleft-предложения (It is/was…, What … is/was…) помогают выделить нужную часть: «Именно…», «То, что…».",
+    explanation:"Cleft sentences with It is/was and What… is/was help us emphasise a person, thing, time, place or reason.",
+    ruleRu:"Cleft-предложения помогают подчеркнуть важную часть: It was John who…, What I need is…. Используем It is/was + X + who/that… или What + clause + is/was + X.",
     formulas:[
       "It is/was + X + who/that + clause",
       "What + clause + is/was + X"
@@ -715,505 +794,1006 @@ const topics = [
       "It was my brother who broke the window.",
       "What I need is a short break."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"1) Affirmative",
+        questions:[
+          {
+            text:"Подчеркни человека: My brother broke the window.",
+            options:[
+              "It was my brother who broke the window.",
+              "My brother it was who broke the window."
+            ],
+            correct:0
+          },
+          {
+            text:"Подчеркни объект: I need a short break.",
+            options:[
+              "What I need is a short break.",
+              "It is a short break what I need."
+            ],
+            correct:0
+          },
+          {
+            text:"Подчеркни место: We met in London.",
+            options:[
+              "It was in London that we met.",
+              "In London it was that we met."
+            ],
+            correct:0
+          },
+          {
+            text:"Подчеркни время: I saw her yesterday.",
+            options:[
+              "It was yesterday that I saw her.",
+              "Yesterday it was that I saw her."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"2) Negative",
+        questions:[
+          {
+            text:"Не моя идея провалилась.",
+            options:[
+              "It was not my idea that failed.",
+              "Not my idea it was that failed."
+            ],
+            correct:0
+          },
+          {
+            text:"Это был не Джон, кто позвонил тебе.",
+            options:[
+              "It was not John who called you.",
+              "It not was John who called you."
+            ],
+            correct:0
+          },
+          {
+            text:"Мне не его характер не нравится, а поведение.",
+            options:[
+              "What I do not like is his behaviour.",
+              "It is his behaviour what I do not like."
+            ],
+            correct:0
+          },
+          {
+            text:"Я ушёл не из-за тебя.",
+            options:[
+              "It was not because of you that I left.",
+              "Because of you it was not that I left."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"3) Questions",
+        questions:[
+          {
+            text:"Сделай общий вопрос: It was my brother who broke the window.",
+            options:[
+              "Was it your brother who broke the window?",
+              "Did it your brother who broke the window?"
+            ],
+            correct:0
+          },
+          {
+            text:"Сделай общий вопрос: It was in London that we met.",
+            options:[
+              "Was it in London that we met?",
+              "Did we in London that met?"
+            ],
+            correct:0
+          },
+          {
+            text:"Сделай общий вопрос: What I need is a break.",
+            options:[
+              "Is a break what you need?",
+              "Is what you need a break?"
+            ],
+            correct:1
+          },
+          {
+            text:"Сделай общий вопрос: It was yesterday that she called you.",
+            options:[
+              "Was it yesterday that she called you?",
+              "Did it yesterday that she called you?"
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"4) Word order",
+        questions:[
+          {
+            text:"Выбери корректное cleft-предложение.",
+            options:[
+              "It was the manager who made the decision.",
+              "The manager was who made the decision it."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери корректное cleft-предложение.",
+            options:[
+              "It was in 2010 that the company was founded.",
+              "In 2010 was the company founded it."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери корректное cleft-предложение.",
+            options:[
+              "What surprised me was his honesty.",
+              "His honesty was what surprised me it."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери корректное cleft-предложение.",
+            options:[
+              "What I enjoy most is travelling.",
+              "Travelling is what I enjoy most it."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"5) Build the sentence",
+        questions:[
+          {
+            text:"Подчеркни время: We met in 2015.",
+            options:[
+              "It was in 2015 that we met.",
+              "In 2015 it was that we met."
+            ],
+            correct:0
+          },
+          {
+            text:"Подчеркни человека: My teacher inspired me.",
+            options:[
+              "It was my teacher who inspired me.",
+              "My teacher was who inspired me."
+            ],
+            correct:0
+          },
+          {
+            text:"Подчеркни причину: I left because I was ill.",
+            options:[
+              "It was because I was ill that I left.",
+              "Because I was ill it was that I left."
+            ],
+            correct:0
+          },
+          {
+            text:"Подчеркни объект: I need your help.",
+            options:[
+              "What I need is your help.",
+              "It is your help what I need."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"6) Translate into English",
+        questions:[
+          {
+            text:"Именно мама помогла мне.",
+            options:[
+              "It was my mother who helped me.",
+              "My mother was who helped me."
+            ],
+            correct:0
+          },
+          {
+            text:"То, что мне нужно, — это отдых.",
+            options:[
+              "What I need is some rest.",
+              "That I need is some rest."
+            ],
+            correct:0
+          },
+          {
+            text:"Именно в этом городе я вырос.",
+            options:[
+              "It was in this city that I grew up.",
+              "In this city I grew up it."
+            ],
+            correct:0
+          },
+          {
+            text:"Именно эта идея изменила всё.",
+            options:[
+              "It was this idea that changed everything.",
+              "This idea it was that changed everything."
+            ],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
+
   {
     id:3,
     title:"Mixed conditionals (advanced use)",
     level:"Advanced",
-    explanation:"Mixed conditionals connect different times: unreal past cause with present result, or unreal present situation with unreal past result.",
-    ruleRu:"Продвинутые смешанные условные предложения: нереальное прошлое → нереальное настоящее, и нереальное настоящее → нереальное прошлое.",
+    explanation:"Mixed conditionals connect unreal past actions with present results or unreal present states with unreal past results.",
+    ruleRu:"Смешанные условные связывают нереальное прошлое с настоящим результатом (If + Past Perfect → would + V now) или нереальное настоящее с нереальным прошлым результатом (If + Past Simple → would have + V3).",
     formulas:[
-      "If + Past Perfect, would + V (now result)",
-      "If + Past Simple, would have + V3 (past result)"
+      "If + Past Perfect, would + V (now)",
+      "If + Past Simple, would have + V3"
     ],
     examples:[
-      "If I had listened to you, I wouldn’t be in trouble now.",
-      "If she were more organised, she wouldn’t have missed the flight."
+      "If I had studied harder, I would be at university now.",
+      "If she were more careful, she would not have lost the documents."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"1) Affirmative",
+        questions:[
+          {
+            text:"(прошлое → сейчас) Я не копил деньги / сейчас я не в путешествии.",
+            options:[
+              "If I had saved more money, I would be travelling now.",
+              "If I saved more money, I would travel now."
+            ],
+            correct:0
+          },
+          {
+            text:"(настоящее → прошлое) Он неответственный / он пропустил дедлайн.",
+            options:[
+              "If he were more responsible, he would not have missed the deadline.",
+              "If he had been more responsible, he would not miss the deadline."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильно.",
+            options:[
+              "If she had gone to bed earlier, she would not be so tired now.",
+              "If she went to bed earlier, she would not have been so tired now."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильно.",
+            options:[
+              "If I had listened to you, I would not be in trouble now.",
+              "If I listened to you, I would not have been in trouble now."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"2) Negative",
+        questions:[
+          {
+            text:"Если бы он не тратил время, сейчас он не был бы так напряжён.",
+            options:[
+              "If he had not wasted time, he would not be so stressed now.",
+              "If he did not waste time, he would not have been so stressed now."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы я не был таким застенчивым, я бы поговорил с ней на вечеринке.",
+            options:[
+              "If I were not so shy, I would have talked to her at the party.",
+              "If I had not been so shy, I would talk to her at the party."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы они не переехали, мы всё ещё часто встречались бы с ними сейчас.",
+            options:[
+              "If they had not moved abroad, we would still see them often now.",
+              "If they did not move abroad, we would have still seen them often now."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы она не заболела, она бы поехала в поездку.",
+            options:[
+              "If she had not been ill, she would have gone on the trip.",
+              "If she were not ill, she would have gone on the trip."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"3) Questions",
+        questions:[
+          {
+            text:"Если бы я слушал тебя, сейчас я был бы счастливее.",
+            options:[
+              "Would you be happier now if you had listened to me?",
+              "Would you be happier now if you listened to me?"
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы он больше учился, сейчас он был бы в университете.",
+            options:[
+              "Would he be at university now if he had studied harder?",
+              "Would he be at university now if he studied harder?"
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы она была аккуратнее, она не потеряла бы документы.",
+            options:[
+              "Would she have lost the documents if she were more careful?",
+              "Would she lose the documents if she had been more careful?"
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы мы жили ближе, раньше мы бы не опаздывали так часто.",
+            options:[
+              "Would we have been late so often before if we lived closer?",
+              "Would we be late so often before if we had lived closer?"
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"4) Word order",
+        questions:[
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "If I had known about the meeting, I would be there now.",
+              "If I had known about the meeting, would be there now I."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "If she were more flexible, she would have accepted the new rules.",
+              "If more flexible she were, she would have accepted the new rules."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "If they had not sold the car, they would be using it now.",
+              "If they had not sold the car, would be using it they now."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "If I had taken that job, I would be living abroad now.",
+              "If I had taken that job, would be living abroad now I."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"5) Build the sentence",
+        questions:[
+          {
+            text:"Жаль, что я не выучил английский раньше / сейчас было бы легче.",
+            options:[
+              "If I had learnt English earlier, it would be easier now.",
+              "If I learnt English earlier, it would have been easier now."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы он был осторожнее, он бы не попал в аварию вчера.",
+            options:[
+              "If he had been more careful, he would not have had an accident yesterday.",
+              "If he were more careful, he would not have an accident yesterday."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы я не потратил столько денег, сейчас я был бы богаче.",
+            options:[
+              "If I had not spent so much money, I would be richer now.",
+              "If I did not spend so much money, I would have been richer now."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы она была увереннее, она бы приняла предложение в прошлом году.",
+            options:[
+              "If she were more confident, she would have accepted the offer last year.",
+              "If she had been more confident, she would accept the offer last year."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"6) Translate into English",
+        questions:[
+          {
+            text:"Если бы я больше работал в школе, сейчас мне было бы легче в университете.",
+            options:[
+              "If I had worked harder at school, it would be easier for me at university now.",
+              "If I worked harder at school, it would have been easier for me at university now."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы он был более терпеливым, он бы не накричал на неё вчера.",
+            options:[
+              "If he were more patient, he would not have shouted at her yesterday.",
+              "If he had been more patient, he would not shout at her yesterday."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы они не уехали за границу, мы бы сейчас часто с ними встречались.",
+            options:[
+              "If they had not moved abroad, we would be meeting them often now.",
+              "If they did not move abroad, we would have met them often now."
+            ],
+            correct:0
+          },
+          {
+            text:"Если бы мы не потратили столько денег, сейчас у нас было бы больше свободы.",
+            options:[
+              "If we had not spent so much money, we would have more freedom now.",
+              "If we did not spend so much money, we would have had more freedom now."
+            ],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
+
   {
     id:4,
-    title:"Advanced modal verbs (deduction & speculation)",
+    title:"Modal verbs of deduction (present & past)",
     level:"Advanced",
-    explanation:"We use must, can’t, may, might, could to talk about deduction and speculation in the present, past and future, often with perfect infinitives.",
-    ruleRu:"Модальные глаголы для сложных предположений о настоящем, прошлом и будущем, включая перфектный инфинитив (must have done, can’t have done и т.д.).",
+    explanation:"We use must, might, may, could and can’t to talk about how sure we are about something (deduction) in the present and the past.",
+    ruleRu:"Must / can’t / might / may / could – модальные глаголы для предположений: must – почти уверены, can’t – уверены, что невозможно; might/may/could – возможно. Для прошлого добавляем have + V3.",
     formulas:[
-      "must / can’t / may / might / could + V",
-      "must / can’t / may / might / could + have + V3"
+      "must + V / must have + V3",
+      "can’t + V / can’t have + V3",
+      "might/may/could + V / might/may/could have + V3"
     ],
     examples:[
-      "He must have forgotten to call.",
-      "She can’t have finished already."
+      "He must be at home – the lights are on.",
+      "She can’t have finished already – it was too difficult."
     ],
-    exercises:[]
+    exercises:[
+      {
+        title:"1) Affirmative (present)",
+        questions:[
+          {
+            text:"The lights are on. He ___ be at home.",
+            options:[
+              "must",
+              "can’t"
+            ],
+            correct:0
+          },
+          {
+            text:"They left very early. They ___ be tired now.",
+            options:[
+              "must",
+              "might not"
+            ],
+            correct:0
+          },
+          {
+            text:"It’s dark and cloudy. It ___ rain later.",
+            options:[
+              "might",
+              "can’t"
+            ],
+            correct:0
+          },
+          {
+            text:"She studied a lot. She ___ know the answer.",
+            options:[
+              "must",
+              "couldn’t"
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"2) Negative / impossibility",
+        questions:[
+          {
+            text:"He is only 10. He ___ be at university.",
+            options:[
+              "can’t",
+              "must"
+            ],
+            correct:0
+          },
+          {
+            text:"The room is empty. They ___ be here now.",
+            options:[
+              "can’t",
+              "must"
+            ],
+            correct:0
+          },
+          {
+            text:"She never studies. She ___ be the best student.",
+            options:[
+              "can’t",
+              "must"
+            ],
+            correct:0
+          },
+          {
+            text:"It’s July and very hot. It ___ be snow.",
+            options:[
+              "can’t",
+              "might"
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"3) Past deduction",
+        questions:[
+          {
+            text:"His phone is off. He ___ have forgotten to charge it.",
+            options:[
+              "must",
+              "must have"
+            ],
+            correct:1
+          },
+          {
+            text:"The road is dry. It ___ have rained last night.",
+            options:[
+              "can’t",
+              "can’t have"
+            ],
+            correct:1
+          },
+          {
+            text:"She looked very happy yesterday. She ___ have got good news.",
+            options:[
+              "might have",
+              "can’t have"
+            ],
+            correct:0
+          },
+          {
+            text:"He doesn’t know about the meeting. He ___ have read the email.",
+            options:[
+              "can’t have",
+              "must have"
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"4) Word order",
+        questions:[
+          {
+            text:"Выбери правильный вариант.",
+            options:[
+              "He must have forgotten his keys.",
+              "He have must forgotten his keys."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный вариант.",
+            options:[
+              "She can’t have finished already.",
+              "She have can’t finished already."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный вариант.",
+            options:[
+              "They might be waiting outside.",
+              "They be might waiting outside."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный вариант.",
+            options:[
+              "It may have been a mistake.",
+              "It have may been a mistake."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"5) Build the sentence",
+        questions:[
+          {
+            text:"Наверняка он дома (виден его велосипед).",
+            options:[
+              "He must be at home.",
+              "He can’t be at home."
+            ],
+            correct:0
+          },
+          {
+            text:"Этого не может быть (это невозможно).",
+            options:[
+              "It can’t be true.",
+              "It must be true."
+            ],
+            correct:0
+          },
+          {
+            text:"Возможно, она забыла про встречу.",
+            options:[
+              "She might have forgotten about the meeting.",
+              "She must have forgotten about the meeting."
+            ],
+            correct:0
+          },
+          {
+            text:"Он точно не сделал домашнее задание.",
+            options:[
+              "He can’t have done his homework.",
+              "He mustn’t have done his homework."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"6) Translate into English",
+        questions:[
+          {
+            text:"Он наверняка устал (он работал весь день).",
+            options:[
+              "He must be tired.",
+              "He can’t be tired."
+            ],
+            correct:0
+          },
+          {
+            text:"Она наверняка уже ушла домой.",
+            options:[
+              "She must have gone home.",
+              "She can’t have gone home."
+            ],
+            correct:0
+          },
+          {
+            text:"Этого не может быть — он слишком честный.",
+            options:[
+              "It can’t be true – he is too honest.",
+              "It must be true – he is too honest."
+            ],
+            correct:0
+          },
+          {
+            text:"Возможно, они опоздали на автобус.",
+            options:[
+              "They might have missed the bus.",
+              "They must have missed the bus."
+            ],
+            correct:0
+          }
+        ]
+      }
+    ]
   },
+
   {
     id:5,
-    title:"Nominalisation and formal style",
+    title:"Wishes and regrets (I wish / If only / would rather)",
     level:"Advanced",
-    explanation:"Nominalisation means changing verbs or adjectives into nouns to make writing more formal and dense, often used in reports, essays and academic texts.",
-    ruleRu:"Nominalisation – превращение глаголов и прилагательных в существительные для более формального стиля: decide → make a decision, fail → failure.",
+    explanation:"We use I wish / If only to talk about regrets and unreal wishes about the present, past or future. We use would rather to express preference.",
+    ruleRu:"I wish / If only + Past Simple – сожаление о настоящем; I wish / If only + Past Perfect – сожаление о прошлом; I wish + would – желание, чтобы кто-то изменил поведение; would rather – предпочтение.",
     formulas:[
-      "V → N (decide → decision)",
-      "Adj → N (different → difference)"
+      "I wish / If only + Past Simple (now)",
+      "I wish / If only + Past Perfect (past)",
+      "I wish + would + V",
+      "would rather + V / would rather + S + Past Simple"
     ],
     examples:[
-      "There has been a significant increase in pollution.",
-      "The failure to act caused serious problems."
+      "I wish I spoke English better.",
+      "If only I had studied harder.",
+      "I wish you would stop shouting.",
+      "I would rather stay at home."
     ],
-    exercises:[]
-  },
-  {
-    id:6,
-    title:"Reduced relative clauses & participle clauses",
-    level:"Advanced",
-    explanation:"We can reduce relative clauses using participles to make the sentence more concise, especially in written English.",
-    ruleRu:"Сокращённые определительные и причастные обороты: вместо who/which + глагол используем V-ing или V3, особенно в письменной речи.",
-    formulas:[
-      "The man who is standing → The man standing",
-      "The book which was written → The book written"
-    ],
-    examples:[
-      "Students arriving late will not be allowed in.",
-      "The data collected shows an interesting trend."
-    ],
-    exercises:[]
-  },
-  {
-    id:7,
-    title:"Subjunctive and formal wishes",
-    level:"Advanced",
-    explanation:"The subjunctive is used in formal English after verbs like suggest, insist, demand and in fixed expressions like If I were you, So be it.",
-    ruleRu:"Сослагательное наклонение в формальном английском: после suggest, insist, demand, а также в выражениях типа If I were you, Long live…, So be it.",
-    formulas:[
-      "They suggested (that) he go.",
-      "It is important that she be informed."
-    ],
-    examples:[
-      "I insist that he apologise.",
-      "If I were you, I would talk to her."
-    ],
-    exercises:[]
-  },
-  {
-    id:8,
-    title:"Emphatic structures with do / did",
-    level:"Advanced",
-    explanation:"We use do/does/did in affirmative sentences to add emphasis, especially in spoken English, and to contradict or correct someone.",
-    ruleRu:"Служебный do/does/did в утвердительном предложении для подчёркивания: I do understand, He did call you.",
-    formulas:[
-      "S + do/does/did + bare infinitive",
-      "Short emphatic replies: I did, He does."
-    ],
-    examples:[
-      "I do appreciate your help.",
-      "He did tell you about the meeting."
-    ],
-    exercises:[]
-  },
-  {
-    id:9,
-    title:"Advanced phrasal verbs in formal contexts",
-    level:"Advanced",
-    explanation:"Some phrasal verbs are common even in formal English (carry out, point out, put forward, bring about) and often replace one-word verbs.",
-    ruleRu:"Продвинутые фразовые глаголы для «академического» стиля: carry out (conduct), point out (indicate), put forward (propose), bring about (cause).",
-    formulas:[
-      "carry out → conduct",
-      "bring about → cause"
-    ],
-    examples:[
-      "The study was carried out last year.",
-      "The changes brought about a new attitude."
-    ],
-    exercises:[]
-  },
-  {
-    id:10,
-    title:"Hedging and softening in academic English",
-    level:"Advanced",
-    explanation:"Hedging means using cautious language (may, might, tend to, seem, appear, likely) to avoid sounding too direct or too certain.",
-    ruleRu:"Hedging – смягчение высказывания: использование may, might, tend to, seem, appear, likely, it is possible that…, it seems that…",
-    formulas:[
-      "It seems/appears that + clause",
-      "X tends to + V",
-      "It is likely/unlikely that + clause"
-    ],
-    examples:[
-      "It appears that the results support our hypothesis.",
-      "Students tend to perform better with feedback."
-    ],
-    exercises:[]
-  },
-  {
-    id:11,
-    title:"Advanced verb patterns",
-    level:"Advanced",
-    explanation:"Many advanced verbs have specific patterns (V + -ing, V + to V, V + object + to V, V + object + V-ing) and changing the pattern can change the meaning.",
-    ruleRu:"Продвинутые глагольные схемы: remember doing vs remember to do, stop doing vs stop to do, глаголы с объектом и инфинитивом/герундием.",
-    formulas:[
-      "V + -ing / V + to V (remember, stop)",
-      "V + object + to V / V + object + V-ing"
-    ],
-    examples:[
-      "I remember meeting her at the conference.",
-      "He stopped to check his email."
-    ],
-    exercises:[]
-  },
-  {
-    id:12,
-    title:"Future in the past & narrative tenses",
-    level:"Advanced",
-    explanation:"Future in the past is used in stories to talk about things that were in the future at that time (was going to, would), often together with past narrative tenses.",
-    ruleRu:"Future in the past: was going to / would для описания будущего из точки зрения прошлого. Часто используется в рассказах.",
-    formulas:[
-      "was/were going to + V",
-      "would + V (future seen from the past)"
-    ],
-    examples:[
-      "I was going to call you, but I forgot.",
-      "We didn’t know that it would rain."
-    ],
-    exercises:[]
-  },
-  {
-    id:13,
-    title:"Wish / If only (unreal past and present)",
-    level:"Advanced",
-    explanation:"We use wish/if only with past forms to talk about regrets about the present, and with past perfect for regrets about the past.",
-    ruleRu:"Wish / If only: wish + Past Simple → жаль, что сейчас не так; wish + Past Perfect → сожаления о прошлом.",
-    formulas:[
-      "I wish / If only + Past Simple",
-      "I wish / If only + Past Perfect"
-    ],
-    examples:[
-      "I wish I were taller.",
-      "If only I had studied harder!"
-    ],
-    exercises:[]
-  },
-  {
-    id:14,
-    title:"Unreal past with would rather / would sooner / as if",
-    level:"Advanced",
-    explanation:"We use unreal past after would rather/would sooner and as if/as though to describe unreal or imaginary situations.",
-    ruleRu:"После would rather/sooner и as if/as though часто используется «нереальное прошлое» (Past Simple/Perfect), чтобы выразить предпочтение или нереальную ситуацию.",
-    formulas:[
-      "I’d rather + Past Simple",
-      "He talks as if he knew everything."
-    ],
-    examples:[
-      "I’d rather you didn’t tell anyone.",
-      "She looked as if she had seen a ghost."
-    ],
-    exercises:[]
-  },
-  {
-    id:15,
-    title:"Discourse markers and advanced linking words",
-    level:"Advanced",
-    explanation:"Advanced discourse markers organise ideas in writing and speaking: however, nevertheless, on the contrary, in addition, in contrast, on the other hand.",
-    ruleRu:"Продвинутые слова-связки для логики текста: however, nevertheless, on the contrary, in addition, in contrast, on the other hand.",
-    formulas:[
-      "However / Nevertheless / On the contrary",
-      "In addition / Furthermore / Moreover",
-      "In contrast / On the other hand"
-    ],
-    examples:[
-      "However, the results were not as expected.",
-      "In addition, the study highlights several risks."
-    ],
-    exercises:[]
-  },
-  {
-    id:16,
-    title:"Ellipsis and substitution (do so, one/ones, so/neither)",
-    level:"Advanced",
-    explanation:"Ellipsis and substitution avoid repetition: do so, one/ones, so/neither do I, nor do I.",
-    ruleRu:"Ellipsis и substitution: вместо повторения глагола или сущ. используем do so, (the) one/ones, конструкции so do I, neither do I.",
-    formulas:[
-      "do so / do it",
-      "the one / the ones",
-      "So do I / Neither do I"
-    ],
-    examples:[
-      "If you have to leave, do so quietly.",
-      "I like this dress and she likes that one."
-    ],
-    exercises:[]
-  },
-  {
-    id:17,
-    title:"Fronting & thematisation",
-    level:"Advanced",
-    explanation:"Fronting means moving information to the beginning of the sentence for emphasis or style, often in formal or literary English.",
-    ruleRu:"Fronting – вынос информации в начало предложения для подчёркивания: особый порядок слов, часто в письменной/художественной речи.",
-    formulas:[
-      "In the corner stood a tall man.",
-      "What I want to say is this..."
-    ],
-    examples:[
-      "On the table lay a pile of books.",
-      "What I need now is some rest."
-    ],
-    exercises:[]
-  },
-  {
-    id:18,
-    title:"Passive reporting structures",
-    level:"Advanced",
-    explanation:"We use passive reporting structures like It is said that…, He is thought to…, especially in news and formal writing.",
-    ruleRu:"Пассивные конструкции для передачи слухов и мнений: It is said that…, He is thought to…, She is believed to….",
-    formulas:[
-      "It is said/believed/known that + clause",
-      "S is said/believed/known to + V"
-    ],
-    examples:[
-      "It is believed that the project will succeed.",
-      "He is thought to be living abroad."
-    ],
-    exercises:[]
-  },
-  {
-    id:19,
-    title:"Complex noun phrases",
-    level:"Advanced",
-    explanation:"Complex noun phrases with pre-modifiers and post-modifiers are typical of advanced and academic English.",
-    ruleRu:"Сложные именные группы с определениями до и после существительного – типичный признак академического стиля.",
-    formulas:[
-      "[Adj + N + of + N]",
-      "[N + with/without + N/participle]"
-    ],
-    examples:[
-      "A highly sophisticated piece of equipment.",
-      "Students with limited access to resources."
-    ],
-    exercises:[]
-  },
-  {
-    id:20,
-    title:"Non-defining and embedded relative clauses",
-    level:"Advanced",
-    explanation:"Non-defining relative clauses add extra, non-essential information, often written with commas. Embedded clauses appear in the middle of the main clause.",
-    ruleRu:"Неразделительные (non-defining) и «встроенные» (embedded) придаточные предложения добавляют дополнительную информацию и отделяются запятыми.",
-    formulas:[
-      "S, who/which..., V",
-      "Main clause, which..., continues"
-    ],
-    examples:[
-      "My brother, who lives in Canada, is visiting us.",
-      "The results, which were unexpected, changed our plan."
-    ],
-    exercises:[]
-  },
-  {
-    id:21,
-    title:"Advanced conditionals with unless, provided, as long as",
-    level:"Advanced",
-    explanation:"We use conjunctions like unless, provided (that), as long as, in case to add nuance to real and unreal conditionals.",
-    ruleRu:"Продвинутые союзы в условных: unless (=if not), provided (that), as long as, in case – добавляют оттенки значения в реальных и нереальных условиях.",
-    formulas:[
-      "Unless + clause",
-      "Provided (that) / As long as + clause",
-      "In case + clause"
-    ],
-    examples:[
-      "You can go out as long as you finish your homework.",
-      "Take an umbrella in case it rains."
-    ],
-    exercises:[]
-  },
-  {
-    id:22,
-    title:"Inversion in conditionals (Had I known…)",
-    level:"Advanced",
-    explanation:"We can use inversion instead of if in formal conditionals: Had I known…, Were I…, Should you…",
-    ruleRu:"Формальные условные с инверсией без if: Had I known…, Were I…, Should you need any help….",
-    formulas:[
-      "Had + S + V3, S would...",
-      "Were + S + to V / Adj, S would...",
-      "Should + S + V, S will/would..."
-    ],
-    examples:[
-      "Had I known, I would have told you.",
-      "Should you need any help, let me know."
-    ],
-    exercises:[]
-  },
-  {
-    id:23,
-    title:"Advanced reporting verbs and patterns",
-    level:"Advanced",
-    explanation:"Reporting verbs like advise, persuade, accuse, deny, suggest have specific patterns (verb + object + to V, verb + -ing, verb + prep + -ing).",
-    ruleRu:"Продвинутые глаголы речи и их схемы: advise, persuade, accuse, deny, suggest и т.д. – с объектом, инфинитивом, герундием и предлогами.",
-    formulas:[
-      "advise/persuade + object + to V",
-      "accuse + object + of + V-ing",
-      "suggest + V-ing / that + clause"
-    ],
-    examples:[
-      "They persuaded me to apply for the job.",
-      "She denied taking the money."
-    ],
-    exercises:[]
-  },
-  {
-    id:24,
-    title:"Complex prepositions and connectors",
-    level:"Advanced",
-    explanation:"Complex prepositions and connectors like due to, owing to, in spite of, despite, in terms of are common in formal English.",
-    ruleRu:"Сложные предлоги и связки: due to, owing to, in spite of, despite, in terms of – часто используются в формальной речи и письме.",
-    formulas:[
-      "due to / owing to + noun/gerund",
-      "in spite of / despite + noun/gerund"
-    ],
-    examples:[
-      "The match was cancelled due to heavy rain.",
-      "Despite feeling tired, she continued working."
-    ],
-    exercises:[]
-  },
-  {
-    id:25,
-    title:"Collocations and lexical chunks",
-    level:"Advanced",
-    explanation:"Advanced learners use natural collocations and lexical chunks: heavy rain, make a decision, take responsibility, play a role.",
-    ruleRu:"Коллокации (устойчивые сочетания) – важная часть продвинутого уровня: make a decision, take responsibility, play a role, heavy traffic.",
-    formulas:[
-      "verb + noun (make a decision)",
-      "adj + noun (heavy rain)",
-      "verb + prep + noun (take part in)"
-    ],
-    examples:[
-      "We need to make a quick decision.",
-      "She takes full responsibility for the project."
-    ],
-    exercises:[]
-  },
-  {
-    id:26,
-    title:"Perfect aspect nuances (have been doing vs have done)",
-    level:"Advanced",
-    explanation:"Advanced use of the perfect aspect contrasts ongoing activity (have been doing) with completed result (have done).",
-    ruleRu:"Продвинутое различие между Present Perfect и Present Perfect Continuous: длительность процесса vs результат.",
-    formulas:[
-      "have/has been + V-ing",
-      "have/has + V3"
-    ],
-    examples:[
-      "I have been reading this book all week.",
-      "I have read the book – you can have it now."
-    ],
-    exercises:[]
-  },
-  {
-    id:27,
-    title:"Adverbial clauses of concession, purpose and result",
-    level:"Advanced",
-    explanation:"Adverbial clauses with although, even though, so that, in order that, so…that, such…that express contrast, purpose and result.",
-    ruleRu:"Придаточные уступки (although, even though), цели (so that, in order that) и результата (so…that, such…that).",
-    formulas:[
-      "Although / Even though + clause",
-      "so that / in order that + clause",
-      "so + adj/adv + that, such (a/an) + adj + noun + that"
-    ],
-    examples:[
-      "Although it was late, we continued working.",
-      "She spoke so quietly that I could hardly hear her."
-    ],
-    exercises:[]
-  },
-  {
-    id:28,
-    title:"Gradable and non-gradable adjectives with modifiers",
-    level:"Advanced",
-    explanation:"Some adjectives are gradable (very, quite) and some are extreme or non-gradable (absolutely, completely).",
-    ruleRu:"Степени прилагательных: gradable (very tired) vs non-gradable/extreme (absolutely exhausted). Разные усилители.",
-    formulas:[
-      "very / quite / rather + gradable adj",
-      "absolutely / completely / totally + non-gradable adj"
-    ],
-    examples:[
-      "He was very tired after the exam.",
-      "The film was absolutely amazing."
-    ],
-    exercises:[]
-  },
-  {
-    id:29,
-    title:"Combining emphasis: inversion + cleft + fronting",
-    level:"Advanced",
-    explanation:"Advanced users often combine several emphasis tools (inversion, cleft, fronting) in one text to create a strong stylistic effect.",
-    ruleRu:"Сочетание приёмов подчёркивания: инверсия, cleft-предложения, fronting в одном тексте для сильного выразительного эффекта.",
-    formulas:[
-      "Never have I…, It was X who…, On the wall hung…"
-    ],
-    examples:[
-      "Never had I realised how important it was.",
-      "It was only then that I understood the problem."
-    ],
-    exercises:[]
-  },
-  {
-    id:30,
-    title:"Register and style shifting (formal vs informal)",
-    level:"Advanced",
-    explanation:"Advanced learners can shift between formal and informal style, choosing appropriate grammar, vocabulary and structures for each context.",
-    ruleRu:"Умение менять регистр речи: формальный vs неформальный стиль, выбор грамматики и лексики под ситуацию.",
-    formulas:[
-      "formal: request, enquire, assume",
-      "informal: ask, think, suppose"
-    ],
-    examples:[
-      "We regret to inform you that your application was unsuccessful.",
-      "Sorry, but you didn’t get it this time."
-    ],
-    exercises:[]
+    exercises:[
+      {
+        title:"1) Affirmative",
+        questions:[
+          {
+            text:"Мне жаль, что у меня нет больше свободного времени.",
+            options:[
+              "I wish I had more free time.",
+              "I wish I have more free time."
+            ],
+            correct:0
+          },
+          {
+            text:"Жаль, что я не живу у моря.",
+            options:[
+              "If only I lived by the sea.",
+              "If only I live by the sea."
+            ],
+            correct:0
+          },
+          {
+            text:"Жаль, что вчера я не был внимательнее.",
+            options:[
+              "I wish I had been more careful yesterday.",
+              "I wish I was more careful yesterday."
+            ],
+            correct:0
+          },
+          {
+            text:"Я предпочёл бы остаться дома сегодня.",
+            options:[
+              "I would rather stay at home today.",
+              "I would rather to stay at home today."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"2) Negative",
+        questions:[
+          {
+            text:"Мне не жаль, что я не купил ту машину. (выбери неверное сожаление)",
+            options:[
+              "I wish I had bought that car.",
+              "I don’t wish I had bought that car."
+            ],
+            correct:1
+          },
+          {
+            text:"Выбери предложение, КОТОРОЕ НЕ ПОДХОДИТ как сожаление о прошлом.",
+            options:[
+              "If only I had told her the truth.",
+              "If only I tell her the truth."
+            ],
+            correct:1
+          },
+          {
+            text:"Выбери неправильный вариант.",
+            options:[
+              "I wish I didn’t have so much homework.",
+              "I wish I don’t have so much homework."
+            ],
+            correct:1
+          },
+          {
+            text:"Выбери неправильный вариант.",
+            options:[
+              "If only he wouldn’t shout so much.",
+              "If only he doesn’t shout so much."
+            ],
+            correct:1
+          }
+        ]
+      },
+      {
+        title:"3) Questions",
+        questions:[
+          {
+            text:"Сделай вопрос: You regret that you didn’t study harder.",
+            options:[
+              "Do you wish you had studied harder?",
+              "Do you wish you studied harder?"
+            ],
+            correct:0
+          },
+          {
+            text:"Сделай вопрос: You regret your friend’s behaviour.",
+            options:[
+              "Do you wish he would behave better?",
+              "Do you wish he behaves better?"
+            ],
+            correct:0
+          },
+          {
+            text:"Сделай вопрос: You prefer to stay at home.",
+            options:[
+              "Would you rather stay at home?",
+              "Would you rather to stay at home?"
+            ],
+            correct:0
+          },
+          {
+            text:"Сделай вопрос: You regret not telling her the truth.",
+            options:[
+              "Do you wish you had told her the truth?",
+              "Do you wish you told her the truth?"
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"4) Word order",
+        questions:[
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "I wish I knew the answer.",
+              "I wish knew I the answer."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "If only I had listened to you.",
+              "If only had I listened to you."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "I would rather you stayed here.",
+              "I would rather stayed you here."
+            ],
+            correct:0
+          },
+          {
+            text:"Выбери правильный порядок слов.",
+            options:[
+              "I wish he would stop talking.",
+              "I wish would he stop talking."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"5) Build the sentence",
+        questions:[
+          {
+            text:"Жаль, что сейчас не лето.",
+            options:[
+              "I wish it was summer now.",
+              "I wish it had been summer now."
+            ],
+            correct:0
+          },
+          {
+            text:"Жаль, что вчера я не подготовился к тесту.",
+            options:[
+              "If only I had prepared for the test yesterday.",
+              "If only I prepared for the test yesterday."
+            ],
+            correct:0
+          },
+          {
+            text:"Я бы предпочёл пойти в кино.",
+            options:[
+              "I would rather go to the cinema.",
+              "I would rather to go to the cinema."
+            ],
+            correct:0
+          },
+          {
+            text:"Жаль, что он так много жалуется.",
+            options:[
+              "I wish he wouldn’t complain so much.",
+              "I wish he doesn’t complain so much."
+            ],
+            correct:0
+          }
+        ]
+      },
+      {
+        title:"6) Translate into English",
+        questions:[
+          {
+            text:"Жаль, что я не выучил английский раньше.",
+            options:[
+              "I wish I had learnt English earlier.",
+              "I wish I learnt English earlier."
+            ],
+            correct:0
+          },
+          {
+            text:"Жаль, что сейчас у меня нет больше времени.",
+            options:[
+              "If only I had more time now.",
+              "If only I have more time now."
+            ],
+            correct:0
+          },
+          {
+            text:"Я предпочёл бы, чтобы ты остался дома.",
+            options:[
+              "I would rather you stayed at home.",
+              "I would rather you stay at home now."
+            ],
+            correct:0
+          },
+          {
+            text:"Жаль, что он не слушал нас вчера.",
+            options:[
+              "I wish he had listened to us yesterday.",
+              "I wish he listened to us yesterday."
+            ],
+            correct:0
+          }
+        ]
+      }
+    ]
   }
 ];
 
 /* ---------- STATE & STORAGE ---------- */
 
-let currentUser = null; // {name, code, classLabel, stars, lastLogin}
+let currentUser = null;   // {name, code, classLabel, stars, lastLogin, attempts:{}}
 let currentTopicId = null;
 
 function todayStr(){
   return new Date().toISOString().slice(0,10);
 }
+
 function studentKey(code){
-  return "bayan_adv_student_"+code;
+  // отдельный namespace для Advanced
+  return "bayan_adv_student_" + code;
 }
 
-function loadStudent(code,name,classLabel){
+function loadStudent(code, name, classLabel){
   const key = studentKey(code);
   let data = null;
   try{
     data = JSON.parse(localStorage.getItem(key));
   }catch(e){
-    data=null;
+    data = null;
   }
   if(!data){
     data = {
-      name:name||"",
+      name: name || "",
       code,
       classLabel,
-      stars:0,
-      lastLogin:null
+      stars: 0,
+      lastLogin: null,
+      attempts: {} // topicId: true (использована 1 попытка)
     };
   }else{
     if(name) data.name = name;
     data.classLabel = classLabel;
+    if(typeof data.stars !== "number") data.stars = 0;
+    if(!data.attempts || typeof data.attempts !== "object"){
+      data.attempts = {};
+    }
   }
   data.lastLogin = todayStr();
-  localStorage.setItem(key,JSON.stringify(data));
+  localStorage.setItem(key, JSON.stringify(data));
   return data;
 }
+
 function saveCurrent(){
   if(!currentUser) return;
   const key = studentKey(currentUser.code);
-  localStorage.setItem(key,JSON.stringify(currentUser));
+  localStorage.setItem(key, JSON.stringify(currentUser));
 }
 
 /* ---------- SCREEN SWITCHING ---------- */
@@ -1225,16 +1805,18 @@ function showOnly(id){
   document.getElementById("teacherScreen").classList.add("hidden");
   document.getElementById(id).classList.remove("hidden");
 }
+
 function setTopInfo(html){
   document.getElementById("topInfo").innerHTML = html;
 }
 
-/* ---------- LOGIN ---------- */
+/* ---------- LOGIN (teacher code 6678) ---------- */
 
 function handleLogin(){
   const name = document.getElementById("loginName").value.trim();
   const codeStr = document.getElementById("loginCode").value.trim();
   const errorEl = document.getElementById("loginError");
+
   errorEl.classList.add("hidden");
   errorEl.textContent = "";
 
@@ -1244,8 +1826,9 @@ function handleLogin(){
     return;
   }
 
-  // Teacher (новый код: 6678)
-  if(codeStr==="6678"){
+  // Учитель
+  if(codeStr === "6678"){
+    currentUser = null;
     setTopInfo(`Logged in as <strong>TEACHER</strong> · code 6678`);
     renderTeacherTable();
     showOnly("teacherScreen");
@@ -1258,6 +1841,7 @@ function handleLogin(){
     errorEl.classList.remove("hidden");
     return;
   }
+
   const classLabel = getClassByCode(num);
   if(!classLabel){
     errorEl.textContent = "Unknown student code. Ask your teacher.";
@@ -1270,11 +1854,13 @@ function handleLogin(){
     return;
   }
 
-  currentUser = loadStudent(num,name,classLabel);
+  currentUser = loadStudent(num, name, classLabel);
   saveCurrent();
+
   setTopInfo(
     `Class <strong>${currentUser.classLabel}</strong> · Student: <strong>${currentUser.name}</strong> (code ${currentUser.code}) · Stars: <strong id="topStars">${currentUser.stars}</strong>`
   );
+
   buildMainMenu();
   updateTopStars();
   showOnly("mainMenuScreen");
@@ -1283,8 +1869,8 @@ function handleLogin(){
 function backToLogin(){
   currentUser = null;
   setTopInfo("Not logged in");
-  document.getElementById("loginCode").value = "";
   document.getElementById("loginName").value = "";
+  document.getElementById("loginCode").value = "";
   showOnly("loginScreen");
 }
 
@@ -1292,60 +1878,55 @@ function backToLogin(){
 
 function buildMainMenu(){
   if(!currentUser) return;
-  document.getElementById("menuInfo").innerHTML =
+  const menuInfo = document.getElementById("menuInfo");
+  menuInfo.innerHTML =
     `Class <strong>${currentUser.classLabel}</strong>, student <strong>${currentUser.name}</strong> (code ${currentUser.code})`;
+
   document.getElementById("menuStars").textContent = currentUser.stars ?? 0;
 
   const grid = document.getElementById("menuTopics");
   grid.innerHTML = "";
-  topics.forEach(t=>{
+
+  topics.forEach(t => {
     const div = document.createElement("div");
     div.className = "topic-card";
-    const color = topicColors[t.id] || "#004d40";
-    div.style.borderColor = color+"55";
-    div.style.background = "#f4fbf8";
+    const color = topicColors[t.id] || "#ff6f00";
+    div.style.borderColor = color + "66";
+
     div.innerHTML = `
       <div class="topic-card-title">${t.id}. ${t.title}</div>
-      <div class="topic-card-sub">${t.level}</div>
+      <div class="muted">${t.level}</div>
     `;
-    div.addEventListener("click",()=>openTopic(t.id));
+
+    div.addEventListener("click", () => openTopic(t.id));
     grid.appendChild(div);
   });
 
-  // AI Panel init for logged-in student
+  // AI панель – простое demo-сообщение
   const chat = document.getElementById("chatBox");
   chat.innerHTML = "";
   const msg = document.createElement("div");
   msg.className = "chat-msg";
-  msg.textContent = "You can ask AI Bayan one advanced question per day. Use English if possible.";
+  msg.textContent = "AI Bayan chat will be added later. Now use grammar topics and exercises.";
   chat.appendChild(msg);
-  const aiLimitEl = document.getElementById("aiLimit");
-  if(aiLimitEl){
-    aiLimitEl.textContent = "· 1 question per day";
-  }
-
-  const q = document.getElementById("aiQuestion");
-  const btn = document.getElementById("askBtn");
-  if(q && btn){
-    q.disabled = false;
-    btn.disabled = false;
-  }
+  document.getElementById("aiLimit").textContent = "· demo mode";
 }
 
-/* ---------- TOPIC SCREEN ---------- */
+/* ---------- TOPIC SCREEN + 1 попытка ---------- */
 
 function openTopic(id){
+  if(!currentUser) return;
   currentTopicId = id;
-  const t = topics.find(x=>x.id===id);
+
+  const t = topics.find(x => x.id === id);
   if(!t) return;
 
-  const color = topicColors[id] || "#004d40";
-  document.documentElement.style.setProperty("--topicColor",color);
+  const color = topicColors[id] || "#ff6f00";
+  document.documentElement.style.setProperty("--topicColor", color);
 
   document.getElementById("topicHeaderTitle").textContent = `${id}. ${t.title}`;
-  document.getElementById("topicHeaderTag").innerHTML =
-    `<span class="tag">${t.level}</span>`;
 
+  // правило
   const rc = document.getElementById("topicRuleContainer");
   rc.innerHTML = "";
   const gbox = document.createElement("div");
@@ -1354,17 +1935,14 @@ function openTopic(id){
     <strong>Rule (EN):</strong> ${t.explanation || ""}
     ${
       t.formulas && t.formulas.length
-        ? "<div style='margin-top:6px;'>"+
-          t.formulas.map(f=>`<span class="formula">${f}</span>`).join(" ")+
+        ? "<div style='margin-top:6px;'>" +
+          t.formulas.map(f => `<span class="formula">${f}</span>`).join(" ") +
           "</div>"
         : ""
     }
     ${
       t.ruleRu
-        ? `<div class="grammar-ru">
-             <strong>Правило (RU):</strong><br>
-             ${t.ruleRu}
-           </div>`
+        ? `<div style="margin-top:8px;font-size:13px;"><strong>Правило (RU):</strong><br>${t.ruleRu}</div>`
         : ""
     }
   `;
@@ -1373,7 +1951,7 @@ function openTopic(id){
   if(t.examples && t.examples.length){
     const ul = document.createElement("ul");
     ul.className = "examples";
-    t.examples.forEach(e=>{
+    t.examples.forEach(e => {
       const li = document.createElement("li");
       li.textContent = e;
       ul.appendChild(li);
@@ -1381,9 +1959,11 @@ function openTopic(id){
     rc.appendChild(ul);
   }
 
+  // упражнения
   const ec = document.getElementById("topicExercisesContainer");
   ec.innerHTML = "";
-  if(!t.exercises || t.exercises.length===0){
+
+  if(!t.exercises || t.exercises.length === 0){
     const p = document.createElement("p");
     p.className = "muted";
     p.style.marginTop = "10px";
@@ -1392,42 +1972,76 @@ function openTopic(id){
   }else{
     const wrapper = document.createElement("div");
     wrapper.className = "exercises";
-    t.exercises.forEach((ex,exIndex)=>{
+
+    t.exercises.forEach((ex, exIndex) => {
       const block = document.createElement("div");
       block.className = "exercise-block";
+      block.style.border = "1px solid #ffe0b2";
+      block.style.borderRadius = "12px";
+      block.style.background = "#fffdf7";
+      block.style.padding = "10px 12px";
+      block.style.marginBottom = "10px";
+
       const title = document.createElement("div");
       title.className = "exercise-title";
-      title.innerHTML = ex.title;
+      title.textContent = ex.title || `Exercise ${exIndex+1}`;
       block.appendChild(title);
 
-      ex.questions.forEach((q,qIndex)=>{
+      ex.questions.forEach((q, qIndex) => {
         const row = document.createElement("div");
         row.className = "question-row";
+        row.style.fontSize = "13px";
+        row.style.marginBottom = "6px";
+        row.style.display = "flex";
+        row.style.flexWrap = "wrap";
+        row.style.gap = "6px";
+        row.style.alignItems = "center";
+
         const qText = document.createElement("div");
         qText.className = "question-text";
+        qText.style.flex = "1 1 160px";
         qText.textContent = `${qIndex+1}) ${q.text}`;
         row.appendChild(qText);
 
         const opts = document.createElement("div");
         opts.className = "options";
+        opts.style.display = "flex";
+        opts.style.flexWrap = "wrap";
+        opts.style.gap = "6px";
+
         if(q.options && q.options.length){
-          q.options.forEach((opt,optIndex)=>{
+          q.options.forEach((opt, optIndex) => {
             const label = document.createElement("label");
+            label.style.background = "#ffffff";
+            label.style.borderRadius = "999px";
+            label.style.border = "1px solid #ffd180";
+            label.style.padding = "2px 8px";
+            label.style.cursor = "pointer";
+            label.style.display = "inline-flex";
+            label.style.alignItems = "center";
+            label.style.gap = "3px";
+
             const radio = document.createElement("input");
             radio.type = "radio";
             const gname = `t${id}_e${exIndex}_q${qIndex}`;
             radio.name = gname;
             radio.value = optIndex;
+
             label.appendChild(radio);
-            label.appendChild(document.createTextNode(" "+opt));
+            label.appendChild(document.createTextNode(" " + opt));
             opts.appendChild(label);
           });
         }
+
         row.appendChild(opts);
 
         const mark = document.createElement("span");
         mark.className = "mark";
         mark.id = `mark_t${id}_e${exIndex}_q${qIndex}`;
+        mark.style.width = "18px";
+        mark.style.textAlign = "center";
+        mark.style.fontSize = "16px";
+        mark.style.fontWeight = "700";
         row.appendChild(mark);
 
         block.appendChild(row);
@@ -1435,32 +2049,39 @@ function openTopic(id){
 
       const footer = document.createElement("div");
       footer.className = "exercise-footer";
+      footer.style.marginTop = "6px";
+      footer.style.display = "flex";
+      footer.style.justifyContent = "space-between";
+      footer.style.alignItems = "center";
+      footer.style.gap = "8px";
+
       const small = document.createElement("small");
-      small.textContent = "Each correct answer gives you 1 star. You can check only once.";
+      small.style.fontSize = "11px";
+      small.style.color = "#6b5f55";
+      small.textContent = "Each correct answer gives you 1 star. Only ONE attempt for this topic.";
+      footer.appendChild(small);
+
       const btn = document.createElement("button");
       btn.className = "btn btn-primary";
       btn.textContent = "Check";
-      btn.addEventListener("click",()=>checkExercise(id,exIndex));
-      footer.appendChild(small);
+      btn.addEventListener("click", () => checkExercise(id, exIndex));
       footer.appendChild(btn);
-      block.appendChild(footer);
 
+      block.appendChild(footer);
       wrapper.appendChild(block);
     });
-    ec.appendChild(wrapper);
 
-    // блокируем уже решённые этим учеником упражнения
-    if(currentUser && t.exercises && t.exercises.length){
-      t.exercises.forEach((ex, idx)=>{
-        const key = `adv_done_t${id}_e${idx}_code${currentUser.code}`;
-        if(localStorage.getItem(key) === "1"){
-          disableExercise(id, idx);
-        }
-      });
-    }
+    ec.appendChild(wrapper);
   }
 
-  document.getElementById("topicStatus").textContent = "";
+  const status = document.getElementById("topicStatus");
+  status.textContent = "";
+  if(currentUser && currentUser.attempts && currentUser.attempts[id]){
+    status.textContent = "You have already used your attempt for this topic.";
+  }else{
+    status.textContent = "You still have 1 attempt for this topic.";
+  }
+
   showOnly("topicScreen");
 }
 
@@ -1473,102 +2094,66 @@ function backToMenu(){
   showOnly("mainMenuScreen");
 }
 
-function printCurrentTopic(){
-  if(!currentTopicId) return;
-  window.print();
-}
-
-/* ---------- CHECK EXERCISE (ONE ATTEMPT) ---------- */
+/* ---------- CHECK EXERCISE (1 попытка на тему) ---------- */
 
 function checkExercise(topicId, exIndex){
   if(!currentUser) return;
 
-  const t = topics.find(x=>x.id===topicId);
-  if(!t) return;
-  const ex = t.exercises[exIndex];
-  if(!ex) return;
+  const status = document.getElementById("topicStatus") || { textContent:"" };
 
-  const key = `adv_done_t${topicId}_e${exIndex}_code${currentUser.code}`;
-
-  // уже решал – не даём повторно
-  if(localStorage.getItem(key) === "1"){
-    const statusAlready = document.getElementById("topicStatus");
-    if(statusAlready){
-      statusAlready.textContent = "You have already completed this exercise.";
-    }
-    disableExercise(topicId, exIndex);
+  // Уже использовал попытку?
+  if(currentUser.attempts && currentUser.attempts[topicId]){
+    status.textContent = "You have already used your attempt for this topic.";
     return;
   }
 
+  const t = topics.find(x => x.id === topicId);
+  if(!t) return;
+
+  const ex = t.exercises[exIndex];
+  if(!ex) return;
+
   let gained = 0;
-  ex.questions.forEach((q,qIndex)=>{
+
+  ex.questions.forEach((q, qIndex) => {
     const gname = `t${topicId}_e${exIndex}_q${qIndex}`;
     const selected = document.querySelector(`input[name="${gname}"]:checked`);
     const markEl = document.getElementById(`mark_t${topicId}_e${exIndex}_q${qIndex}`);
+
     if(!markEl) return;
     markEl.textContent = "";
-    markEl.classList.remove("correct","wrong");
+    markEl.style.color = "#3a2b1f";
 
     if(!selected){
       markEl.textContent = "•";
       return;
     }
+
     const chosen = Number(selected.value);
-    if(chosen===q.correct){
-      markEl.textContent="✓";
-      markEl.classList.add("correct");
+    if(chosen === q.correct){
+      markEl.textContent = "✓";
+      markEl.style.color = "#2e7d32";
       gained++;
     }else{
-      markEl.textContent="✗";
-      markEl.classList.add("wrong");
+      markEl.textContent = "✗";
+      markEl.style.color = "#c62828";
     }
   });
 
-  // помечаем, что упражнение завершено
-  localStorage.setItem(key, "1");
+  // Помечаем, что попытка для ВСЕЙ темы использована
+  if(!currentUser.attempts || typeof currentUser.attempts !== "object"){
+    currentUser.attempts = {};
+  }
+  currentUser.attempts[topicId] = true;
 
-  const status = document.getElementById("topicStatus");
-  if(gained>0){
+  if(gained > 0){
     currentUser.stars += gained;
     saveCurrent();
     updateTopStars();
-    if(status){
-      status.textContent = `Exercise completed. You gained ${gained} star(s).`;
-    }
+    status.textContent = `Well done! You gained ${gained} star(s). Your attempt for this topic is now used.`;
   }else{
-    if(status){
-      status.textContent = "Exercise completed. No correct answers.";
-    }
-  }
-
-  disableExercise(topicId, exIndex);
-}
-
-/* ---------- DISABLE EXERCISE ---------- */
-
-function disableExercise(topicId, exIndex){
-  const t = topics.find(x=>x.id===topicId);
-  if(!t) return;
-  const ex = t.exercises[exIndex];
-  if(!ex) return;
-
-  // радиокнопки
-  ex.questions.forEach((q,qIndex)=>{
-    const gname = `t${topicId}_e${exIndex}_q${qIndex}`;
-    const inputs = document.querySelectorAll(`input[name="${gname}"]`);
-    inputs.forEach(inp => inp.disabled = true);
-  });
-
-  // кнопка "Check" именно этого блока
-  const blocks = document.querySelectorAll("#topicExercisesContainer .exercise-block");
-  const block = blocks[exIndex];
-  if(block){
-    const btn = block.querySelector("button");
-    if(btn){
-      btn.disabled = true;
-      btn.style.opacity = "0.6";
-      btn.style.cursor = "not-allowed";
-    }
+    saveCurrent();
+    status.textContent = "No correct answers this time. Your attempt for this topic is used.";
   }
 }
 
@@ -1577,32 +2162,44 @@ function disableExercise(topicId, exIndex){
 function renderTeacherTable(){
   const tbody = document.querySelector("#teacherTable tbody");
   tbody.innerHTML = "";
+
   const allStudents = [];
-  classRanges.forEach(r=>{
-    for(let code=r.from; code<=r.to; code++){
+
+  classRanges.forEach(r => {
+    for(let code = r.from; code <= r.to; code++){
       const key = studentKey(code);
       let data = null;
       try{
         data = JSON.parse(localStorage.getItem(key));
-      }catch(e){ data=null; }
-      if(data) allStudents.push(data);
+      }catch(e){
+        data = null;
+      }
+      if(data){
+        if(!data.attempts || typeof data.attempts !== "object"){
+          data.attempts = {};
+        }
+        allStudents.push(data);
+      }
     }
   });
-  if(allStudents.length===0){
+
+  if(allStudents.length === 0){
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-    td.colSpan = 5;
-    td.textContent =
-      "No student data in this browser yet. Ask students to log in and work with tasks.";
+    td.colSpan = 6;
+    td.textContent = "No student data in this browser yet.";
     tr.appendChild(td);
     tbody.appendChild(tr);
     return;
   }
-  allStudents.sort((a,b)=>a.code-b.code);
-  allStudents.forEach(s=>{
+
+  allStudents.sort((a,b) => a.code - b.code);
+
+  allStudents.forEach(s => {
     const tr = document.createElement("tr");
-    const cls = document.createElement("td");
-    cls.textContent = s.classLabel || getClassByCode(s.code) || "";
+
+    const clsTd = document.createElement("td");
+    clsTd.textContent = s.classLabel || getClassByCode(s.code) || "";
     const codeTd = document.createElement("td");
     codeTd.textContent = s.code;
     const nameTd = document.createElement("td");
@@ -1611,138 +2208,36 @@ function renderTeacherTable(){
     starsTd.textContent = s.stars ?? 0;
     const loginTd = document.createElement("td");
     loginTd.textContent = s.lastLogin || "";
-    tr.appendChild(cls);
+
+    const attemptsTd = document.createElement("td");
+    const cnt = s.attempts ? Object.keys(s.attempts).length : 0;
+    attemptsTd.textContent = `${cnt} topic(s)`;
+
+    tr.appendChild(clsTd);
     tr.appendChild(codeTd);
     tr.appendChild(nameTd);
     tr.appendChild(starsTd);
     tr.appendChild(loginTd);
+    tr.appendChild(attemptsTd);
+
     tbody.appendChild(tr);
   });
 }
 
-/* ---------- STARS ---------- */
+/* ---------- STARS DISPLAY ---------- */
 
-function updateTopStars() {
-  if (!currentUser) return;
-  const topStarsEl = document.getElementById("topStars");
-  if (topStarsEl) {
-    topStarsEl.textContent = currentUser.stars;
-  }
-  const menuStarsEl = document.getElementById("menuStars");
-  if (menuStarsEl) {
-    menuStarsEl.textContent = currentUser.stars;
-  }
-}
-
-/* ---------- AI BAYAN CHAT (1 QUESTION PER DAY) ---------- */
-
-const AI_WORKER_URL = "https://shiny-tree-f78c.aiko030500.workers.dev/";
-
-function canAskAiToday(){
-  if(!currentUser) return false;
-  const key = `adv_ai_last_${currentUser.code}`;
-  const today = todayStr();
-  const last = localStorage.getItem(key);
-  return last !== today;
-}
-
-function setAiAskedToday(){
+function updateTopStars(){
   if(!currentUser) return;
-  const key = `adv_ai_last_${currentUser.code}`;
-  localStorage.setItem(key, todayStr());
-}
+  const topStarsEl = document.getElementById("topStars");
+  if(topStarsEl) topStarsEl.textContent = currentUser.stars;
 
-function appendChatMessage(sender, text){
-  const box = document.getElementById("chatBox");
-  if(!box) return;
-  const msg = document.createElement("div");
-  msg.className = "chat-msg";
-  const strong = document.createElement("strong");
-  strong.textContent = sender+": ";
-  const span = document.createElement("span");
-  span.textContent = text;
-  msg.appendChild(strong);
-  msg.appendChild(span);
-  box.appendChild(msg);
-  box.scrollTop = box.scrollHeight;
-}
-
-async function sendToAiBayan(){
-  const qEl = document.getElementById("aiQuestion");
-  const btn = document.getElementById("askBtn");
-  if(!qEl || !btn) return;
-  const question = qEl.value.trim();
-  if(!question){
-    return;
-  }
-  if(!currentUser){
-    appendChatMessage("System","Please log in as a student first.");
-    return;
-  }
-  if(!canAskAiToday()){
-    appendChatMessage("System","You have already used your question for today. Try again tomorrow.");
-    return;
-  }
-
-  appendChatMessage(currentUser.name || "You", question);
-  qEl.value = "";
-  btn.disabled = true;
-  btn.textContent = "Asking...";
-
-  let aiMsg = "Sorry, there was a problem with AI Bayan. Try again later.";
-  try{
-    const resp = await fetch(AI_WORKER_URL, {
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({
-        question,
-        level:"Advanced",
-        student:{
-          name: currentUser.name,
-          code: currentUser.code,
-          classLabel: currentUser.classLabel
-        }
-      })
-    });
-    if(resp.ok){
-      const data = await resp.json().catch(()=>null);
-      if(data){
-        aiMsg = data.answer || data.reply || data.result || data.message || JSON.stringify(data);
-      }else{
-        aiMsg = "AI Bayan sent an empty response.";
-      }
-      setAiAskedToday();
-    }else{
-      aiMsg = "AI Bayan is not available now (server error).";
-    }
-  }catch(e){
-    aiMsg = "AI Bayan is not available now (network error).";
-  }
-
-  appendChatMessage("AI Bayan", aiMsg);
-  btn.disabled = false;
-  btn.textContent = "Ask AI Bayan";
+  const menuStarsEl = document.getElementById("menuStars");
+  if(menuStarsEl) menuStarsEl.textContent = currentUser.stars;
 }
 
 /* ---------- INIT ---------- */
 
-document.addEventListener("DOMContentLoaded", ()=>{
-  const btn = document.getElementById("askBtn");
-  const q = document.getElementById("aiQuestion");
-  if(btn){
-    btn.addEventListener("click", sendToAiBayan);
-  }
-  if(q){
-    q.addEventListener("keydown", (e)=>{
-      if(e.key==="Enter" && !e.shiftKey){
-        e.preventDefault();
-        sendToAiBayan();
-      }
-    });
-  }
-
-  showOnly("loginScreen");
-});
+showOnly("loginScreen");
 </script>
 </body>
 </html>
