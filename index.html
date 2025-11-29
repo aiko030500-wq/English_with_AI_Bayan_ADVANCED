@@ -590,494 +590,6808 @@ const topicColors = {
 };
 
 /* ---------- TOPICS (30 ADVANCED) ---------- */
-
+<script>
 const topics = [
-  {
-    id:1,
-    title:"Inversion after negative adverbials",
-    level:"Advanced",
-    explanation:"We use inversion (auxiliary + subject) after negative or limiting adverbials like never, seldom, rarely, only then, not until to sound more formal or emphatic.",
-    ruleRu:"После отрицательных или ограничительных наречий (never, seldom, rarely, only then, not until и др.) используем инверсию: вспомогательный глагол + подлежащее, чтобы усилить высказывание.",
-    formulas:[
-      "Never / Rarely / Seldom + AUX + S + V",
-      "Not until + clause + AUX + S + V",
-      "Only then / only later + AUX + S + V"
-    ],
-    examples:[
-      "Never have I seen such chaos.",
-      "Not until he left did she realise her mistake."
-    ],
-    exercises:[]
+/* ============================================================
+   1) INVERSION AFTER NEGATIVE ADVERBIALS
+============================================================ */
+{
+  id:1,
+  title:"Inversion after negative adverbials",
+  level:"Advanced",
+  explanation:
+    "We use inversion (auxiliary + subject) after negative or limiting adverbials like never, seldom, rarely, only then, not until to sound more formal or emphatic.",
+  ruleRu:
+    "После отрицательных или ограничительных наречий (never, seldom, rarely, only then, not until и др.) используем инверсию: вспомогательный глагол + подлежащее.",
+  formulas:[
+    "Never / Rarely / Seldom + AUX + S + V",
+    "Not until + clause + AUX + S + V",
+    "Only then / only later + AUX + S + V"
+  ],
+  examples:[
+    "Never have I seen such chaos.",
+    "Not until he left did she realise her mistake."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"I have seen such chaos many times.",
+          options:[
+            "Never have I seen such chaos.",
+            "I never have seen such chaos."
+          ],
+          correct:0
+        },
+        {
+          text:"She realised the truth only then.",
+          options:[
+            "Only then did she realise the truth.",
+            "She realised the truth only then she did."
+          ],
+          correct:0
+        },
+        {
+          text:"We noticed the problem only after the test.",
+          options:[
+            "Only after the test did we notice the problem.",
+            "After the test only we noticed the problem."
+          ],
+          correct:0
+        },
+        {
+          text:"I heard such silence before.",
+          options:[
+            "Never before had I heard such silence.",
+            "I had never before heard such silence it."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Я никогда не понимал эту тему.",
+          options:[
+            "Never have I understood this topic.",
+            "I have never understood this topic it."
+          ],
+          correct:0
+        },
+        {
+          text:"Он редко делает ошибки.",
+          options:[
+            "Rarely does he make mistakes.",
+            "He does rarely make mistakes."
+          ],
+          correct:0
+        },
+        {
+          text:"Они почти не замечали опасности.",
+          options:[
+            "Hardly did they notice the danger.",
+            "They did hardly notice the danger."
+          ],
+          correct:0
+        },
+        {
+          text:"Мало я ожидал такого результата.",
+          options:[
+            "Little did I expect such a result.",
+            "I did little expect such a result."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"you / ever / see / such a storm?",
+          options:[
+            "Have you ever seen such a storm?",
+            "Ever have you seen such a storm?"
+          ],
+          correct:0
+        },
+        {
+          text:"she / often / arrive / late?",
+          options:[
+            "Does she often arrive late?",
+            "Often does she arrive late?"
+          ],
+          correct:0
+        },
+        {
+          text:"they / rarely / visit / you?",
+          options:[
+            "Do they rarely visit you?",
+            "Rarely do they visit you?"
+          ],
+          correct:0
+        },
+        {
+          text:"he / ever / tell / lies?",
+          options:[
+            "Does he ever tell lies?",
+            "Does he never tell lies?"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный порядок.",
+          options:[
+            "Not until the end of the lesson did they understand it.",
+            "Did they understand it not until the end of the lesson."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "Only then did she start to cry.",
+            "She started to cry only then did."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "Never before had I heard this story.",
+            "Had I never before heard this story."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "Little did I know about their plan.",
+            "I did little know about their plan."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(никогда / я / не видел / такой вид)",
+          options:[
+            "Never have I seen such a view.",
+            "I have never seen such a view it."
+          ],
+          correct:0
+        },
+        {
+          text:"(только тогда / я / понял / ошибку)",
+          options:[
+            "Only then did I understand the mistake.",
+            "I understood only then did the mistake."
+          ],
+          correct:0
+        },
+        {
+          text:"(не раньше чем / он пришёл / мы начали)",
+          options:[
+            "Not until he arrived did we start.",
+            "We started not until he arrived did."
+          ],
+          correct:0
+        },
+        {
+          text:"(редко / он / говорит / публично)",
+          options:[
+            "Rarely does he speak in public.",
+            "He rarely does speak in public."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Никогда раньше я не был так занят.",
+          options:[
+            "Never before have I been so busy.",
+            "I have never been so busy before it."
+          ],
+          correct:0
+        },
+        {
+          text:"Только тогда я понял, что она права.",
+          options:[
+            "Only then did I realise she was right.",
+            "I realised only then that she was right did."
+          ],
+          correct:0
+        },
+        {
+          text:"Редко он соглашается на такие условия.",
+          options:[
+            "Rarely does he agree to such conditions.",
+            "He does rarely agree to such conditions."
+          ],
+          correct:0
+        },
+        {
+          text:"Мало я знал о её планах.",
+          options:[
+            "Little did I know about her plans.",
+            "I knew little about her plans did."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+
+/* ============================================================
+   2) CLEFT SENTENCES
+============================================================ */
+{
+  id:2,
+  title:"Cleft sentences for emphasis",
+  level:"Advanced",
+  explanation:
+    "Cleft sentences with It is/was and What… is/was help us emphasise a person, thing, time, place or reason.",
+  ruleRu:
+    "Cleft-предложения создают акцент: It was John who…, What I need is….",
+  formulas:[
+    "It is/was + X + who/that + clause",
+    "What + clause + is/was + X"
+  ],
+  examples:[
+    "It was my brother who broke the window.",
+    "What I need is a short break."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Подчеркни человека: My brother broke the window.",
+          options:[
+            "It was my brother who broke the window.",
+            "My brother it was who broke the window."
+          ],
+          correct:0
+        },
+        {
+          text:"Подчеркни объект: I need a short break.",
+          options:[
+            "What I need is a short break.",
+            "It is a short break what I need."
+          ],
+          correct:0
+        },
+        {
+          text:"Подчеркни место: We met in London.",
+          options:[
+            "It was in London that we met.",
+            "In London it was that we met."
+          ],
+          correct:0
+        },
+        {
+          text:"Подчеркни время: I saw her yesterday.",
+          options:[
+            "It was yesterday that I saw her.",
+            "Yesterday it was that I saw her."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Это был не Джон, кто позвонил.",
+          options:[
+            "It was not John who called you.",
+            "It not was John who called you."
+          ],
+          correct:0
+        },
+        {
+          text:"Мне не его характер не нравится, а поведение.",
+          options:[
+            "What I do not like is his behaviour.",
+            "It is his behaviour what I do not like."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Сделай вопрос: It was my brother who broke the window.",
+          options:[
+            "Was it your brother who broke the window?",
+            "Did it your brother who broke the window?"
+          ],
+          correct:0
+        },
+        {
+          text:"Сделай вопрос: It was in London that we met.",
+          options:[
+            "Was it in London that we met?",
+            "Did we in London that met?"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери корректное cleft-предложение.",
+          options:[
+            "It was the manager who made the decision.",
+            "The manager was who made the decision it."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери корректное cleft-предложение.",
+          options:[
+            "What surprised me was his honesty.",
+            "His honesty was what surprised me it."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"Подчеркни время: We met in 2015.",
+          options:[
+            "It was in 2015 that we met.",
+            "In 2015 it was that we met."
+          ],
+          correct:0
+        },
+        {
+          text:"Подчеркни объект: I need your help.",
+          options:[
+            "What I need is your help.",
+            "It is your help what I need."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Именно мама помогла мне.",
+          options:[
+            "It was my mother who helped me.",
+            "My mother was who helped me."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что мне нужно — отдых.",
+          options:[
+            "What I need is some rest.",
+            "That I need is some rest."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+
+];  
+</script>
+/* ============================================================
+   5) NOMINALISATION IN FORMAL WRITING
+============================================================ */
+{
+  id:5,
+  title:"Nominalisation (formal writing)",
+  level:"Advanced",
+  explanation:
+    "Nominalisation means turning verbs or adjectives into nouns to create more formal and academic style.",
+  ruleRu:
+    "Nominalisation — преобразование глаголов и прилагательных в существительные для более формального стиля.",
+  formulas:[
+    "decide → decision",
+    "develop → development",
+    "analyse → analysis",
+    "fail → failure",
+    "accurate → accuracy"
+  ],
+  examples:[
+    "We analysed the data → Our analysis of the data…",
+    "They decided to change → Their decision to change…"
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Turn into nominalisation: They decided to start.",
+          options:[
+            "Their decision to start…",
+            "Their decide to start…"
+          ],
+          correct:0
+        },
+        {
+          text:"Turn into nominalisation: We analysed the results.",
+          options:[
+            "Our analysis of the results…",
+            "Our analysing of the results…"
+          ],
+          correct:0
+        },
+        {
+          text:"Turn into nominalisation: The company failed to improve.",
+          options:[
+            "The company’s failure to improve…",
+            "The company’s failing to improve…"
+          ],
+          correct:0
+        },
+        {
+          text:"Turn into nominalisation: They developed a new method.",
+          options:[
+            "Their development of a new method…",
+            "Their developing of a new method…"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"(отрицание) She did not improve the accuracy.",
+          options:[
+            "There was no improvement in accuracy.",
+            "There was no improve in accuracy."
+          ],
+          correct:0
+        },
+        {
+          text:"He did not decide anything.",
+          options:[
+            "No decision was made.",
+            "No decide was made."
+          ],
+          correct:0
+        },
+        {
+          text:"They did not analyse the data.",
+          options:[
+            "No analysis of the data was done.",
+            "No analysing of the data was done."
+          ],
+          correct:0
+        },
+        {
+          text:"The company did not develop solutions.",
+          options:[
+            "There was no development of solutions.",
+            "There was no developing of solutions."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"What is the nominalisation of 'decide'?",
+          options:["decision","deciding"],
+          correct:0
+        },
+        {
+          text:"What is the nominalisation of 'analyse'?",
+          options:["analysis","analysing"],
+          correct:0
+        },
+        {
+          text:"What is the nominalisation of 'fail'?",
+          options:["failure","failing"],
+          correct:0
+        },
+        {
+          text:"What is the nominalisation of 'approve'?",
+          options:["approval","approving"],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Choose the formal version.",
+          options:[
+            "The analysis of the problem was completed.",
+            "The problem the analysis was completed."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose the formal version.",
+          options:[
+            "The development of technology is important.",
+            "The technology the development is important."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose the correct option.",
+          options:[
+            "The decision to expand was unexpected.",
+            "The expand decision was unexpected."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose the correct option.",
+          options:[
+            "The improvement in results was significant.",
+            "The improve in results was significant."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(Formal) They improved the system.",
+          options:[
+            "There was an improvement in the system.",
+            "The system the improvement was."
+          ],
+          correct:0
+        },
+        {
+          text:"(Formal) They failed to solve the problem.",
+          options:[
+            "Their failure to solve the problem…",
+            "Their fail to solve the problem…"
+          ],
+          correct:0
+        },
+        {
+          text:"(Formal) They developed a strategy.",
+          options:[
+            "Their development of a strategy…",
+            "Their developing strategy…"
+          ],
+          correct:0
+        },
+        {
+          text:"(Formal) They analysed the situation.",
+          options:[
+            "Their analysis of the situation…",
+            "Their analysing of the situation…"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Их решение удивило всех.",
+          options:[
+            "Their decision surprised everyone.",
+            "Their decide surprised everyone."
+          ],
+          correct:0
+        },
+        {
+          text:"Произошло серьёзное улучшение.",
+          options:[
+            "There was a significant improvement.",
+            "There was a significant improving."
+          ],
+          correct:0
+        },
+        {
+          text:"Требуется анализ ситуации.",
+          options:[
+            "An analysis of the situation is required.",
+            "An analysing of the situation is required."
+          ],
+          correct:0
+        },
+        {
+          text:"Наблюдается развитие технологий.",
+          options:[
+            "There is a development of technology.",
+            "There is a developing of technology."
+          ],
+          correct:0
+        }
+      ]
+    }
   },
-  {
-    id:2,
-    title:"Cleft sentences for emphasis",
-    level:"Advanced",
-    explanation:"Cleft sentences with It is/was and What… is/was help us emphasise a person, thing, time, place or reason.",
-    ruleRu:"Cleft-предложения помогают подчеркнуть важную часть: It was John who…, What I need is…. Используем It is/was + X + who/that… или What + clause + is/was + X.",
-    formulas:[
-      "It is/was + X + who/that + clause",
-      "What + clause + is/was + X"
-    ],
-    examples:[
-      "It was my brother who broke the window.",
-      "What I need is a short break."
-    ],
-    exercises:[]
-  },
-  {
-    id:3,
-    title:"Mixed conditionals (advanced use)",
-    level:"Advanced",
-    explanation:"Mixed conditionals connect unreal past actions with present results or unreal present states with unreal past results.",
-    ruleRu:"Смешанные условные связывают нереальное прошлое с настоящим результатом или нереальное настоящее с нереальным прошлым результатом.",
-    formulas:[
-      "If + Past Perfect, would + V (now)",
-      "If + Past Simple, would have + V3"
-    ],
-    examples:[
-      "If I had studied harder, I would be at university now.",
-      "If she were more careful, she would not have lost the documents."
-    ],
-    exercises:[]
-  },
-  {
-    id:4,
-    title:"Modal verbs of deduction (present & past)",
-    level:"Advanced",
-    explanation:"We use must, might, may, could and can’t to show how sure we are about something (deduction) in the present and the past.",
-    ruleRu:"Must / can’t / might / may / could – модальные глаголы для предположений: must – почти уверены, can’t – уверены, что невозможно; might/may/could – возможно. Для прошлого добавляем have + V3.",
-    formulas:[
-      "must + V / must have + V3",
-      "can’t + V / can’t have + V3",
-      "might/may/could + V / might/may/could have + V3"
-    ],
-    examples:[
-      "He must be at home – the lights are on.",
-      "She can’t have finished already – it was too difficult."
-    ],
-    exercises:[]
-  },
-  {
-    id:5,
-    title:"Wishes and regrets (I wish / If only / would rather)",
-    level:"Advanced",
-    explanation:"We use I wish / If only to talk about regrets and unreal wishes about the present, past or future. We use would rather to express preference.",
-    ruleRu:"I wish / If only + Past Simple – сожаление о настоящем; + Past Perfect – о прошлом; I wish + would – желание, чтобы кто-то изменил поведение; would rather – предпочтение.",
-    formulas:[
-      "I wish / If only + Past Simple",
-      "I wish / If only + Past Perfect",
-      "I wish + would + V",
-      "would rather + V / would rather + S + Past Simple"
-    ],
-    examples:[
-      "I wish I spoke English better.",
-      "If only I had studied harder."
-    ],
-    exercises:[]
-  },
-  {
-    id:6,
-    title:"Passive reporting structures",
-    level:"Advanced",
-    explanation:"We use passive reporting structures to sound more formal and impersonal, especially in news and academic style.",
-    ruleRu:"Пассивные конструкции с глаголами сообщения (say, think, believe, report и др.) делают речь более формальной и безличной: It is said that..., He is believed to....",
-    formulas:[
-      "It is/was said that + clause",
-      "S is/was thought/believed/known to + V"
-    ],
-    examples:[
-      "It is said that the company will close next year.",
-      "He is believed to have left the country."
-    ],
-    exercises:[]
-  },
-  {
-    id:7,
-    title:"Participle clauses",
-    level:"Advanced",
-    explanation:"Participle clauses (V-ing, V3, having V3) allow us to join ideas and make sentences more compact and formal.",
-    ruleRu:"Причастные конструкции с V-ing, V3 и having V3 заменяют придаточные предложения и делают текст более компактным.",
-    formulas:[
-      "V-ing ..., S + V",
-      "V3 ..., S + V",
-      "Having V3 ..., S + V"
-    ],
-    examples:[
-      "Walking along the street, I met an old friend.",
-      "Having finished his work, he went home."
-    ],
-    exercises:[]
-  },
-  {
-    id:8,
-    title:"Advanced linking words (contrast & concession)",
-    level:"Advanced",
-    explanation:"Advanced linking words show contrast and concession: although, even though, whereas, while, in spite of, despite, however, nevertheless.",
-    ruleRu:"Для противопоставления используем although / even though, whereas / while, in spite of / despite, however / nevertheless.",
-    formulas:[
-      "Although / Even though + clause",
-      "Whereas / While + clause",
-      "In spite of / Despite + noun / V-ing"
-    ],
-    examples:[
-      "Although it was raining, we went out.",
-      "Despite the rain, we went out."
-    ],
-    exercises:[]
-  },
-  {
-    id:9,
-    title:"Reporting verbs and patterns",
-    level:"Advanced",
-    explanation:"Different reporting verbs take different structures: say, tell, explain, suggest, deny, admit, accuse sb of, insist on, recommend etc.",
-    ruleRu:"Say, tell, suggest, deny, admit, accuse sb of, insist on, recommend и др. имеют свои схемы: say (that), tell sb (that), suggest + V-ing / that и т.д.",
-    formulas:[
-      "say (that) + clause",
-      "tell + object + (that) + clause",
-      "suggest / recommend + V-ing / that + clause"
-    ],
-    examples:[
-      "He suggested going to the cinema.",
-      "She denied taking the money."
-    ],
-    exercises:[]
-  },
-  {
-    id:10,
-    title:"Relative clauses with prepositions",
-    level:"Advanced",
-    explanation:"In formal English prepositions can come before relative pronouns (to whom, with whom, about which). In spoken English, prepositions are usually at the end.",
-    ruleRu:"В формальном стиле предлог ставится перед относительным местоимением (to whom, with whom, about which). В разговорном – чаще в конце: the person who I spoke to.",
-    formulas:[
-      "the person to whom I spoke",
-      "the person who I spoke to"
-    ],
-    examples:[
-      "The professor to whom I spoke was very helpful.",
-      "The girl who I was talking to is my cousin."
-    ],
-    exercises:[]
-  },
-  {
-    id:11,
-    title:"Reduced relative clauses",
-    level:"Advanced",
-    explanation:"We can shorten relative clauses when the subject is the same: the man who is standing → the man standing near the door.",
-    ruleRu:"Сокращённые относительные придаточные: убираем who/which и глагол be, когда подлежащее то же самое.",
-    formulas:[
-      "S who is V-ing → S V-ing",
-      "S which is V3 → S V3"
-    ],
-    examples:[
-      "Students who are taking the exam must be quiet → Students taking the exam must be quiet.",
-      "The books which are printed in colour are more expensive → The books printed in colour are more expensive."
-    ],
-    exercises:[]
-  },
-  {
-    id:12,
-    title:"Nominalisation (verbs → nouns)",
-    level:"Advanced",
-    explanation:"Nominalisation means using nouns instead of verbs to sound more formal and academic.",
-    ruleRu:"Nominalisation – превращаем глаголы и прилагательные в существительные: decide → decision, fail → failure, different → difference.",
-    formulas:[
-      "V → N (develop → development)",
-      "Adj → N (important → importance)"
-    ],
-    examples:[
-      "We decided to change the plan → We made a decision to change the plan.",
-      "The system failed → There was a failure in the system."
-    ],
-    exercises:[]
-  },
-  {
-    id:13,
-    title:"Future in the past",
-    level:"Advanced",
-    explanation:"Future in the past describes something that was in the future at a past time: was going to, would.",
-    ruleRu:"Future in the past – будущее из точки зрения прошлого: was/were going to, would + V.",
-    formulas:[
-      "was/were going to + V",
-      "would + V (future seen from the past)"
-    ],
-    examples:[
-      "I was going to call you, but I forgot.",
-      "He said he would help us."
-    ],
-    exercises:[]
-  },
-  {
-    id:14,
-    title:"Emphasis with do / did",
-    level:"Advanced",
-    explanation:"We use do/does/did to give emphasis in affirmative sentences.",
-    ruleRu:"Do / does / did в утвердительных предложениях используется для усиления: I do agree with you.",
-    formulas:[
-      "do/does + V",
-      "did + V (Past Simple)"
-    ],
-    examples:[
-      "I do understand your point.",
-      "She did try her best."
-    ],
-    exercises:[]
-  },
-  {
-    id:15,
-    title:"Subjunctive in formal English",
-    level:"Advanced",
-    explanation:"The present subjunctive is used after verbs like suggest, recommend, insist, demand in formal style.",
-    ruleRu:"Subjunctive (конъюнктив) в современном английском: insist, demand, suggest, recommend + that + S + base form.",
-    formulas:[
-      "They suggested that he go.",
-      "The teacher insisted that she stay."
-    ],
-    examples:[
-      "I suggest that he see a doctor.",
-      "The manager insisted that the report be ready by Monday."
-    ],
-    exercises:[]
-  },
-  {
-    id:16,
-    title:"Hedging and tentative language",
-    level:"Advanced",
-    explanation:"Hedging makes statements less direct: seem, appear, tend to, kind of, a bit, perhaps, probably.",
-    ruleRu:"Hedging делает высказывания мягче: It seems that..., It appears that..., He tends to..., It is kind of difficult.",
-    formulas:[
-      "It seems/appears that + clause",
-      "S tends to + V"
-    ],
-    examples:[
-      "It seems that we need more time.",
-      "He tends to forget names."
-    ],
-    exercises:[]
-  },
-  {
-    id:17,
-    title:"Complex noun phrases",
-    level:"Advanced",
-    explanation:"Complex noun phrases combine nouns, adjectives and prepositional phrases: a long-term educational development plan.",
-    ruleRu:"Сложные именные группы объединяют прилагательные, существительные и предлоги: a highly efficient public transport system.",
-    formulas:[
-      "Adj + N + of + N",
-      "Adv + Adj + N"
-    ],
-    examples:[
-      "A highly effective learning strategy.",
-      "A long-term environmental protection programme."
-    ],
-    exercises:[]
-  },
-  {
-    id:18,
-    title:"Advanced gerund & infinitive patterns",
-    level:"Advanced",
-    explanation:"Some verbs change meaning with gerund vs infinitive: remember doing / remember to do, stop doing / stop to do.",
-    ruleRu:"Герундий и инфинитив после некоторых глаголов меняют значение: remember doing (прошлый опыт), remember to do (не забыть сделать).",
-    formulas:[
-      "remember doing / remember to do",
-      "stop doing / stop to do"
-    ],
-    examples:[
-      "I remember meeting her at the conference.",
-      "Remember to lock the door."
-    ],
-    exercises:[]
-  },
-  {
-    id:19,
-    title:"Fronting and thematisation",
-    level:"Advanced",
-    explanation:"We can move information to the front for emphasis: This book I really enjoyed.",
-    ruleRu:"Fronting – выносим элемент в начало предложения для акцента: What I need most is rest.",
-    formulas:[
-      "Object / phrase to front + clause",
-      "What-clause for focus"
-    ],
-    examples:[
-      "This problem we cannot ignore.",
-      "What I like most is the atmosphere."
-    ],
-    exercises:[]
-  },
-  {
-    id:20,
-    title:"Ellipsis and substitution",
-    level:"Advanced",
-    explanation:"We can avoid repetition using ellipsis (leaving words out) and substitution (do so, one, ones).",
-    ruleRu:"Ellipsis – опускание повторяющихся слов; substitution – замена на do (so), one, ones и др.",
-    formulas:[
-      "do so / do it",
-      "one / ones"
-    ],
-    examples:[
-      "I haven’t finished my project yet, but she has.",
-      "I prefer the red one."
-    ],
-    exercises:[]
-  },
-  {
-    id:21,
-    title:"Inversion in conditionals (Had I known...)",
-    level:"Advanced",
-    explanation:"In formal style we can invert if-clauses: Had I known, I would have told you.",
-    ruleRu:"В формальном стиле условные можно писать с инверсией без if: Had I known..., Were I you..., Should you need help....",
-    formulas:[
-      "Had + S + V3, ...",
-      "Were + S + to V, ..."
-    ],
-    examples:[
-      "Had I known about the problem, I would have helped.",
-      "Were I you, I would apologise."
-    ],
-    exercises:[]
-  },
-  {
-    id:22,
-    title:"Advanced passive (get-passive, passive modals)",
-    level:"Advanced",
-    explanation:"We use get-passive in informal English for change or something unexpected, and passive with modals to focus on the action.",
-    ruleRu:"Get-passive: He got promoted. Passive с модальными: The work must be finished today.",
-    formulas:[
-      "S + get + V3",
-      "modal + be + V3"
-    ],
-    examples:[
-      "He got fired last week.",
-      "The report must be submitted by Friday."
-    ],
-    exercises:[]
-  },
-  {
-    id:23,
-    title:"Idiomatic phrasal verbs",
-    level:"Advanced",
-    explanation:"Many phrasal verbs have idiomatic meanings not clear from the words: bring up, come up with, look forward to.",
-    ruleRu:"Фразовые глаголы с переносным значением: bring up (воспитывать), come up with (придумать), look forward to (с нетерпением ждать).",
-    formulas:[
-      "verb + particle → new meaning"
-    ],
-    examples:[
-      "They came up with a brilliant idea.",
-      "I’m looking forward to seeing you."
-    ],
-    exercises:[]
-  },
-  {
-    id:24,
-    title:"Collocations with make / do / take / have",
-    level:"Advanced",
-    explanation:"Some verbs naturally go together with certain nouns: make a decision, do homework, take a risk, have a rest.",
-    ruleRu:"Устойчивые сочетания: make a mistake, do research, take responsibility, have a shower и т.д.",
-    formulas:[
-      "make + decision / mistake / effort",
-      "do + homework / research / work"
-    ],
-    examples:[
-      "She made an important decision.",
-      "He did a lot of research."
-    ],
-    exercises:[]
-  },
-  {
-    id:25,
-    title:"Approximation and vague language",
-    level:"Advanced",
-    explanation:"Approximation makes speech softer: sort of, kind of, more or less, around, roughly, something like that.",
-    ruleRu:"Размытые выражения: kind of, sort of, more or less, around ten people, roughly 50%, and stuff like that.",
-    formulas:[
-      "around / roughly + number",
-      "kind of / sort of + Adj / N"
-    ],
-    examples:[
-      "There were around twenty students.",
-      "It’s kind of difficult to explain."
-    ],
-    exercises:[]
-  },
-  {
-    id:26,
-    title:"Adverbial inversion (So do I / Neither do I)",
-    level:"Advanced",
-    explanation:"We use so/neither with inversion to show agreement: So do I, Neither did we.",
-    ruleRu:"So / neither + auxiliary + subject: I like it. – So do I. I don’t like it. – Neither do I.",
-    formulas:[
-      "So + AUX + S",
-      "Neither / Nor + AUX + S"
-    ],
-    examples:[
-      "I love jazz. – So do I.",
-      "I didn’t enjoy the film. – Neither did they."
-    ],
-    exercises:[]
-  },
-  {
-    id:27,
-    title:"Emphatic what- and all- clauses",
-    level:"Advanced",
-    explanation:"We can focus on a whole idea using what- and all- clauses: What I need is…, All I want is….",
-    ruleRu:"What / all-клаузы подчёркивают идею: What I need is time. All I want is to rest.",
-    formulas:[
-      "What + clause + is + N / to V",
-      "All + clause + is + N / to V"
-    ],
-    examples:[
-      "What matters most is your health.",
-      "All I want is to relax."
-    ],
-    exercises:[]
-  },
-  {
-    id:28,
-    title:"Concessive clauses (even if, whether or not)",
-    level:"Advanced",
-    explanation:"Concessive clauses show that something happens despite a condition: even if, whether or not, no matter what/where/when.",
-    ruleRu:"Уступительные придаточные: even if, whether or not, no matter what/where/when – действие произойдёт несмотря ни на что.",
-    formulas:[
-      "Even if + clause, ...",
-      "No matter + wh-word + clause"
-    ],
-    examples:[
-      "Even if it rains, we will go.",
-      "No matter what you say, I’ll try."
-    ],
-    exercises:[]
-  },
-  {
-    id:29,
-    title:"Linking devices in essays",
-    level:"Advanced",
-    explanation:"We use formal linking devices to organise essays: firstly, moreover, on the other hand, in conclusion.",
-    ruleRu:"Формальные связки для эссе: firstly, secondly, moreover, however, on the one hand / on the other hand, in conclusion.",
-    formulas:[
-      "Firstly / Secondly, ...",
-      "On the one hand, ... On the other hand, ..."
-    ],
-    examples:[
-      "Firstly, the government should invest more in education.",
-      "On the one hand, cars are convenient; on the other hand, they cause pollution."
-    ],
-    exercises:[]
-  },
-  {
-    id:30,
-    title:"Formal vs informal style",
-    level:"Advanced",
-    explanation:"Advanced learners should choose formal or informal style depending on context: contractions, phrasal verbs, vocabulary and structures.",
-    ruleRu:"Формальный стиль (no contractions, более сложные структуры) и неформальный (сокращения, фразовые глаголы) зависят от ситуации.",
-    formulas:[
-      "Formal: children → offspring, buy → purchase",
-      "Informal: kids, pick up, get"
-    ],
-    examples:[
-      "The results indicate a significant increase in sales. (formal)",
-      "The results show a big jump in sales. (informal)"
-    ],
-    exercises:[]
-  }
+
+/* ============================================================
+   6) ELLIPSIS & SUBSTITUTION
+============================================================ */
+{
+  id:6,
+  title:"Ellipsis & substitution",
+  level:"Advanced",
+  explanation:
+    "Ellipsis and substitution help avoid repetition by removing repeated words or replacing them with shorter forms.",
+  ruleRu:
+    "Ellipsis — пропуск слов; substitution — замена слов на do/one/so и т.д., чтобы избежать повторов.",
+  formulas:[
+    "I think so / I hope so",
+    "I believe so / I suppose so",
+    "— Want to come? — I might.",
+    "— Need help? — I do.",
+    "— Which dress? — The red one."
+  ],
+  examples:[
+    "I think so.",
+    "He said he would come, and he did."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"— Will he come? — Yes, he ___.",
+          options:["will","will come"],
+          correct:0
+        },
+        {
+          text:"— Do you like it? — Yes, I ___.",
+          options:["do","like it"],
+          correct:0
+        },
+        {
+          text:"— Need help? — I ___.",
+          options:["do","need help"],
+          correct:0
+        },
+        {
+          text:"— Are they joining? — They might ___.",
+          options:["might","might join"],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"— Will he call? — No, he ___.",
+          options:["won’t","won’t call"],
+          correct:0
+        },
+        {
+          text:"— Do they agree? — No, they ___.",
+          options:["don’t","don’t agree"],
+          correct:0
+        },
+        {
+          text:"— Should he try? — No, he ___.",
+          options:["shouldn’t","shouldn’t try"],
+          correct:0
+        },
+        {
+          text:"— Will she come? — I don’t think ___.",
+          options:["so","not"],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Which dress do you want?",
+          options:["The red one.","The red."],
+          correct:0
+        },
+        {
+          text:"Do you think he will help?",
+          options:["I hope so.","I hope yes."],
+          correct:0
+        },
+        {
+          text:"Will they continue?",
+          options:["I think so.","I think yes."],
+          correct:0
+        },
+        {
+          text:"Does he like pizza?",
+          options:["I guess so.","I guess yes."],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Choose correct ellipsis.",
+          options:[
+            "I might.",
+            "I might do it."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct substitution.",
+          options:[
+            "The blue one.",
+            "The blue."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct form.",
+          options:[
+            "I hope so.",
+            "I hope it."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct form.",
+          options:[
+            "He said he would come, and he did.",
+            "He said he would come, and he did come."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"Он сказал, что придёт, и он пришёл.",
+          options:[
+            "He said he would come, and he did.",
+            "He said he would come, and he came."
+          ],
+          correct:0
+        },
+        {
+          text:"Я думаю, да.",
+          options:[
+            "I think so.",
+            "I think yes."
+          ],
+          correct:0
+        },
+        {
+          text:"Красное.",
+          options:[
+            "The red one.",
+            "The red."
+          ],
+          correct:0
+        },
+        {
+          text:"Я надеюсь, что да.",
+          options:[
+            "I hope so.",
+            "I hope yes."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Я думаю, что да.",
+          options:["I think so.","I think yes."],
+          correct:0
+        },
+        {
+          text:"Ему нужна помощь? — Да.",
+          options:["He does.","He needs."],
+          correct:0
+        },
+        {
+          text:"Ты придёшь? — Возможно.",
+          options:["I might.","Might I."],
+          correct:0
+        },
+        {
+          text:"Какое платье ты хочешь? — Красное.",
+          options:["The red one.","The red."],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+/* ============================================================
+   9) EMPHATIC STRUCTURES (DO / INDEED / SUCH / SO / VERY)
+============================================================ */
+{
+  id:9,
+  title:"Emphatic structures (do / indeed / such / so / very)",
+  level:"Advanced",
+  explanation:
+    "We use emphatic structures to show strong emotion or emphasis: do/does/did + verb, indeed, such/s0/very.",
+  ruleRu:
+    "Усилительные конструкции используются для выражения эмоции или акцента: do/does/did, indeed, such, so, very.",
+  formulas:[
+    "do/does/did + base verb",
+    "He did say it.",
+    "It was indeed surprising.",
+    "such + (a) + adj + noun",
+    "so + adj"
+  ],
+  examples:[
+    "He did tell you the truth.",
+    "It was such a beautiful day.",
+    "She is so smart!"
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Он действительно сказал правду.",
+          options:[
+            "He did tell the truth.",
+            "He told the truth did."
+          ],
+          correct:0
+        },
+        {
+          text:"Это был такой потрясающий концерт.",
+          options:[
+            "It was such an amazing concert.",
+            "It was so an amazing concert."
+          ],
+          correct:0
+        },
+        {
+          text:"Она такая добрая!",
+          options:[
+            "She is so kind!",
+            "She is such kind!"
+          ],
+          correct:0
+        },
+        {
+          text:"Он действительно старался.",
+          options:[
+            "He did try.",
+            "He tried did."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Он действительно не хотел это делать.",
+          options:[
+            "He really didn’t want to do it.",
+            "He didn’t really want to do it."
+          ],
+          correct:1
+        },
+        {
+          text:"Это не было таким большим успехом.",
+          options:[
+            "It wasn’t such a big success.",
+            "It wasn’t so a big success."
+          ],
+          correct:0
+        },
+        {
+          text:"Это было не так сложно.",
+          options:[
+            "It wasn’t so difficult.",
+            "It wasn’t such difficult."
+          ],
+          correct:0
+        },
+        {
+          text:"Она не такая ответственная.",
+          options:[
+            "She isn’t very responsible.",
+            "She isn’t so a responsible."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как задать вопрос с 'did' для усиления?",
+          options:[
+            "Did he really say that?",
+            "He did really say that?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Она прям ОЧЕНЬ занята?",
+          options:[
+            "Is she very busy?",
+            "Is she such busy?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Он действительно пришёл?",
+          options:[
+            "Did he really come?",
+            "He did come?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Это было ТАК весело?",
+          options:[
+            "Was it so fun?",
+            "Was it such fun?"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильное усиление:",
+          options:[
+            "He did explain everything.",
+            "He explained did everything."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "It was such a long day.",
+            "It was so a long day."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "She is very talented.",
+            "She is such talented."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The view was so beautiful.",
+            "The view was such beautiful."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(such) Это был потрясающий успех.",
+          options:[
+            "It was such a great success.",
+            "It was so a great success."
+          ],
+          correct:0
+        },
+        {
+          text:"(so) Она такая милая.",
+          options:[
+            "She is so sweet.",
+            "She is such sweet."
+          ],
+          correct:0
+        },
+        {
+          text:"(did) Он действительно видел это.",
+          options:[
+            "He did see it.",
+            "He saw it did."
+          ],
+          correct:0
+        },
+        {
+          text:"(very) Он очень умный.",
+          options:[
+            "He is very smart.",
+            "He is such smart."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Она такая красивая!",
+          options:[
+            "She is so beautiful!",
+            "She is such beautiful!"
+          ],
+          correct:0
+        },
+        {
+          text:"Это было таким удивительным моментом.",
+          options:[
+            "It was such an amazing moment.",
+            "It was so an amazing moment."
+          ],
+          correct:0
+        },
+        {
+          text:"Он действительно пытался.",
+          options:[
+            "He did try.",
+            "He tried did."
+          ],
+          correct:0
+        },
+        {
+          text:"Она очень ответственная.",
+          options:[
+            "She is very responsible.",
+            "She is so responsible person."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+
+/* ============================================================
+   10) REDUCED RELATIVE CLAUSES
+============================================================ */
+{
+  id:10,
+  title:"Reduced relative clauses",
+  level:"Advanced",
+  explanation:
+    "Reduced relative clauses allow us to shorten clauses by removing who/which/that and using V-ing or V3.",
+  ruleRu:
+    "Сокращённые относительные придаточные: вместо who/that/which + verb → используем V-ing или V3.",
+  formulas:[
+    "people who live → people living",
+    "the book that was written → the book written",
+    "students who study → students studying"
+  ],
+  examples:[
+    "The man standing over there is my uncle.",
+    "The book written in 1990 is a bestseller."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"The girl who sings is my sister.",
+          options:[
+            "The girl singing is my sister.",
+            "The girl sung is my sister."
+          ],
+          correct:0
+        },
+        {
+          text:"The book that was published last year is popular.",
+          options:[
+            "The book published last year is popular.",
+            "The book publishing last year is popular."
+          ],
+          correct:0
+        },
+        {
+          text:"The students who study hard succeed.",
+          options:[
+            "The students studying hard succeed.",
+            "The students studied hard succeed."
+          ],
+          correct:0
+        },
+        {
+          text:"The car that was repaired yesterday works great.",
+          options:[
+            "The car repaired yesterday works great.",
+            "The car repairing yesterday works great."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"The people who don’t know the rules get confused.",
+          options:[
+            "The people not knowing the rules get confused.",
+            "The people no knowing the rules get confused."
+          ],
+          correct:0
+        },
+        {
+          text:"The books that were not returned are marked.",
+          options:[
+            "The books not returned are marked.",
+            "The books no returned are marked."
+          ],
+          correct:0
+        },
+        {
+          text:"The children who aren’t listening are noisy.",
+          options:[
+            "The children not listening are noisy.",
+            "The children no listening are noisy."
+          ],
+          correct:0
+        },
+        {
+          text:"The devices that weren’t tested cannot be used.",
+          options:[
+            "The devices not tested cannot be used.",
+            "The devices no tested cannot be used."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как сократить: The man who is standing near the door?",
+          options:[
+            "The man standing near the door",
+            "The man stood near the door"
+          ],
+          correct:0
+        },
+        {
+          text:"Как сократить: The cake that was made yesterday?",
+          options:[
+            "The cake made yesterday",
+            "The cake making yesterday"
+          ],
+          correct:0
+        },
+        {
+          text:"Как сократить: The students who are working now?",
+          options:[
+            "The students working now",
+            "The students worked now"
+          ],
+          correct:0
+        },
+        {
+          text:"Как сократить: The film that was released in 2020?",
+          options:[
+            "The film released in 2020",
+            "The film releasing in 2020"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Choose correct reduced clause:",
+          options:[
+            "People living in cities often rush.",
+            "People lived in cities often rush."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct reduced clause:",
+          options:[
+            "Cars made in Japan are reliable.",
+            "Cars making in Japan are reliable."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct reduced clause:",
+          options:[
+            "Children playing outside are happy.",
+            "Children played outside are happy."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct reduced clause:",
+          options:[
+            "Books written long ago are still loved.",
+            "Books writing long ago are still loved."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"Ученики, которые готовятся, обычно успешны.",
+          options:[
+            "Students preparing are usually successful.",
+            "Students prepared are usually successful."
+          ],
+          correct:0
+        },
+        {
+          text:"Книги, написанные в прошлом веке, всё ещё читают.",
+          options:[
+            "Books written last century are still read.",
+            "Books writing last century are still read."
+          ],
+          correct:0
+        },
+        {
+          text:"Люди, живущие в горах, привыкли к холоду.",
+          options:[
+            "People living in the mountains are used to cold.",
+            "People lived in the mountains are used to cold."
+          ],
+          correct:0
+        },
+        {
+          text:"Здания, построенные недавно, выглядят современно.",
+          options:[
+            "Buildings built recently look modern.",
+            "Buildings building recently look modern."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Девочка, поющая на сцене, — моя сестра.",
+          options:[
+            "The girl singing on stage is my sister.",
+            "The girl sung on stage is my sister."
+          ],
+          correct:0
+        },
+        {
+          text:"Машина, отремонтированная вчера, стоит снаружи.",
+          options:[
+            "The car repaired yesterday is outside.",
+            "The car repairing yesterday is outside."
+          ],
+          correct:0
+        },
+        {
+          text:"Фильмы, снятые давно, могут быть классикой.",
+          options:[
+            "Films made long ago can be classics.",
+            "Films making long ago can be classics."
+          ],
+          correct:0
+        },
+        {
+          text:"Люди, живущие здесь, очень дружелюбны.",
+          options:[
+            "People living here are very friendly.",
+            "People lived here are very friendly."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+/* ============================================================
+   9) EMPHATIC STRUCTURES (DO / INDEED / SUCH / SO / VERY)
+============================================================ */
+{
+  id:9,
+  title:"Emphatic structures (do / indeed / such / so / very)",
+  level:"Advanced",
+  explanation:
+    "We use emphatic structures to show strong emotion or emphasis: do/does/did + verb, indeed, such/s0/very.",
+  ruleRu:
+    "Усилительные конструкции используются для выражения эмоции или акцента: do/does/did, indeed, such, so, very.",
+  formulas:[
+    "do/does/did + base verb",
+    "He did say it.",
+    "It was indeed surprising.",
+    "such + (a) + adj + noun",
+    "so + adj"
+  ],
+  examples:[
+    "He did tell you the truth.",
+    "It was such a beautiful day.",
+    "She is so smart!"
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Он действительно сказал правду.",
+          options:[
+            "He did tell the truth.",
+            "He told the truth did."
+          ],
+          correct:0
+        },
+        {
+          text:"Это был такой потрясающий концерт.",
+          options:[
+            "It was such an amazing concert.",
+            "It was so an amazing concert."
+          ],
+          correct:0
+        },
+        {
+          text:"Она такая добрая!",
+          options:[
+            "She is so kind!",
+            "She is such kind!"
+          ],
+          correct:0
+        },
+        {
+          text:"Он действительно старался.",
+          options:[
+            "He did try.",
+            "He tried did."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Он действительно не хотел это делать.",
+          options:[
+            "He really didn’t want to do it.",
+            "He didn’t really want to do it."
+          ],
+          correct:1
+        },
+        {
+          text:"Это не было таким большим успехом.",
+          options:[
+            "It wasn’t such a big success.",
+            "It wasn’t so a big success."
+          ],
+          correct:0
+        },
+        {
+          text:"Это было не так сложно.",
+          options:[
+            "It wasn’t so difficult.",
+            "It wasn’t such difficult."
+          ],
+          correct:0
+        },
+        {
+          text:"Она не такая ответственная.",
+          options:[
+            "She isn’t very responsible.",
+            "She isn’t so a responsible."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как задать вопрос с 'did' для усиления?",
+          options:[
+            "Did he really say that?",
+            "He did really say that?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Она прям ОЧЕНЬ занята?",
+          options:[
+            "Is she very busy?",
+            "Is she such busy?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Он действительно пришёл?",
+          options:[
+            "Did he really come?",
+            "He did come?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Это было ТАК весело?",
+          options:[
+            "Was it so fun?",
+            "Was it such fun?"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильное усиление:",
+          options:[
+            "He did explain everything.",
+            "He explained did everything."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "It was such a long day.",
+            "It was so a long day."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "She is very talented.",
+            "She is such talented."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The view was so beautiful.",
+            "The view was such beautiful."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(such) Это был потрясающий успех.",
+          options:[
+            "It was such a great success.",
+            "It was so a great success."
+          ],
+          correct:0
+        },
+        {
+          text:"(so) Она такая милая.",
+          options:[
+            "She is so sweet.",
+            "She is such sweet."
+          ],
+          correct:0
+        },
+        {
+          text:"(did) Он действительно видел это.",
+          options:[
+            "He did see it.",
+            "He saw it did."
+          ],
+          correct:0
+        },
+        {
+          text:"(very) Он очень умный.",
+          options:[
+            "He is very smart.",
+            "He is such smart."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Она такая красивая!",
+          options:[
+            "She is so beautiful!",
+            "She is such beautiful!"
+          ],
+          correct:0
+        },
+        {
+          text:"Это было таким удивительным моментом.",
+          options:[
+            "It was such an amazing moment.",
+            "It was so an amazing moment."
+          ],
+          correct:0
+        },
+        {
+          text:"Он действительно пытался.",
+          options:[
+            "He did try.",
+            "He tried did."
+          ],
+          correct:0
+        },
+        {
+          text:"Она очень ответственная.",
+          options:[
+            "She is very responsible.",
+            "She is so responsible person."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+
+/* ============================================================
+   10) REDUCED RELATIVE CLAUSES
+============================================================ */
+{
+  id:10,
+  title:"Reduced relative clauses",
+  level:"Advanced",
+  explanation:
+    "Reduced relative clauses allow us to shorten clauses by removing who/which/that and using V-ing or V3.",
+  ruleRu:
+    "Сокращённые относительные придаточные: вместо who/that/which + verb → используем V-ing или V3.",
+  formulas:[
+    "people who live → people living",
+    "the book that was written → the book written",
+    "students who study → students studying"
+  ],
+  examples:[
+    "The man standing over there is my uncle.",
+    "The book written in 1990 is a bestseller."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"The girl who sings is my sister.",
+          options:[
+            "The girl singing is my sister.",
+            "The girl sung is my sister."
+          ],
+          correct:0
+        },
+        {
+          text:"The book that was published last year is popular.",
+          options:[
+            "The book published last year is popular.",
+            "The book publishing last year is popular."
+          ],
+          correct:0
+        },
+        {
+          text:"The students who study hard succeed.",
+          options:[
+            "The students studying hard succeed.",
+            "The students studied hard succeed."
+          ],
+          correct:0
+        },
+        {
+          text:"The car that was repaired yesterday works great.",
+          options:[
+            "The car repaired yesterday works great.",
+            "The car repairing yesterday works great."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"The people who don’t know the rules get confused.",
+          options:[
+            "The people not knowing the rules get confused.",
+            "The people no knowing the rules get confused."
+          ],
+          correct:0
+        },
+        {
+          text:"The books that were not returned are marked.",
+          options:[
+            "The books not returned are marked.",
+            "The books no returned are marked."
+          ],
+          correct:0
+        },
+        {
+          text:"The children who aren’t listening are noisy.",
+          options:[
+            "The children not listening are noisy.",
+            "The children no listening are noisy."
+          ],
+          correct:0
+        },
+        {
+          text:"The devices that weren’t tested cannot be used.",
+          options:[
+            "The devices not tested cannot be used.",
+            "The devices no tested cannot be used."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как сократить: The man who is standing near the door?",
+          options:[
+            "The man standing near the door",
+            "The man stood near the door"
+          ],
+          correct:0
+        },
+        {
+          text:"Как сократить: The cake that was made yesterday?",
+          options:[
+            "The cake made yesterday",
+            "The cake making yesterday"
+          ],
+          correct:0
+        },
+        {
+          text:"Как сократить: The students who are working now?",
+          options:[
+            "The students working now",
+            "The students worked now"
+          ],
+          correct:0
+        },
+        {
+          text:"Как сократить: The film that was released in 2020?",
+          options:[
+            "The film released in 2020",
+            "The film releasing in 2020"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Choose correct reduced clause:",
+          options:[
+            "People living in cities often rush.",
+            "People lived in cities often rush."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct reduced clause:",
+          options:[
+            "Cars made in Japan are reliable.",
+            "Cars making in Japan are reliable."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct reduced clause:",
+          options:[
+            "Children playing outside are happy.",
+            "Children played outside are happy."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct reduced clause:",
+          options:[
+            "Books written long ago are still loved.",
+            "Books writing long ago are still loved."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"Ученики, которые готовятся, обычно успешны.",
+          options:[
+            "Students preparing are usually successful.",
+            "Students prepared are usually successful."
+          ],
+          correct:0
+        },
+        {
+          text:"Книги, написанные в прошлом веке, всё ещё читают.",
+          options:[
+            "Books written last century are still read.",
+            "Books writing last century are still read."
+          ],
+          correct:0
+        },
+        {
+          text:"Люди, живущие в горах, привыкли к холоду.",
+          options:[
+            "People living in the mountains are used to cold.",
+            "People lived in the mountains are used to cold."
+          ],
+          correct:0
+        },
+        {
+          text:"Здания, построенные недавно, выглядят современно.",
+          options:[
+            "Buildings built recently look modern.",
+            "Buildings building recently look modern."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Девочка, поющая на сцене, — моя сестра.",
+          options:[
+            "The girl singing on stage is my sister.",
+            "The girl sung on stage is my sister."
+          ],
+          correct:0
+        },
+        {
+          text:"Машина, отремонтированная вчера, стоит снаружи.",
+          options:[
+            "The car repaired yesterday is outside.",
+            "The car repairing yesterday is outside."
+          ],
+          correct:0
+        },
+        {
+          text:"Фильмы, снятые давно, могут быть классикой.",
+          options:[
+            "Films made long ago can be classics.",
+            "Films making long ago can be classics."
+          ],
+          correct:0
+        },
+        {
+          text:"Люди, живущие здесь, очень дружелюбны.",
+          options:[
+            "People living here are very friendly.",
+            "People lived here are very friendly."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+/* ============================================================
+   11) NOMINALISATION (VERB/ADJ → NOUN)
+============================================================ */
+{
+  id:11,
+  title:"Nominalisation (turning verbs/adjectives into nouns)",
+  level:"Advanced",
+  explanation:
+    "Nominalisation means turning a verb or adjective into a noun to make writing more formal.",
+  ruleRu:
+    "Номинация — превращение глаголов и прилагательных в существительные, чтобы сделать речь формальной.",
+  formulas:[
+    "decide → decision",
+    "improve → improvement",
+    "strong → strength",
+    "accurate → accuracy"
+  ],
+  examples:[
+    "We decided to change the plan → The decision to change the plan...",
+    "The system improved → The improvement of the system..."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"We decided to cancel the meeting.",
+          options:[
+            "The decision to cancel the meeting...",
+            "The decide to cancel the meeting..."
+          ],
+          correct:0
+        },
+        {
+          text:"The system improved last year.",
+          options:[
+            "The improvement of the system last year...",
+            "The improve of the system last year..."
+          ],
+          correct:0
+        },
+        {
+          text:"They analysed the data.",
+          options:[
+            "The analysis of the data...",
+            "The analyse of the data..."
+          ],
+          correct:0
+        },
+        {
+          text:"She arrived late.",
+          options:[
+            "Her late arrival...",
+            "Her lateness arrive..."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"He didn’t approve the project.",
+          options:[
+            "There was no approval of the project.",
+            "There was no approve of the project."
+          ],
+          correct:0
+        },
+        {
+          text:"They didn’t agree.",
+          options:[
+            "There was no agreement.",
+            "There was no agreeing."
+          ],
+          correct:0
+        },
+        {
+          text:"The report wasn’t accurate.",
+          options:[
+            "The report lacked accuracy.",
+            "The report lacked accurate."
+          ],
+          correct:0
+        },
+        {
+          text:"The plan wasn’t effective.",
+          options:[
+            "The plan lacked effectiveness.",
+            "The plan lacked effective."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Choose correct nominalisation:",
+          options:[
+            "The improvement of education is necessary.",
+            "The improve of education is necessary."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct nominalisation:",
+          options:[
+            "Her behaviour surprised everyone.",
+            "Her behaving surprised everyone."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct nominalisation:",
+          options:[
+            "The discovery changed everything.",
+            "The discover changed everything."
+          ],
+          correct:0
+        },
+        {
+          text:"Choose correct nominalisation:",
+          options:[
+            "The development of technology is rapid.",
+            "The develop of technology is rapid."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The reduction of costs is important.",
+            "The reducing of costs is important."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Her refusal surprised me.",
+            "Her refuse surprised me."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The invitation was unexpected.",
+            "The invite was unexpected."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "His explanation was clear.",
+            "His explaining was clear."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(decide) Мы решили начать.",
+          options:[
+            "The decision to start...",
+            "The decide to start..."
+          ],
+          correct:0
+        },
+        {
+          text:"(improve) Система улучшилась.",
+          options:[
+            "The improvement of the system...",
+            "The improve of the system..."
+          ],
+          correct:0
+        },
+        {
+          text:"(strong) Он силён.",
+          options:[
+            "He has great strength.",
+            "He has great strong."
+          ],
+          correct:0
+        },
+        {
+          text:"(accurate) Его отчёт точный.",
+          options:[
+            "His report has accuracy.",
+            "His report has accurate."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Это было важное решение.",
+          options:[
+            "It was an important decision.",
+            "It was an important decide."
+          ],
+          correct:0
+        },
+        {
+          text:"Нужно улучшение качества.",
+          options:[
+            "There is a need for quality improvement.",
+            "There is a need for quality improve."
+          ],
+          correct:0
+        },
+        {
+          text:"Требуется точность.",
+          options:[
+            "Accuracy is required.",
+            "Accurate is required."
+          ],
+          correct:0
+        },
+        {
+          text:"Система нуждается в развитии.",
+          options:[
+            "The system needs development.",
+            "The system needs develop."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+
+/* ============================================================
+   12) ELLIPSIS & SUBSTITUTION
+============================================================ */
+{
+  id:12,
+  title:"Ellipsis & substitution (so/neither, do/does/did, one/ones)",
+  level:"Advanced",
+  explanation:
+    "Ellipsis removes repeated words; substitution replaces repeated words with do/so/one.",
+  ruleRu:
+    "Эллипсис — пропуск повторяющихся слов. Замена — использование do/so/one для избежания повторов.",
+  formulas:[
+    "I like apples → I do (too).",
+    "She isn’t tired → Neither is he.",
+    "I need a pen. Do you have one?"
+  ],
+  examples:[
+    "She loves music, and so do I.",
+    "I haven’t finished, but he has.",
+    "Take a big one."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Он любит спорт. Я тоже.",
+          options:[
+            "He likes sport, and so do I.",
+            "He likes sport, and I do so."
+          ],
+          correct:0
+        },
+        {
+          text:"Она ходит в театр. Мы тоже.",
+          options:[
+            "She goes to the theatre, and so do we.",
+            "She goes to the theatre, and we do so."
+          ],
+          correct:0
+        },
+        {
+          text:"Я хочу поехать. Он тоже.",
+          options:[
+            "I want to go, and so does he.",
+            "I want to go, and he does so."
+          ],
+          correct:0
+        },
+        {
+          text:"Она может помочь. Я тоже.",
+          options:[
+            "She can help, and so can I.",
+            "She can help, and I can so."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Я не устал. Он тоже нет.",
+          options:[
+            "I’m not tired, and neither is he.",
+            "I’m not tired, and he is neither."
+          ],
+          correct:0
+        },
+        {
+          text:"Она не видела фильм. Мы тоже нет.",
+          options:[
+            "She hasn’t seen the film, and neither have we.",
+            "She hasn’t seen the film, and we have neither."
+          ],
+          correct:0
+        },
+        {
+          text:"Он не пойдёт. Я тоже нет.",
+          options:[
+            "He won’t go, and neither will I.",
+            "He won’t go, and I will neither."
+          ],
+          correct:0
+        },
+        {
+          text:"Он не согласен. Мы тоже.",
+          options:[
+            "He doesn’t agree, and neither do we.",
+            "He doesn’t agree, and we do neither."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как правильно:",
+          options:[
+            "So do I.",
+            "I do so."
+          ],
+          correct:0
+        },
+        {
+          text:"Как правильно:",
+          options:[
+            "Neither am I.",
+            "I am neither."
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: У тебя есть такой?",
+          options:[
+            "Do you have one?",
+            "Do you have so?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Ты тоже хочешь?",
+          options:[
+            "Do you want to, too?",
+            "Do you want so?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "He likes it, and so do they.",
+            "He likes it, and do so they."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "She isn’t ready, and neither are we.",
+            "She isn’t ready, and we neither are."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "I want the blue one.",
+            "I want the blue."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "He bought two big ones.",
+            "He bought two big."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"Я устал. Она тоже.",
+          options:[
+            "I’m tired, and so is she.",
+            "I’m tired, and she is so."
+          ],
+          correct:0
+        },
+        {
+          text:"Я не согласен. Они тоже нет.",
+          options:[
+            "I don’t agree, and neither do they.",
+            "I don’t agree, and they do neither."
+          ],
+          correct:0
+        },
+        {
+          text:"Мне нравится эта. Возьми ту.",
+          options:[
+            "I like this one. Take that one.",
+            "I like this. Take that."
+          ],
+          correct:0
+        },
+        {
+          text:"Он закончил. Я тоже.",
+          options:[
+            "He has finished, and so have I.",
+            "He has finished, and I have so."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Мне нравится этот цвет. Ей тоже.",
+          options:[
+            "I like this colour, and so does she.",
+            "I like this colour, and she does so."
+          ],
+          correct:0
+        },
+        {
+          text:"Он не ходит в зал. Мы тоже нет.",
+          options:[
+            "He doesn’t go to the gym, and neither do we.",
+            "He doesn’t go to the gym, and we do neither."
+          ],
+          correct:0
+        },
+        {
+          text:"Мне нужен новый. У тебя есть такой?",
+          options:[
+            "I need a new one. Do you have one?",
+            "I need a new one. Do you have so?"
+          ],
+          correct:0
+        },
+        {
+          text:"Она может помочь. Я тоже.",
+          options:[
+            "She can help, and so can I.",
+            "She can help, and I can so."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+
+/* ============================================================
+   13) FRONTING FOR EMPHASIS
+============================================================ */
+{
+  id:13,
+  title:"Fronting (moving phrases to the beginning for emphasis)",
+  level:"Advanced",
+  explanation:
+    "Fronting means moving a part of a sentence to the beginning to create emphasis.",
+  ruleRu:
+    "Фронтинг — вынос части предложения в начало для выделения.",
+  formulas:[
+    "Never have I seen...",
+    "In the corner sat a cat.",
+    "What he wanted was..."
+  ],
+  examples:[
+    "At the end of the road stood an old house.",
+    "What he needs is a rest."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Я никогда не видел такого.",
+          options:[
+            "Never have I seen such a thing.",
+            "I have never seen such a thing never."
+          ],
+          correct:0
+        },
+        {
+          text:"В углу стояла кошка.",
+          options:[
+            "In the corner sat a cat.",
+            "A cat sat in the corner."
+          ],
+          correct:0
+        },
+        {
+          text:"Он действительно пытался.",
+          options:[
+            "He did try.",
+            "Did he try."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что мне нужно, — это отдых.",
+          options:[
+            "What I need is a rest.",
+            "A rest is what I need is."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Я не часто слышу такую историю.",
+          options:[
+            "Rarely do I hear such a story.",
+            "I rarely hear such a story do."
+          ],
+          correct:0
+        },
+        {
+          text:"Он не понимал ситуацию.",
+          options:[
+            "Little did he understand the situation.",
+            "He little understood the situation did."
+          ],
+          correct:0
+        },
+        {
+          text:"Она никогда не была там.",
+          options:[
+            "Never has she been there.",
+            "She has never been there never."
+          ],
+          correct:0
+        },
+        {
+          text:"Они едва начали.",
+          options:[
+            "Hardly had they started.",
+            "They had hardly started had."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как правильно?",
+          options:[
+            "Only then did I understand.",
+            "Only then I did understand."
+          ],
+          correct:0
+        },
+        {
+          text:"Как правильно?",
+          options:[
+            "Seldom do we see this.",
+            "Seldom we do see this."
+          ],
+          correct:0
+        },
+        {
+          text:"Как правильно?",
+          options:[
+            "What he wants is freedom.",
+            "He wants what is freedom."
+          ],
+          correct:0
+        },
+        {
+          text:"Как правильно?",
+          options:[
+            "Never have I heard this word.",
+            "I never have heard this word have."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "Down the hill rolled the ball.",
+            "Rolled down the hill the ball."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "Into the room walked the teacher.",
+            "Walked into the room the teacher."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "Up the mountain climbed the hikers.",
+            "Climbed up the mountain the hikers."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "What he needs is a break.",
+            "A break what he needs is."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(Fronting) На берегу стояла лодка.",
+          options:[
+            "On the shore stood a boat.",
+            "A boat stood on the shore stood."
+          ],
+          correct:0
+        },
+        {
+          text:"(Fronting) То, что она хочет, — это мир.",
+          options:[
+            "What she wants is peace.",
+            "Peace is what she wants is."
+          ],
+          correct:0
+        },
+        {
+          text:"(Inversion) Никогда я не был так зол.",
+          options:[
+            "Never have I been so angry.",
+            "I have never been so angry never."
+          ],
+          correct:0
+        },
+        {
+          text:"(Fronting) В тени шёл мужчина.",
+          options:[
+            "In the shadow walked a man.",
+            "A man walked in the shadow walked."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Никогда я не слышал такой лжи.",
+          options:[
+            "Never have I heard such lies.",
+            "I never heard such lies never."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что они хотят, — это уважение.",
+          options:[
+            "What they want is respect.",
+            "Respect is what they want is."
+          ],
+          correct:0
+        },
+        {
+          text:"На крыше стояла кошка.",
+          options:[
+            "On the roof sat a cat.",
+            "A cat sat on the roof sat."
+          ],
+          correct:0
+        },
+        {
+          text:"Редко мы видим такое.",
+          options:[
+            "Rarely do we see this.",
+            "We rarely see this do."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+/* ============================================================
+   14) CAUSATIVE: HAVE / GET SOMETHING DONE
+============================================================ */
+{
+  id:14,
+  title:"Causative: have / get something done",
+  level:"Advanced",
+  explanation:
+    "We use have/get something done when someone does a service for us, or something happens to us.",
+  ruleRu:
+    "Causative have/get: have/get + object + V3. Используем, когда нам оказывают услугу или что-то происходит с нами.",
+  formulas:[
+    "have + object + V3",
+    "get + object + V3"
+  ],
+  examples:[
+    "I had my hair cut yesterday.",
+    "We got the car repaired last week."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Я починил машину (мне её починили).",
+          options:[
+            "I had my car repaired.",
+            "I repaired my car myself had."
+          ],
+          correct:0
+        },
+        {
+          text:"Он сделал причёску в салоне.",
+          options:[
+            "He had his hair cut.",
+            "He got his hair cutted."
+          ],
+          correct:0
+        },
+        {
+          text:"Мы установили новый интернет (нам установили).",
+          options:[
+            "We had a new internet connection installed.",
+            "We installed a new internet connection had."
+          ],
+          correct:0
+        },
+        {
+          text:"Она перекрасила свою комнату (её перекрасили).",
+          options:[
+            "She got her room repainted.",
+            "She repainted her room got."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Он не починил телефон (ему его не починили).",
+          options:[
+            "He didn’t have his phone repaired.",
+            "He didn’t get repaired his phone."
+          ],
+          correct:0
+        },
+        {
+          text:"Мы не поставили окна (нам их не установили).",
+          options:[
+            "We didn’t get the windows replaced.",
+            "We didn’t get replaced the windows."
+          ],
+          correct:0
+        },
+        {
+          text:"Она ещё не сделала маникюр (ей ещё не сделали).",
+          options:[
+            "She hasn’t had her nails done yet.",
+            "She hasn’t got done her nails yet."
+          ],
+          correct:0
+        },
+        {
+          text:"Я не помыл машину (мне её не помыли).",
+          options:[
+            "I haven’t had my car washed.",
+            "I haven’t got washed my car."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Спроси: Тебе уже починили телефон?",
+          options:[
+            "Have you had your phone repaired yet?",
+            "Have you got repaired your phone yet?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Он сделал причёску вчера?",
+          options:[
+            "Did he have his hair cut yesterday?",
+            "Did he got his hair cut yesterday?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Вы уже заменили окна?",
+          options:[
+            "Have you got the windows replaced?",
+            "Have you got replaced the windows?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Ты скоро помоешь машину (тебе помоют)?",
+          options:[
+            "Are you going to have your car washed?",
+            "Are you going to get washed your car?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный порядок:",
+          options:[
+            "We had the house painted last month.",
+            "We had painted the house last month."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок:",
+          options:[
+            "She got her laptop fixed yesterday.",
+            "She got fixed her laptop yesterday."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок:",
+          options:[
+            "He had his teeth checked.",
+            "He had checked his teeth."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок:",
+          options:[
+            "They are getting their roof repaired.",
+            "They are getting repaired their roof."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(машина / помыли / вчера)",
+          options:[
+            "I had my car washed yesterday.",
+            "I got washed my car yesterday."
+          ],
+          correct:0
+        },
+        {
+          text:"(она / сделала / ногти / сегодня)",
+          options:[
+            "She has had her nails done today.",
+            "She has got done her nails today."
+          ],
+          correct:0
+        },
+        {
+          text:"(мы / установили / новую дверь)",
+          options:[
+            "We got a new door installed.",
+            "We got installed a new door."
+          ],
+          correct:0
+        },
+        {
+          text:"(он / проверил / глаза / у врача)",
+          options:[
+            "He had his eyes tested at the doctor’s.",
+            "He had tested his eyes at the doctor’s."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Я починил велосипед (мне его починили).",
+          options:[
+            "I had my bike repaired.",
+            "I repaired my bike had."
+          ],
+          correct:0
+        },
+        {
+          text:"Они сделали новые ключи (им сделали).",
+          options:[
+            "They got new keys made.",
+            "They got made new keys."
+          ],
+          correct:0
+        },
+        {
+          text:"Она регулярно проверяет зубы (ей их проверяют).",
+          options:[
+            "She regularly has her teeth checked.",
+            "She regularly has checked her teeth."
+          ],
+          correct:0
+        },
+        {
+          text:"Мы скоро заменим окна (нам их заменят).",
+          options:[
+            "We are going to have the windows replaced.",
+            "We are going to get replaced the windows."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+
+/* ============================================================
+   15) COMPLEX PASSIVE (modals, continuous, perfect)
+============================================================ */
+{
+  id:15,
+  title:"Complex passive (modals, continuous, perfect)",
+  level:"Advanced",
+  explanation:
+    "The passive can be used with modals, continuous and perfect forms: can be done, is being done, has been done, will have been done.",
+  ruleRu:
+    "Пассив сочетается с модальными и сложными временами: can be done, is being done, has been done, will have been done.",
+  formulas:[
+    "Modal + be + V3",
+    "be + being + V3",
+    "have/has been + V3",
+    "will have been + V3"
+  ],
+  examples:[
+    "The report must be finished today.",
+    "The room is being cleaned now.",
+    "The work has been done.",
+    "The project will have been completed by June."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"(modal) Они могут быть приглашены.",
+          options:[
+            "They can be invited.",
+            "They can invited."
+          ],
+          correct:0
+        },
+        {
+          text:"(continuous) Комната сейчас убирается.",
+          options:[
+            "The room is being cleaned now.",
+            "The room is cleaned now."
+          ],
+          correct:0
+        },
+        {
+          text:"(perfect) Работа уже сделана.",
+          options:[
+            "The work has already been done.",
+            "The work has already done."
+          ],
+          correct:0
+        },
+        {
+          text:"(future perfect) Проект будет завершён к пятнице.",
+          options:[
+            "The project will have been completed by Friday.",
+            "The project will have completed by Friday."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Отчёт ещё не был отправлен.",
+          options:[
+            "The report hasn’t been sent yet.",
+            "The report hasn’t sent yet."
+          ],
+          correct:0
+        },
+        {
+          text:"Задание не может быть завершено сегодня.",
+          options:[
+            "The task can’t be completed today.",
+            "The task can’t completed today."
+          ],
+          correct:0
+        },
+        {
+          text:"Документы ещё не проверяются.",
+          options:[
+            "The documents are not being checked yet.",
+            "The documents are not checked being yet."
+          ],
+          correct:0
+        },
+        {
+          text:"Книга не будет переведена вовремя.",
+          options:[
+            "The book will not be translated in time.",
+            "The book will not translated in time."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Спроси: Доклад уже был подготовлен?",
+          options:[
+            "Has the report been prepared yet?",
+            "Has the report prepared yet?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Сейчас задание проверяется?",
+          options:[
+            "Is the task being checked now?",
+            "Is the task checked now?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Проект может быть изменён?",
+          options:[
+            "Can the project be changed?",
+            "Can the project changed?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Книга будет переведена к июню?",
+          options:[
+            "Will the book have been translated by June?",
+            "Will the book have translated by June?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "The letters are being written now.",
+            "The letters being are written now."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "The results have been announced.",
+            "The results have announced."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "The room will be cleaned tomorrow.",
+            "The room will cleaned be tomorrow."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "The plan must be changed.",
+            "The plan must changed be."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(сейчас / дверь / красят)",
+          options:[
+            "The door is being painted now.",
+            "The door is painted now being."
+          ],
+          correct:0
+        },
+        {
+          text:"(уже / письмо / отправили)",
+          options:[
+            "The letter has already been sent.",
+            "The letter has already sent."
+          ],
+          correct:0
+        },
+        {
+          text:"(к вечеру / работа / будет закончена)",
+          options:[
+            "The work will have been finished by the evening.",
+            "The work will have finished by the evening."
+          ],
+          correct:0
+        },
+        {
+          text:"(это / нельзя / изменить)",
+          options:[
+            "It cannot be changed.",
+            "It cannot changed."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Сейчас документы проверяются.",
+          options:[
+            "The documents are being checked now.",
+            "The documents are checked now."
+          ],
+          correct:0
+        },
+        {
+          text:"Эта проблема должна быть решена.",
+          options:[
+            "This problem must be solved.",
+            "This problem must solved."
+          ],
+          correct:0
+        },
+        {
+          text:"Книга уже была переведена на английский.",
+          options:[
+            "The book has already been translated into English.",
+            "The book has already translated into English."
+          ],
+          correct:0
+        },
+        {
+          text:"К экзамену все задания будут проверены.",
+          options:[
+            "All the tasks will have been checked by the exam.",
+            "All the tasks will have checked by the exam."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+
+/* ============================================================
+   16) UNREAL PAST: as if / it’s time / would rather you did
+============================================================ */
+{
+  id:16,
+  title:"Unreal past (as if / it’s time / would rather you did)",
+  level:"Advanced",
+  explanation:
+    "We use past forms after as if/as though, it’s (high) time and would rather to talk about unreal or desired situations.",
+  ruleRu:
+    "После as if/as though, it’s (high) time и would rather используем прошедшее время для нереальных или желаемых ситуаций.",
+  formulas:[
+    "He talks as if he knew everything.",
+    "It’s time you went to bed.",
+    "I’d rather you didn’t do that."
+  ],
+  examples:[
+    "She looks as if she had seen a ghost.",
+    "It’s high time we started.",
+    "I’d rather you stayed here."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Он говорит так, будто всё знает.",
+          options:[
+            "He talks as if he knew everything.",
+            "He talks as if he knows everything."
+          ],
+          correct:0
+        },
+        {
+          text:"Пора нам начинать.",
+          options:[
+            "It’s time we started.",
+            "It’s time we start."
+          ],
+          correct:0
+        },
+        {
+          text:"Я бы предпочёл, чтобы ты остался дома.",
+          options:[
+            "I’d rather you stayed at home.",
+            "I’d rather you stay at home."
+          ],
+          correct:0
+        },
+        {
+          text:"Она ведёт себя так, будто она знаменитость.",
+          options:[
+            "She behaves as if she were a celebrity.",
+            "She behaves as if she is a celebrity."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Пора тебе перестать жаловаться.",
+          options:[
+            "It’s time you stopped complaining.",
+            "It’s time you stop complaining."
+          ],
+          correct:0
+        },
+        {
+          text:"Я бы предпочёл, чтобы ты не говорил об этом.",
+          options:[
+            "I’d rather you didn’t talk about it.",
+            "I’d rather you don’t talk about it."
+          ],
+          correct:0
+        },
+        {
+          text:"Он смотрит так, будто не верит нам.",
+          options:[
+            "He looks as if he didn’t believe us.",
+            "He looks as if he doesn’t believe us."
+          ],
+          correct:0
+        },
+        {
+          text:"Они ведут себя так, будто не слышали правила.",
+          options:[
+            "They act as if they hadn’t heard the rules.",
+            "They act as if they haven’t heard the rules."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Does he talk as if he knew everything?",
+            "Does he talk as if he knows everything for real?"
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Would you rather I stayed here?",
+            "Would you rather I stay here now?"
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Why does she behave as if she were the boss?",
+            "Why does she behave as if she was being the boss really?"
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Isn’t it time we went home?",
+            "Isn’t it time we go home?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "He speaks as if he knew the answer.",
+            "As if he knew the answer he speaks."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "It’s high time you started working.",
+            "It’s high time started you working."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "I’d rather you didn’t say anything.",
+            "I’d rather didn’t you say anything."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант.",
+          options:[
+            "They behave as if they owned the place.",
+            "They behave as if owned they the place."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(as if) Он выглядит так, будто он миллионер.",
+          options:[
+            "He looks as if he were a millionaire.",
+            "He looks as if he is a millionaire really."
+          ],
+          correct:0
+        },
+        {
+          text:"(it’s time) Пора детям спать.",
+          options:[
+            "It’s time the children went to bed.",
+            "It’s time the children go to bed."
+          ],
+          correct:0
+        },
+        {
+          text:"(would rather) Я бы предпочёл, чтобы вы пришли пораньше.",
+          options:[
+            "I’d rather you came earlier.",
+            "I’d rather you come earlier."
+          ],
+          correct:0
+        },
+        {
+          text:"(as if) Она говорит так, будто всё уже решила.",
+          options:[
+            "She speaks as if she had already decided everything.",
+            "She speaks as if she has already decided everything."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Он ведёт себя так, будто он самый умный.",
+          options:[
+            "He behaves as if he were the smartest.",
+            "He behaves as if he is the smartest."
+          ],
+          correct:0
+        },
+        {
+          text:"Пора нам серьёзно заняться учёбой.",
+          options:[
+            "It’s high time we took our studies seriously.",
+            "It’s high time we take our studies seriously."
+          ],
+          correct:0
+        },
+        {
+          text:"Я бы предпочёл, чтобы ты сейчас был дома.",
+          options:[
+            "I’d rather you were at home now.",
+            "I’d rather you are at home now."
+          ],
+          correct:0
+        },
+        {
+          text:"Она выглядит так, будто не спала всю ночь.",
+          options:[
+            "She looks as if she hadn’t slept all night.",
+            "She looks as if she hasn’t slept all night."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:17,
+  title:"Inversion (Negative adverbials)",
+  level:"Advanced",
+  explanation:
+    "We use inversion after negative or limiting adverbials (never, hardly, seldom, only then). The auxiliary verb comes before the subject.",
+  ruleRu:
+    "Инверсия после отрицательных/ограничивающих наречий: Never, Hardly, Seldom, Rarely, Only then. Помощник → подлежащее.",
+  formulas:[
+    "Never + have/has + subject + V3",
+    "Hardly had + subject + V3 + when",
+    "No sooner had + subject + V3 + than",
+    "Only then did + subject + V"
+  ],
+  examples:[
+    "Never have I seen such a view.",
+    "Hardly had he left when it started raining.",
+    "Only then did she understand."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Никогда я не видел такого.",
+          options:[
+            "Never have I seen such a thing.",
+            "Never I have seen such a thing."
+          ],
+          correct:0
+        },
+        {
+          text:"Едва он вошёл, начался дождь.",
+          options:[
+            "Hardly had he entered when it started raining.",
+            "Hardly he had entered when it started raining."
+          ],
+          correct:0
+        },
+        {
+          text:"Только тогда она поняла ошибку.",
+          options:[
+            "Only then did she understand the mistake.",
+            "Only then she understood the mistake."
+          ],
+          correct:0
+        },
+        {
+          text:"Редко я вижу такую красоту.",
+          options:[
+            "Rarely do I see such beauty.",
+            "Rarely I see such beauty."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Я никогда не был так удивлён.",
+          options:[
+            "Never have I been so surprised.",
+            "Never I have been so surprised."
+          ],
+          correct:0
+        },
+        {
+          text:"Редко он делает ошибки.",
+          options:[
+            "Seldom does he make mistakes.",
+            "Seldom he makes mistakes."
+          ],
+          correct:0
+        },
+        {
+          text:"Едва мы пришли, как всё закончилось.",
+          options:[
+            "Hardly had we arrived when it ended.",
+            "Hardly we had arrived when it ended."
+          ],
+          correct:0
+        },
+        {
+          text:"Только тогда я понял правду.",
+          options:[
+            "Only then did I understand the truth.",
+            "Only then I understood the truth."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить: Ты когда-нибудь видел такое?",
+          options:[
+            "Have you ever seen such a thing?",
+            "Ever have you seen such a thing?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Он редко приходит?",
+          options:[
+            "Does he seldom come?",
+            "Seldom does he comes?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Он только тогда понял?",
+          options:[
+            "Did he understand only then?",
+            "Only then did he understand?"
+          ],
+          correct:1
+        },
+        {
+          text:"Как спросить: Он едва ушёл?",
+          options:[
+            "Had he hardly left?",
+            "Hardly had he left?"
+          ],
+          correct:1
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный порядок:",
+          options:[
+            "No sooner had he arrived than it began.",
+            "No sooner he had arrived than it began."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок:",
+          options:[
+            "Only then did we see the problem.",
+            "Only then we saw the problem."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок:",
+          options:[
+            "Never have they understood the rule.",
+            "Never they have understood the rule."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок:",
+          options:[
+            "Hardly had I spoken when he interrupted.",
+            "Hardly I had spoken when he interrupted."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(никогда / я / не видел / такое)",
+          options:[
+            "Never have I seen such a thing.",
+            "Never I have seen such a thing."
+          ],
+          correct:0
+        },
+        {
+          text:"(едва / он / вышел / начался снег)",
+          options:[
+            "Hardly had he gone out when it started snowing.",
+            "Hardly he had gone out when it started snowing."
+          ],
+          correct:0
+        },
+        {
+          text:"(только тогда / он / понял)",
+          options:[
+            "Only then did he understand.",
+            "Only then he understood."
+          ],
+          correct:0
+        },
+        {
+          text:"(редко / я / ем сладкое)",
+          options:[
+            "Seldom do I eat sweets.",
+            "Seldom I eat sweets."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Едва мы начали, как свет выключили.",
+          options:[
+            "Hardly had we started when the lights went out.",
+            "Hardly we had started when the lights went out."
+          ],
+          correct:0
+        },
+        {
+          text:"Только тогда он понял свою ошибку.",
+          options:[
+            "Only then did he understand his mistake.",
+            "Only then he understood his mistake."
+          ],
+          correct:0
+        },
+        {
+          text:"Никогда я не был так напуган.",
+          options:[
+            "Never have I been so scared.",
+            "Never I have been so scared."
+          ],
+          correct:0
+        },
+        {
+          text:"Редко они приходят вовремя.",
+          options:[
+            "Rarely do they come on time.",
+            "Rarely they come on time."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:18,
+  title:"Emphasis structures",
+  level:"Advanced",
+  explanation:
+    "We use special structures to add emphasis: cleft sentences (It is/was…), what-clefts, all-clefts, and 'the thing is'.",
+  ruleRu:
+    "Для выделения важной информации используем cleft-предложения: It is/was…, What…, All…, The thing is…",
+  formulas:[
+    "It is/was + X + who/that + clause",
+    "What + clause + is…",
+    "All + clause + is…",
+    "The thing is (that)…"
+  ],
+  examples:[
+    "It was John who helped me.",
+    "What I need is time.",
+    "All I want is peace."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Именно она сказала правду.",
+          options:[
+            "It was her who told the truth.",
+            "It was her that told truth."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что мне нужно, — это отдых.",
+          options:[
+            "What I need is rest.",
+            "What I need rest is."
+          ],
+          correct:0
+        },
+        {
+          text:"Всё, что я хочу, — это тишина.",
+          options:[
+            "All I want is silence.",
+            "All I want silence is."
+          ],
+          correct:0
+        },
+        {
+          text:"Дело в том, что я устал.",
+          options:[
+            "The thing is that I’m tired.",
+            "Thing the is that I’m tired."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Это был не он, кто пришёл.",
+          options:[
+            "It wasn’t him who came.",
+            "It wasn’t him that come."
+          ],
+          correct:0
+        },
+        {
+          text:"Не это мне сейчас нужно.",
+          options:[
+            "What I don’t need is this.",
+            "What I don’t need this is."
+          ],
+          correct:0
+        },
+        {
+          text:"Это не то, что я хотел.",
+          options:[
+            "This isn’t what I wanted.",
+            "This is not what wanted I."
+          ],
+          correct:0
+        },
+        {
+          text:"Всё, чего я не хочу, — это шум.",
+          options:[
+            "All I don’t want is noise.",
+            "All I don’t want noise is."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Спроси: Кто сказал правду?",
+          options:[
+            "Who was it that told the truth?",
+            "Who it was that told truth?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Что тебе нужно?",
+          options:[
+            "What is it that you need?",
+            "What you need is it?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Это он помог тебе?",
+          options:[
+            "Was it him who helped you?",
+            "It was him who helped you?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Всё, что ты хочешь — это отдых?",
+          options:[
+            "Is all you want rest?",
+            "Is rest all you want?"
+          ],
+          correct:1
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "It was my mother who cooked dinner.",
+            "It was my mother cooked who dinner."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "What she loves is music.",
+            "What loves she is music."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "All I need is some time.",
+            "All I need some time is."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The thing is that we are late.",
+            "The thing is we that are late."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(именно ты / помог мне)",
+          options:[
+            "It was you who helped me.",
+            "It was you that helped me."
+          ],
+          correct:0
+        },
+        {
+          text:"(всё, что мне нужно, — вода)",
+          options:[
+            "All I need is water.",
+            "All I need water is."
+          ],
+          correct:0
+        },
+        {
+          text:"(то, что меня беспокоит — время)",
+          options:[
+            "What worries me is time.",
+            "What worries me time is."
+          ],
+          correct:0
+        },
+        {
+          text:"(дело в том, что мы опаздываем)",
+          options:[
+            "The thing is that we are late.",
+            "Thing the is that we are late."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Именно он сделал ошибку.",
+          options:[
+            "It was him who made the mistake.",
+            "It was him that made mistake."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что мне нужно — это помощь.",
+          options:[
+            "What I need is help.",
+            "What I need help is."
+          ],
+          correct:0
+        },
+        {
+          text:"Всё, чего он хочет — это успех.",
+          options:[
+            "All he wants is success.",
+            "All he wants success is."
+          ],
+          correct:0
+        },
+        {
+          text:"Дело в том, что времени мало.",
+          options:[
+            "The thing is that there is little time.",
+            "Thing the is that is little time."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:19,
+  title:"Nominalization",
+  level:"Advanced",
+  explanation:
+    "Nominalization is turning verbs and adjectives into nouns to create more formal or academic sentences.",
+  ruleRu:
+    "Nominalization — превращение глаголов и прилагательных в существительные (decide → decision, improve → improvement). Используется в формальном стиле.",
+  formulas:[
+    "verb → noun (decide → decision)",
+    "adj → noun (strong → strength)",
+    "phrase → noun phrase"
+  ],
+  examples:[
+    "We decided → We made a decision.",
+    "Prices increased → There was an increase in prices."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"(decide) Они приняли решение.",
+          options:[
+            "They made a decision.",
+            "They did a decide."
+          ],
+          correct:0
+        },
+        {
+          text:"(improve) Произошло улучшение.",
+          options:[
+            "There was an improvement.",
+            "There was an improve."
+          ],
+          correct:0
+        },
+        {
+          text:"(analyse) Был проведён анализ.",
+          options:[
+            "An analysis was carried out.",
+            "An analyse was carried out."
+          ],
+          correct:0
+        },
+        {
+          text:"(strong) Его сила удивительна.",
+          options:[
+            "His strength is amazing.",
+            "His strong is amazing."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"(decide) Не было окончательного решения.",
+          options:[
+            "There was no final decision.",
+            "There was no decide."
+          ],
+          correct:0
+        },
+        {
+          text:"(develop) Улучшения не произошло.",
+          options:[
+            "There was no development.",
+            "There was no develop."
+          ],
+          correct:0
+        },
+        {
+          text:"(approve) Не было одобрения.",
+          options:[
+            "There was no approval.",
+            "There was no approve."
+          ],
+          correct:0
+        },
+        {
+          text:"(weak) Его слабость очевидна.",
+          options:[
+            "His weakness is obvious.",
+            "His weak is obvious."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Спроси: Было ли принято решение?",
+          options:[
+            "Was a decision made?",
+            "Was a decide made?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Произошло улучшение?",
+          options:[
+            "Was there an improvement?",
+            "Was there an improve?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Был анализ?",
+          options:[
+            "Was an analysis done?",
+            "Was an analyse done?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Есть ли слабость?",
+          options:[
+            "Is there any weakness?",
+            "Is there any weak?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выберите верный вариант:",
+          options:[
+            "There was a significant improvement.",
+            "There was improvement a significant."
+          ],
+          correct:0
+        },
+        {
+          text:"Выберите верный вариант:",
+          options:[
+            "His decision surprised everyone.",
+            "His decision everyone surprised."
+          ],
+          correct:0
+        },
+        {
+          text:"Выберите верный вариант:",
+          options:[
+            "The development was important.",
+            "The develop was important."
+          ],
+          correct:0
+        },
+        {
+          text:"Выберите верный вариант:",
+          options:[
+            "The weakness was obvious.",
+            "The weak was obvious."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(decide → decision) Они приняли важное решение.",
+          options:[
+            "They made an important decision.",
+            "They did an important decide."
+          ],
+          correct:0
+        },
+        {
+          text:"(analyse → analysis) Мы провели анализ данных.",
+          options:[
+            "We carried out an analysis of the data.",
+            "We carried out an analyse of the data."
+          ],
+          correct:0
+        },
+        {
+          text:"(develop → development) Было большое развитие.",
+          options:[
+            "There was great development.",
+            "There was great develop."
+          ],
+          correct:0
+        },
+        {
+          text:"(strong → strength) Его сила впечатляет.",
+          options:[
+            "His strength is impressive.",
+            "His strong is impressive."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Произошло увеличение цен.",
+          options:[
+            "There was an increase in prices.",
+            "There was an increasing prices."
+          ],
+          correct:0
+        },
+        {
+          text:"Им нужно одобрение.",
+          options:[
+            "They need approval.",
+            "They need approve."
+          ],
+          correct:0
+        },
+        {
+          text:"Было проведено исследование.",
+          options:[
+            "A study was conducted.",
+            "A studying was conducted."
+          ],
+          correct:0
+        },
+        {
+          text:"Его слабость заметна.",
+          options:[
+            "His weakness is noticeable.",
+            "His weak is noticeable."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:20,
+  title:"Hedging (softening statements)",
+  level:"Advanced",
+  explanation:
+    "Hedging is used in academic writing to make statements less direct and more careful: may, might, seem, appear, suggest.",
+  ruleRu:
+    "Hedging — смягчение утверждений: may, might, seem, appear, suggest. Помогает звучать осторожно и академично.",
+  formulas:[
+    "It seems that…",
+    "The data suggest that…",
+    "This may indicate that…"
+  ],
+  examples:[
+    "The results suggest that students need more practice.",
+    "It appears that the method is effective."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Результаты показывают, что нужно больше времени.",
+          options:[
+            "The results suggest that more time is needed.",
+            "The results show more time needed is."
+          ],
+          correct:0
+        },
+        {
+          text:"Похоже, что эксперимент прошёл успешно.",
+          options:[
+            "It seems that the experiment was successful.",
+            "It seems the experiment successful was."
+          ],
+          correct:0
+        },
+        {
+          text:"Это может указывать, что есть проблема.",
+          options:[
+            "This may indicate that there is a problem.",
+            "This indicates maybe that there is a problem."
+          ],
+          correct:0
+        },
+        {
+          text:"Похоже, что ученики улучшили навыки.",
+          options:[
+            "It appears that students have improved their skills.",
+            "It appears students have their skills improved."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Данные не показывают значительного улучшения.",
+          options:[
+            "The data do not suggest significant improvement.",
+            "The data do not suggest improve."
+          ],
+          correct:0
+        },
+        {
+          text:"Это может не означать успех.",
+          options:[
+            "This may not indicate success.",
+            "This indicates not success may."
+          ],
+          correct:0
+        },
+        {
+          text:"Не похоже, что метод работает.",
+          options:[
+            "It doesn’t seem that the method works.",
+            "It doesn’t seem the method working."
+          ],
+          correct:0
+        },
+        {
+          text:"Доказательства не указывают на проблему.",
+          options:[
+            "The evidence does not suggest a problem.",
+            "The evidence does not suggest problem."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Спроси: Что показывают результаты?",
+          options:[
+            "What do the results suggest?",
+            "What the results suggest?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Похоже, что он прав?",
+          options:[
+            "Does it seem that he is right?",
+            "Seems it that he is right?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Это может означать проблему?",
+          options:[
+            "May this indicate a problem?",
+            "This may indicate problem?"
+          ],
+          correct:0
+        },
+        {
+          text:"Спроси: Данные указывают на улучшение?",
+          options:[
+            "Do the data suggest improvement?",
+            "Do the data suggest improve?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Правильный вариант:",
+          options:[
+            "It seems that he is correct.",
+            "It seems he correct is."
+          ],
+          correct:0
+        },
+        {
+          text:"Правильный вариант:",
+          options:[
+            "The data suggest that the method is effective.",
+            "The data suggest the method effective is."
+          ],
+          correct:0
+        },
+        {
+          text:"Правильный вариант:",
+          options:[
+            "This may indicate a problem.",
+            "This may a problem indicate."
+          ],
+          correct:0
+        },
+        {
+          text:"Правильный вариант:",
+          options:[
+            "It appears that she has improved.",
+            "It appears she improved has."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(кажется / он прав)",
+          options:[
+            "It seems that he is right.",
+            "It seems he right is."
+          ],
+          correct:0
+        },
+        {
+          text:"(данные показывают / рост)",
+          options:[
+            "The data suggest growth.",
+            "The data suggest grow."
+          ],
+          correct:0
+        },
+        {
+          text:"(это может указать / ошибку)",
+          options:[
+            "This may indicate an error.",
+            "This may indicate error."
+          ],
+          correct:0
+        },
+        {
+          text:"(похоже / ученики улучшили результаты)",
+          options:[
+            "It appears that students have improved their results.",
+            "It appears students improved their results have."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Это может указывать на трудности.",
+          options:[
+            "This may indicate difficulties.",
+            "This may indicate difficults."
+          ],
+          correct:0
+        },
+        {
+          text:"Похоже, что он ошибся.",
+          options:[
+            "It seems that he made a mistake.",
+            "It seems he made mistake."
+          ],
+          correct:0
+        },
+        {
+          text:"Данные показывают улучшение.",
+          options:[
+            "The data suggest improvement.",
+            "The data suggest improve."
+          ],
+          correct:0
+        },
+        {
+          text:"Похоже, что проект успешен.",
+          options:[
+            "It appears that the project is successful.",
+            "It appears the project successful is."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:21,
+  title:"Substitution and ellipsis (so do I, neither do I, do so)",
+  level:"Advanced",
+  explanation:
+    "We use substitution (so do I, neither do I, do so) to avoid repeating the whole clause.",
+  ruleRu:
+    "Substitution (замена) помогает не повторять всё предложение: So do I / Neither do I / do so вместо полного предложения.",
+  formulas:[
+    "So + auxiliary + subject (So do I.)",
+    "Neither / Nor + auxiliary + subject",
+    "do so = repeat the action",
+    "If you do so / He did so"
+  ],
+  examples:[
+    "I like coffee. – So do I.",
+    "I don’t like tea. – Neither do I.",
+    "He asked me to call, so I did so."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"I love English. – Я тоже.",
+          options:[
+            "So do I.",
+            "I do so."
+          ],
+          correct:0
+        },
+        {
+          text:"She can speak French. – Её брат тоже.",
+          options:[
+            "So can her brother.",
+            "Her brother so can."
+          ],
+          correct:0
+        },
+        {
+          text:"They have finished the test. – Мы тоже.",
+          options:[
+            "So have we.",
+            "We so have."
+          ],
+          correct:0
+        },
+        {
+          text:"I will go to the party. – Моя сестра тоже.",
+          options:[
+            "So will my sister.",
+            "My sister will so."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"I don’t like coffee. – Я тоже нет.",
+          options:[
+            "Neither do I.",
+            "So don’t I."
+          ],
+          correct:0
+        },
+        {
+          text:"She hasn’t finished yet. – И он тоже нет.",
+          options:[
+            "Neither has he.",
+            "So has not he."
+          ],
+          correct:0
+        },
+        {
+          text:"They can’t swim. – Мы тоже нет.",
+          options:[
+            "Neither can we.",
+            "So can’t we."
+          ],
+          correct:0
+        },
+        {
+          text:"He didn’t call her. – И она тоже ему не звонила.",
+          options:[
+            "Neither did she call him.",
+            "So didn’t she call him."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как правильно спросить: Ты тоже любишь музыку?",
+          options:[
+            "Do you like music too?",
+            "Do you so like music?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как правильно: Он любит читать, а ты тоже?",
+          options:[
+            "He likes reading. Do you?",
+            "He likes reading. Do you so?"
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильно:",
+          options:[
+            "I enjoyed the film. Did you?",
+            "I enjoyed the film. Did you so?"
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильно:",
+          options:[
+            "She went to Paris, and so did I.",
+            "She went to Paris, and so went I."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "So do they.",
+            "Do so they."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Neither did we.",
+            "Did neither we."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "He promised to help and he did so.",
+            "He promised to help and did he so."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "So was I.",
+            "Was so I."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(I love chocolate / я тоже)",
+          options:[
+            "I love chocolate. So do I.",
+            "I love chocolate. I do so."
+          ],
+          correct:0
+        },
+        {
+          text:"(He is tired / мы тоже)",
+          options:[
+            "He is tired. So are we.",
+            "He is tired. We so are."
+          ],
+          correct:0
+        },
+        {
+          text:"(They didn’t understand / я тоже нет)",
+          options:[
+            "They didn’t understand. Neither did I.",
+            "They didn’t understand. So didn’t I."
+          ],
+          correct:0
+        },
+        {
+          text:"(He turned off the light, and я сделал то же самое)",
+          options:[
+            "He turned off the light, and I did so too.",
+            "He turned off the light, and so did I so."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Я люблю читать, и моя сестра тоже.",
+          options:[
+            "I like reading and so does my sister.",
+            "I like reading and my sister so does."
+          ],
+          correct:0
+        },
+        {
+          text:"Я не умею плавать, и он тоже нет.",
+          options:[
+            "I can’t swim and neither can he.",
+            "I can’t swim and so can’t he."
+          ],
+          correct:0
+        },
+        {
+          text:"Он пообещал прийти и действительно сделал это.",
+          options:[
+            "He promised to come and he did so.",
+            "He promised to come and did so he."
+          ],
+          correct:0
+        },
+        {
+          text:"Я люблю английский, а ты?",
+          options:[
+            "I like English. Do you?",
+            "I like English. Do you so?"
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:22,
+  title:"Fronting and focus (Moving information to the front)",
+  level:"Advanced",
+  explanation:
+    "Fronting means moving a part of the sentence to the beginning to give it special focus or emphasis.",
+  ruleRu:
+    "Fronting — вынос важной части предложения в начало для акцента: This problem I just can’t solve.",
+  formulas:[
+    "Object fronting: This book I really like.",
+    "Adverbial fronting: In this room, we had our lessons.",
+    "Negative fronting + inversion: Never have I felt so happy."
+  ],
+  examples:[
+    "This problem I just can’t solve.",
+    "In this town, I grew up.",
+    "Today, I’m really tired."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Мне очень нравится этот фильм. (Этот фильм / мне очень нравится.)",
+          options:[
+            "This film I really like.",
+            "I really like this film it."
+          ],
+          correct:0
+        },
+        {
+          text:"В этом городе я вырос.",
+          options:[
+            "In this city I grew up.",
+            "I grew up in this city it."
+          ],
+          correct:0
+        },
+        {
+          text:"Именно этот человек помог мне.",
+          options:[
+            "This person helped me.",
+            "This person it was who helped me."
+          ],
+          correct:1
+        },
+        {
+          text:"Сегодня я действительно устал. (Сегодня / я действительно устал.)",
+          options:[
+            "Today I am really tired.",
+            "I am really tired today it."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative / limited focus",
+      questions:[
+        {
+          text:"Только тогда я понял ошибку. (Only then / я понял ошибку.)",
+          options:[
+            "Only then did I realise the mistake.",
+            "Only then I realised the mistake."
+          ],
+          correct:0
+        },
+        {
+          text:"Никогда раньше я не видел этого. (Never before / я не видел этого.)",
+          options:[
+            "Never before had I seen this.",
+            "Never before I had seen this."
+          ],
+          correct:0
+        },
+        {
+          text:"Лишь в конце мы узнали правду. (Only at the end / мы узнали правду.)",
+          options:[
+            "Only at the end did we find out the truth.",
+            "Only at the end we found out the truth."
+          ],
+          correct:0
+        },
+        {
+          text:"Только в школе я начал любить английский.",
+          options:[
+            "Only at school did I start to love English.",
+            "Only at school I started to love English."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить с акцентом: Именно это ты хочешь?",
+          options:[
+            "Is it this that you want?",
+            "Is this you want it?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: В этой школе ты учился?",
+          options:[
+            "Is it at this school that you studied?",
+            "At this school did you studied?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Сегодня ты особенно устал?",
+          options:[
+            "Are you especially tired today?",
+            "Today are you especially tired?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Именно это тебе нравится?",
+          options:[
+            "Is this what you like?",
+            "Is what you like this?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный fronting:",
+          options:[
+            "This problem I simply can’t solve.",
+            "This problem simply I can’t solve."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "In my childhood I loved reading.",
+            "In my childhood loved I reading."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "On the wall there was a picture.",
+            "On the wall a picture there was."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Very difficult this task is.",
+            "This task is very difficult."
+          ],
+          correct:1
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(особенно / меня волнует / эта проблема)",
+          options:[
+            "Especially this problem worries me.",
+            "This problem especially worries me."
+          ],
+          correct:1
+        },
+        {
+          text:"(в этой комнате / мы всегда писали тесты)",
+          options:[
+            "In this room we always wrote tests.",
+            "We always wrote tests in this room it."
+          ],
+          correct:0
+        },
+        {
+          text:"(именно здесь / я познакомился с ним)",
+          options:[
+            "It was here that I met him.",
+            "Here it was I met him."
+          ],
+          correct:0
+        },
+        {
+          text:"(только тогда / мы поняли задание)",
+          options:[
+            "Only then did we understand the task.",
+            "Only then we understood the task."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Именно эту книгу я хочу прочитать.",
+          options:[
+            "It is this book that I want to read.",
+            "This book I want to read it."
+          ],
+          correct:0
+        },
+        {
+          text:"В этом городе я провёл своё детство.",
+          options:[
+            "In this city I spent my childhood.",
+            "I spent my childhood in this city it."
+          ],
+          correct:0
+        },
+        {
+          text:"Именно тогда я понял свою мечту.",
+          options:[
+            "It was then that I understood my dream.",
+            "Then it was I understood my dream."
+          ],
+          correct:0
+        },
+        {
+          text:"Больше всего меня интересует эта тема.",
+          options:[
+            "This topic interests me most of all.",
+            "Most of all this topic interests me it."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:23,
+  title:"Complex noun phrases (-ing / -ed adjectives)",
+  level:"Advanced",
+  explanation:
+    "Complex noun phrases use -ing and -ed forms as adjectives: a boring lesson, a tired student, a time-consuming task.",
+  ruleRu:
+    "Формы V-ing и V-ed могут быть прилагательными: a boring film (фильм скучный), a bored student (ученик скучающий). Часто образуют сложные именные группы.",
+  formulas:[
+    "V-ing + noun (a shocking story)",
+    "V-ed + noun (a broken window)",
+    "compound: a time-consuming task"
+  ],
+  examples:[
+    "It was an exhausting day.",
+    "She told us a frightening story.",
+    "He has a broken phone."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Утомительный день.",
+          options:[
+            "an exhausting day",
+            "an exhausted day"
+          ],
+          correct:0
+        },
+        {
+          text:"Скучающий студент.",
+          options:[
+            "a bored student",
+            "a boring student"
+          ],
+          correct:0
+        },
+        {
+          text:"Шокирующая новость.",
+          options:[
+            "shocking news",
+            "shocked news"
+          ],
+          correct:0
+        },
+        {
+          text:"Разбитое окно.",
+          options:[
+            "a broken window",
+            "a breaking window"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative / contrast",
+      questions:[
+        {
+          text:"Выбери правильную пару:",
+          options:[
+            "The film was boring, so I felt bored.",
+            "The film was bored, so I felt boring."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильную пару:",
+          options:[
+            "The task was tiring, so we were tired.",
+            "The task was tired, so we were tiring."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильную пару:",
+          options:[
+            "The news was shocking, and they were shocked.",
+            "The news was shocked, and they were shocking."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильную пару:",
+          options:[
+            "The story was interesting, and we were interested.",
+            "The story was interested, and we were interesting."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить: История была скучной?",
+          options:[
+            "Was the story boring?",
+            "Was the story bored?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Ты устал?",
+          options:[
+            "Are you tired?",
+            "Are you tiring?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Это была пугающая история?",
+          options:[
+            "Was it a frightening story?",
+            "Was it a frightened story?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Это утомительное задание?",
+          options:[
+            "Is it a tiring task?",
+            "Is it a tired task?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "a time-consuming task",
+            "a consuming-time task"
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "a well-paid job",
+            "a paid-well job"
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "a recently-built house",
+            "a built-recently house"
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "a fast-growing company",
+            "a growing-fast company"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(задача / отнимающая много времени)",
+          options:[
+            "a time-consuming task",
+            "a time-taking task"
+          ],
+          correct:0
+        },
+        {
+          text:"(хорошо подготовленный студент)",
+          options:[
+            "a well-prepared student",
+            "a prepared-well student"
+          ],
+          correct:0
+        },
+        {
+          text:"(недавно открытый ресторан)",
+          options:[
+            "a recently-opened restaurant",
+            "an opened-recently restaurant"
+          ],
+          correct:0
+        },
+        {
+          text:"(быстро растущий город)",
+          options:[
+            "a fast-growing city",
+            "a growing-fast city"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Это была очень утомительная поездка.",
+          options:[
+            "It was a very tiring trip.",
+            "It was a very tired trip."
+          ],
+          correct:0
+        },
+        {
+          text:"Студенты были шокированы новостями.",
+          options:[
+            "The students were shocked by the news.",
+            "The students were shocking by the news."
+          ],
+          correct:0
+        },
+        {
+          text:"Это очень вдохновляющая история.",
+          options:[
+            "It is a very inspiring story.",
+            "It is a very inspired story."
+          ],
+          correct:0
+        },
+        {
+          text:"Он был смущён вопросом.",
+          options:[
+            "He was confused by the question.",
+            "He was confusing by the question."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:24,
+  title:"Advanced comparatives (the more..., the more...)",
+  level:"Advanced",
+  explanation:
+    "Advanced comparatives use intensifiers (much, far, a lot) and double comparatives: the more..., the more....",
+  ruleRu:
+    "Продвинутые степени сравнения: much/far/a lot + comparative (much better), и двойные сравнения: The more…, the more….",
+  formulas:[
+    "much / far / a lot + comparative: much easier",
+    "the + comparative, the + comparative",
+    "less / the least + adjective"
+  ],
+  examples:[
+    "This task is much easier.",
+    "The more you read, the better you write."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Эта задача намного легче.",
+          options:[
+            "This task is much easier.",
+            "This task is more easy much."
+          ],
+          correct:0
+        },
+        {
+          text:"Этот фильм гораздо интереснее.",
+          options:[
+            "This film is far more interesting.",
+            "This film is more interesting far."
+          ],
+          correct:0
+        },
+        {
+          text:"Эта книга намного лучше.",
+          options:[
+            "This book is a lot better.",
+            "This book is better a lot."
+          ],
+          correct:0
+        },
+        {
+          text:"Он гораздо старше меня.",
+          options:[
+            "He is much older than me.",
+            "He is more older than me."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative / less",
+      questions:[
+        {
+          text:"Это задание менее сложное.",
+          options:[
+            "This task is less difficult.",
+            "This task is more less difficult."
+          ],
+          correct:0
+        },
+        {
+          text:"Это наименее интересная часть.",
+          options:[
+            "This is the least interesting part.",
+            "This is the less interesting part."
+          ],
+          correct:0
+        },
+        {
+          text:"Он менее опытный, чем она.",
+          options:[
+            "He is less experienced than she is.",
+            "He is less more experienced than she is."
+          ],
+          correct:0
+        },
+        {
+          text:"Это гораздо менее важно.",
+          options:[
+            "It is much less important.",
+            "It is less much important."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить: Это намного лучше?",
+          options:[
+            "Is it much better?",
+            "Is it better much?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Это менее важно?",
+          options:[
+            "Is it less important?",
+            "Is it important less?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Эта книга лучше, чем та?",
+          options:[
+            "Is this book better than that one?",
+            "Is this book more better than that one?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Это самая сложная часть?",
+          options:[
+            "Is this the most difficult part?",
+            "Is this most difficult part?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order (the more..., the more...)",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The more you practice, the better you become.",
+            "More you practice, the better you become."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The harder you work, the more you achieve.",
+            "Harder you work, more you achieve."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The more you read, the more you know.",
+            "More you read, more you know."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "The less you sleep, the more tired you feel.",
+            "Less you sleep, more tired you feel."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+          {
+            text:"(чем больше / ты учишься / тем лучше / ты чувствуешь себя на экзамене)",
+            options:[
+              "The more you study, the better you feel in the exam.",
+              "More you study, better you feel in the exam."
+            ],
+            correct:0
+          },
+          {
+            text:"(чем меньше / он отдыхает / тем более уставшим / он становится)",
+            options:[
+              "The less he rests, the more tired he becomes.",
+              "The less he rests, more tired he becomes."
+            ],
+            correct:0
+          },
+          {
+            text:"(чем раньше / мы начнём / тем быстрее / закончим)",
+            options:[
+              "The earlier we start, the faster we finish.",
+              "Earlier we start, faster we finish."
+            ],
+            correct:0
+          },
+          {
+            text:"(чем больше / ты тренируешься / тем сильнее / становишься)",
+            options:[
+              "The more you train, the stronger you become.",
+              "More you train, stronger you become."
+            ],
+            correct:0
+          }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Эта задача гораздо сложнее.",
+          options:[
+            "This task is much more difficult.",
+            "This task is more difficult much."
+          ],
+          correct:0
+        },
+        {
+          text:"Чем больше ты читаешь, тем умнее становишься.",
+          options:[
+            "The more you read, the smarter you become.",
+            "More you read, smarter you become."
+          ],
+          correct:0
+        },
+        {
+          text:"Это гораздо менее опасно.",
+          options:[
+            "It is much less dangerous.",
+            "It is less much dangerous."
+          ],
+          correct:0
+        },
+        {
+          text:"Чем больше он работает, тем меньше у него свободного времени.",
+          options:[
+            "The more he works, the less free time he has.",
+            "More he works, less free time he has."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+}
+{
+  id:25,
+  title:"Nominal Relative Clauses (what / whatever / whoever)",
+  level:"Advanced",
+  explanation:
+    "Nominal relative clauses act as nouns. They start with what, whoever, whatever and express ‘the thing that’, ‘anyone who’, ‘anything that’.",
+  ruleRu:
+    "Nominal relative clauses — это придаточные, которые выступают как существительные: what = то, что; whoever = тот, кто; whatever = всё, что.",
+  formulas:[
+    "What + clause + verb (What he said was true.)",
+    "Whoever + verb (Whoever comes is welcome.)",
+    "Whatever + verb (Whatever happens, call me.)"
+  ],
+  examples:[
+    "What you did was amazing.",
+    "Whoever wins gets the prize.",
+    "Whatever you choose is fine."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"То, что ты сделал, очень важно.",
+          options:[
+            "What you did is very important.",
+            "That what you did is very important."
+          ],
+          correct:0
+        },
+        {
+          text:"Кто придёт первым, получит подарок.",
+          options:[
+            "Whoever comes first will get a gift.",
+            "Who comes first will get whoever a gift."
+          ],
+          correct:0
+        },
+        {
+          text:"Всё, что он скажет, правда.",
+          options:[
+            "Whatever he says is true.",
+            "Whatever says he is true."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что мне нужно, — это время.",
+          options:[
+            "What I need is time.",
+            "That what I need is time."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Не важно, что ты выберешь.",
+          options:[
+            "Whatever you choose doesn’t matter.",
+            "Whatever you choose not matter."
+          ],
+          correct:0
+        },
+        {
+          text:"Кто бы ни пришёл, он не сможет войти.",
+          options:[
+            "Whoever comes won’t be able to enter.",
+            "Whoever will come won’t be able to enter."
+          ],
+          correct:0
+        },
+        {
+          text:"То, чего у нас нет, — это время.",
+          options:[
+            "What we don’t have is time.",
+            "That what we don’t have is time."
+          ],
+          correct:0
+        },
+        {
+          text:"Неважно, кто победит.",
+          options:[
+            "Whoever wins doesn’t matter.",
+            "Who wins doesn’t matter whoever."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить: Что он сказал — правда?",
+          options:[
+            "Is what he said true?",
+            "Is that what he said true?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Кто бы это ни был, он придёт?",
+          options:[
+            "Will whoever it is come?",
+            "Will come whoever it is?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Что ты хочешь?",
+          options:[
+            "What do you want?",
+            "What you want is?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Всё, что тебе нужно — это помощь?",
+          options:[
+            "Is what you need help?",
+            "What you need is help?"
+          ],
+          correct:1
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Whoever arrives first gets a seat.",
+            "Arrives whoever first gets a seat."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "What happened was unexpected.",
+            "What happened unexpected was."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Whatever you decide is fine.",
+            "Whatever you decide fine is."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "What she wants is rest.",
+            "What wants she is rest."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(то, что он сказал / удивительно)",
+          options:[
+            "What he said is amazing.",
+            "What said he is amazing."
+          ],
+          correct:0
+        },
+        {
+          text:"(кто придёт / получит билет)",
+          options:[
+            "Whoever comes will get a ticket.",
+            "Who comes whoever will get a ticket."
+          ],
+          correct:0
+        },
+        {
+          text:"(всё, что ты сделаешь / будет оценено)",
+          options:[
+            "Whatever you do will be appreciated.",
+            "Whatever you do appreciated will be."
+          ],
+          correct:0
+        },
+        {
+          text:"(то, что мне нужно / отдых)",
+          options:[
+            "What I need is rest.",
+            "That what I need is rest."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Кто бы ни позвонил, скажи, что меня нет.",
+          options:[
+            "Whoever calls, say I'm not here.",
+            "Who calls whoever, say I'm not here."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что он делает, очень важно.",
+          options:[
+            "What he does is very important.",
+            "That what he does is very important."
+          ],
+          correct:0
+        },
+        {
+          text:"Всё, что ты скажешь, будет записано.",
+          options:[
+            "Whatever you say will be recorded.",
+            "Whatever you say recorded will be."
+          ],
+          correct:0
+        },
+        {
+          text:"Кто придёт позже — тот опоздает.",
+          options:[
+            "Whoever comes later will be late.",
+            "Who comes later will be late whoever."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:26,
+  title:"Advanced Conditionals (mixed, inverted)",
+  level:"Advanced",
+  explanation:
+    "Advanced conditionals include mixed types (past → present result) and inverted forms (Had I known...).",
+  ruleRu:
+    "Продвинутые условные предложения: смешанные типы (прошлое → настоящее), и инверсия (Had I known…).",
+  formulas:[
+    "If + past perfect → would + V (now) (If I had studied, I would know.)",
+    "If + past simple → would have + V3 (If I were you, I would have called.)",
+    "Inversion: Had + subject + V3",
+    "Should + subject + V (Should you need help…)"
+  ],
+  examples:[
+    "If I had slept earlier, I wouldn’t be tired now.",
+    "Had I known, I would have changed the plan."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Если бы я знал раньше, я бы пришёл вовремя.",
+          options:[
+            "If I had known earlier, I would have come on time.",
+            "If I knew earlier, I would come on time."
+          ],
+          correct:0
+        },
+        {
+          text:"Если бы мы сделали это вчера, сейчас было бы легче.",
+          options:[
+            "If we had done it yesterday, it would be easier now.",
+            "If we did it yesterday, it is easier now."
+          ],
+          correct:0
+        },
+        {
+          text:"Если бы он больше учился, он знал бы это сейчас.",
+          options:[
+            "If he had studied more, he would know this now.",
+            "If he studied more, he would have known this now."
+          ],
+          correct:0
+        },
+        {
+          text:"Если бы я был тобой, я бы извинился.",
+          options:[
+            "If I were you, I would apologise.",
+            "If I was you, I would have apologised."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Если бы они не ушли рано, они бы не опоздали.",
+          options:[
+            "If they hadn’t left early, they wouldn’t have been late.",
+            "If they didn’t leave early, they wouldn’t be late."
+          ],
+          correct:0
+        },
+        {
+          text:"Если бы я не ел так много, мне бы сейчас не было плохо.",
+          options:[
+            "If I hadn’t eaten so much, I wouldn’t feel bad now.",
+            "If I didn’t eat so much, I wouldn’t have felt bad now."
+          ],
+          correct:0
+        },
+        {
+          text:"Если бы он не был таким уставшим, он бы пришёл.",
+          options:[
+            "If he weren’t so tired, he would come.",
+            "If he hadn’t been so tired, he would come."
+          ],
+          correct:0
+        },
+        {
+          text:"Если бы я не пропустил автобус, я бы сейчас не опаздывал.",
+          options:[
+            "If I hadn’t missed the bus, I wouldn’t be late now.",
+            "If I didn’t miss the bus, I wouldn’t be late now."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить: Ты бы пришёл, если бы знал?",
+          options:[
+            "Would you have come if you had known?",
+            "Would you come if you knew?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Было бы лучше, если бы мы ушли раньше?",
+          options:[
+            "Would it have been better if we had left earlier?",
+            "Would it be better if we left earlier?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Если бы ты был мной, ты бы сказал правду?",
+          options:[
+            "If you were me, would you tell the truth?",
+            "If you were me, would you have told the truth?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить с инверсией: Если тебе понадобится помощь…?",
+          options:[
+            "Should you need help…?",
+            "If you should need help…?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Inversion",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Had I known, I would have helped.",
+            "I had known, I would have helped."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Should you require more time, call me.",
+            "You should require more time, call me."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Were he here, he would explain.",
+            "If he were here would explain."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Had they arrived earlier, they would be inside now.",
+            "If had they arrived earlier, they would be inside now."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(если бы я знал / я бы сказал заранее)",
+          options:[
+            "Had I known, I would have said earlier.",
+            "If I knew, I would say earlier."
+          ],
+          correct:0
+        },
+        {
+          text:"(если бы он пришёл раньше / мы бы уже закончили)",
+          options:[
+            "If he had come earlier, we would have finished.",
+            "If he came earlier, we would finish."
+          ],
+          correct:0
+        },
+        {
+          text:"(если бы ты был умнее / ты бы извинился)",
+          options:[
+            "If you were wiser, you would apologise.",
+            "If you had been wiser, you would apologise."
+          ],
+          correct:0
+        },
+        {
+          text:"(если понадобиться помощь / позвони мне — inversion)",
+          options:[
+            "Should you need help, call me.",
+            "If should you need help, call me."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Если бы я знал, я бы не пришёл.",
+          options:[
+            "Had I known, I wouldn’t have come.",
+            "If had I known, I wouldn’t have come."
+          ],
+          correct:0
+        },
+        {
+          text:"Он бы сделал это, если бы был дома.",
+          options:[
+            "He would have done it if he had been at home.",
+            "He would do it if he was at home."
+          ],
+          correct:0
+        },
+        {
+          text:"Если бы он не опоздал, он был бы здесь сейчас.",
+          options:[
+            "If he hadn’t been late, he would be here now.",
+            "If he weren’t late, he would have been here now."
+          ],
+          correct:0
+        },
+        {
+          text:"Если тебе понадобятся деньги, скажи мне.",
+          options:[
+            "Should you need money, tell me.",
+            "If you should need money tell me."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:27,
+  title:"Cleft Sentences (What…, The one who…, It is/was…)",
+  level:"Advanced",
+  explanation:
+    "Cleft sentences split one idea into two clauses to add emphasis. They highlight the most important part of a sentence.",
+  ruleRu:
+    "Cleft-предложения разделяют одну мысль на две части, выделяя самое важное. Формы: It is/was…, What…, The one who…",
+  formulas:[
+    "It is/was + focus + who/that + clause",
+    "What + clause + is + focus",
+    "The one who + clause"
+  ],
+  examples:[
+    "It was John who broke the window.",
+    "What I need is help.",
+    "The one who called was my sister."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"Именно он помог мне.",
+          options:[
+            "It was him who helped me.",
+            "Him it was who helped me."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что мне нужно — это поддержка.",
+          options:[
+            "What I need is support.",
+            "That what I need is support."
+          ],
+          correct:0
+        },
+        {
+          text:"Тот, кто позвонил — мой друг.",
+          options:[
+            "The one who called was my friend.",
+            "The one who called my friend was."
+          ],
+          correct:0
+        },
+        {
+          text:"Именно здесь я родился.",
+          options:[
+            "It was here that I was born.",
+            "Here it was I was born."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Это была не она, кто сделал ошибку.",
+          options:[
+            "It wasn’t her who made the mistake.",
+            "It was not her that made mistake."
+          ],
+          correct:0
+        },
+        {
+          text:"Не это мне нужно.",
+          options:[
+            "This is not what I need.",
+            "Not this is what I need."
+          ],
+          correct:0
+        },
+        {
+          text:"Это не он позвонил.",
+          options:[
+            "It wasn’t him who called.",
+            "It wasn’t him that call."
+          ],
+          correct:0
+        },
+        {
+          text:"Не это было важно.",
+          options:[
+            "It wasn’t this that was important.",
+            "It wasn’t this important was."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить: Это он сделал?",
+          options:[
+            "Was it him who did it?",
+            "He did it, was it him?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Что тебе нужно?",
+          options:[
+            "What is it that you need?",
+            "What you need is it?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Кто позвонил?",
+          options:[
+            "Who was it that called?",
+            "Who it was that called?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Это ты сделал?",
+          options:[
+            "Was it you who did this?",
+            "You did this, was it you?"
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный cleft:",
+          options:[
+            "It was last night that it happened.",
+            "It was last night it happened that."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный cleft:",
+          options:[
+            "What surprised me was her answer.",
+            "What surprised me her answer was."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный cleft:",
+          options:[
+            "The one who called was my teacher.",
+            "The one who called my teacher was."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный cleft:",
+          options:[
+            "It was my idea that started everything.",
+            "My idea it was that started everything."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(именно она / сказала правду)",
+          options:[
+            "It was her who told the truth.",
+            "Her it was who told the truth."
+          ],
+          correct:0
+        },
+        {
+          text:"(то, что он хочет / это отдых)",
+          options:[
+            "What he wants is rest.",
+            "That what he wants is rest."
+          ],
+          correct:0
+        },
+        {
+          text:"(тот, кто выиграет / получит приз)",
+          options:[
+            "The one who wins will get a prize.",
+            "Who wins whoever will get a prize."
+          ],
+          correct:0
+        },
+        {
+          text:"(именно здесь / всё началось)",
+          options:[
+            "It was here that it all began.",
+            "Here it was that all began."
+          ],
+          correct:0
+        }
+      ]
+    },
+
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Именно он начал разговор.",
+          options:[
+            "It was him who started the conversation.",
+            "It was him that start the conversation."
+          ],
+          correct:0
+        },
+        {
+          text:"То, что тебе нужно — это отдых.",
+          options:[
+            "What you need is rest.",
+            "What you need rest is."
+          ],
+          correct:0
+        },
+        {
+          text:"Тот, кто рассказал историю — мой брат.",
+          options:[
+            "The one who told the story was my brother.",
+            "The one who told the story my brother was."
+          ],
+          correct:0
+        },
+        {
+          text:"Именно в этом городе я вырос.",
+          options:[
+            "It was in this city that I grew up.",
+            "In this city it was I grew up."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:28,
+  title:"Emphasis with do / so / such",
+  level:"Advanced",
+  explanation:
+    "We use do/does/did to add emphasis in affirmative sentences, and so/such to make the meaning stronger (so + adj/adv, such + (a) + adj + noun).",
+  ruleRu:
+    "Do/does/did используются для усиления утверждения: I do agree. So/such усиливают прилагательные и существительные: so + adj/adv, such (a) + adj + noun.",
+  formulas:[
+    "do / does / did + bare infinitive (I did tell you.)",
+    "so + adjective/adverb (so tired, so quickly)",
+    "such (a) + adjective + noun (such a good idea)",
+    "such + plural/uncountable noun (such problems, such noise)"
+  ],
+  examples:[
+    "I do agree with you.",
+    "She did try her best.",
+    "It was such a nice day.",
+    "He is so intelligent."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative (emphatic do)",
+      questions:[
+        {
+          text:"Я действительно согласен с тобой.",
+          options:[
+            "I do agree with you.",
+            "I agree with you do."
+          ],
+          correct:0
+        },
+        {
+          text:"Она действительно старалась.",
+          options:[
+            "She did try.",
+            "She tried did."
+          ],
+          correct:0
+        },
+        {
+          text:"Я действительно хочу поехать туда.",
+          options:[
+            "I do want to go there.",
+            "I want do to go there."
+          ],
+          correct:0
+        },
+        {
+          text:"Они действительно любят свою работу.",
+          options:[
+            "They do love their job.",
+            "They love do their job."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative / wrong emphasis",
+      questions:[
+        {
+          text:"Выбери предложение, где do ИСПОЛЬЗОВАНО НЕПРАВИЛЬНО:",
+          options:[
+            "He did not tell me the truth.",
+            "He told did not me the truth."
+          ],
+          correct:1
+        },
+        {
+          text:"Выбери предложение, где do НЕ НУЖНО:",
+          options:[
+            "I do think this is a bad idea.",
+            "I do not think this is a bad idea."
+          ],
+          correct:1
+        },
+        {
+          text:"Выбери НЕПРАВИЛЬНОЕ предложение:",
+          options:[
+            "She doesn’t agree.",
+            "She doesn’t agrees."
+          ],
+          correct:1
+        },
+        {
+          text:"Выбери НЕПРАВИЛЬНОЕ предложение:",
+          options:[
+            "They didn’t understand.",
+            "They didn’t understood."
+          ],
+          correct:1
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить с усилением: Ты действительно так думаешь?",
+          options:[
+            "Do you really think so?",
+            "You do really think so?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Ты правда видел его вчера?",
+          options:[
+            "Did you really see him yesterday?",
+            "You really did see him yesterday?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Ты действительно хочешь это сделать?",
+          options:[
+            "Do you really want to do it?",
+            "Do really you want to do it?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Ему действительно нравится эта идея?",
+          options:[
+            "Does he really like this idea?",
+            "Does really he like this idea?"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) So / such – word order",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "It was such a beautiful day.",
+            "It was so a beautiful day."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "She is so kind.",
+            "She is such kind."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "They are such good friends.",
+            "They are so good friends."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "He spoke so quickly.",
+            "He spoke such quickly."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(так / громко / музыка / что мы не могли спать)",
+          options:[
+            "The music was so loud that we couldn’t sleep.",
+            "The music was such loud that we couldn’t sleep."
+          ],
+          correct:0
+        },
+        {
+          text:"(такая / интересная / книга)",
+          options:[
+            "It is such an interesting book.",
+            "It is so an interesting book."
+          ],
+          correct:0
+        },
+        {
+          text:"(он / так / занят / что у него нет времени)",
+          options:[
+            "He is so busy that he has no time.",
+            "He is such busy that he has no time."
+          ],
+          correct:0
+        },
+        {
+          text:"(это / такая / важная / проблема)",
+          options:[
+            "It is such an important problem.",
+            "It is so important problem."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Он действительно хочет помочь.",
+          options:[
+            "He does want to help.",
+            "He wants to help does."
+          ],
+          correct:0
+        },
+        {
+          text:"Это было так скучно.",
+          options:[
+            "It was so boring.",
+            "It was such boring."
+          ],
+          correct:0
+        },
+        {
+          text:"Это такая странная ситуация.",
+          options:[
+            "It is such a strange situation.",
+            "It is so strange situation."
+          ],
+          correct:0
+        },
+        {
+          text:"Она действительно знает ответ.",
+          options:[
+            "She does know the answer.",
+            "She knows does the answer."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:29,
+  title:"Correlative conjunctions (either/or, neither/nor, not only/but also)",
+  level:"Advanced",
+  explanation:
+    "Correlative conjunctions work in pairs to join similar elements: either…or, neither…nor, both…and, not only…but also. After not only at the beginning, we can use inversion.",
+  ruleRu:
+    "Парные союзы: either…or (или…или), neither…nor (ни…ни), both…and (и…и), not only…but also (не только… но и). При not only в начале возможна инверсия.",
+  formulas:[
+    "either + noun/phrase + or + noun/phrase",
+    "neither + noun/phrase + nor + noun/phrase",
+    "both + noun/phrase + and + noun/phrase",
+    "not only + clause, but also + clause (иногда с инверсией после not only)"
+  ],
+  examples:[
+    "Either you apologise or you leave.",
+    "Neither my brother nor my sister likes maths.",
+    "Both the teacher and the students were happy.",
+    "Not only did he help, but he also paid for everything."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative",
+      questions:[
+        {
+          text:"И учитель, и студенты были довольны.",
+          options:[
+            "Both the teacher and the students were satisfied.",
+            "Both the teacher or the students were satisfied."
+          ],
+          correct:0
+        },
+        {
+          text:"И мой брат, и моя сестра живут в Лондоне.",
+          options:[
+            "Both my brother and my sister live in London.",
+            "Either my brother and my sister live in London."
+          ],
+          correct:0
+        },
+        {
+          text:"Либо ты звонишь ему, либо я это делаю.",
+          options:[
+            "Either you call him or I do it.",
+            "Neither you call him or I do it."
+          ],
+          correct:0
+        },
+        {
+          text:"Он не только помог нам, но и дал совет.",
+          options:[
+            "He not only helped us but also gave us advice.",
+            "He helped us not only but also gave us advice."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative",
+      questions:[
+        {
+          text:"Ни он, ни его друг не пришли.",
+          options:[
+            "Neither he nor his friend came.",
+            "Neither he or his friend came."
+          ],
+          correct:0
+        },
+        {
+          text:"Ни погода, ни дорога не были хорошими.",
+          options:[
+            "Neither the weather nor the road was good.",
+            "Neither the weather or the road was good."
+          ],
+          correct:0
+        },
+        {
+          text:"Ни один из вариантов меня не устраивает.",
+          options:[
+            "Neither option is suitable for me.",
+            "Either option isn’t suitable for me."
+          ],
+          correct:0
+        },
+        {
+          text:"Ни мой брат, ни сестра не любят математику.",
+          options:[
+            "Neither my brother nor my sister likes maths.",
+            "Neither my brother nor my sister like maths is."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions",
+      questions:[
+        {
+          text:"Как спросить: Тебе нравится и чай, и кофе?",
+          options:[
+            "Do you like both tea and coffee?",
+            "Do you like both tea or coffee?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Ни он, ни она не были там?",
+          options:[
+            "Were neither he nor she there?",
+            "Were neither he or she there?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Ты выберешь или английский, или немецкий?",
+          options:[
+            "Will you choose either English or German?",
+            "Will you choose neither English or German?"
+          ],
+          correct:0
+        },
+        {
+          text:"Как спросить: Ты не только читаешь, но и пишешь статьи?",
+          options:[
+            "Do you not only read but also write articles?",
+            "Do you read not only but also write articles?"
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order (особенно not only… but also)",
+      questions:[
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Not only was he late, but he also forgot his homework.",
+            "Not only he was late, but also he forgot his homework."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Not only did she pass the exam, but she also got the highest mark.",
+            "Not only she passed the exam, but also she got the highest mark."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Either we can go now or we can stay here.",
+            "Either can we go now or we can stay here."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный вариант:",
+          options:[
+            "Both his parents and his friends supported him.",
+            "Both his parents nor his friends supported him."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"(ни я, ни он / не знаем ответа)",
+          options:[
+            "Neither I nor he knows the answer.",
+            "Neither I nor he know the answer is."
+          ],
+          correct:0
+        },
+        {
+          text:"(или ты / или я / должен это сделать)",
+          options:[
+            "Either you or I must do it.",
+            "Either you nor I must do it."
+          ],
+          correct:0
+        },
+        {
+          text:"(и учитель, и студенты / согласны)",
+          options:[
+            "Both the teacher and the students agree.",
+            "Both the teacher or the students agree."
+          ],
+          correct:0
+        },
+        {
+          text:"(он не только выучил правила, но и сделал все упражнения — inversion)",
+          options:[
+            "Not only did he learn the rules, but he also did all the exercises.",
+            "Not only he learned the rules, but also did all the exercises."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Ни мой брат, ни сестра не были дома.",
+          options:[
+            "Neither my brother nor my sister was at home.",
+            "Neither my brother or my sister was at home."
+          ],
+          correct:0
+        },
+        {
+          text:"И мама, и папа работают в школе.",
+          options:[
+            "Both my mum and my dad work at school.",
+            "Both my mum or my dad work at school."
+          ],
+          correct:0
+        },
+        {
+          text:"Или ты извинишься, или уйдёшь.",
+          options:[
+            "Either you apologise or you leave.",
+            "Either you apologise nor you leave."
+          ],
+          correct:0
+        },
+        {
+          text:"Он не только пришёл вовремя, но и помог всем.",
+          options:[
+            "Not only did he arrive on time, but he also helped everyone.",
+            "Not only he arrived on time, but also he helped everyone."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+},
+{
+  id:30,
+  title:"Agreement with so / neither / nor (So do I, Neither did we)",
+  level:"Advanced",
+  explanation:
+    "We use so/neither/nor + auxiliary + subject to show agreement: So do I (I also…), Neither do I (I also not…).",
+  ruleRu:
+    "Для выражения согласия используем конструкцию so/neither/nor + вспомогательный глагол + подлежащее: So do I (=я тоже), Neither did we (=мы тоже нет). Вспомогательный глагол берётся из первой фразы.",
+  formulas:[
+    "So + auxiliary + subject (So do I / So did she / So will they)",
+    "Neither / Nor + auxiliary + subject (Neither do I / Nor did he)",
+    "We can also use: Me too / Me neither (разговорно)"
+  ],
+  examples:[
+    "I like chocolate. — So do I.",
+    "I don’t like coffee. — Neither do I.",
+    "She passed the exam. — So did he."
+  ],
+  exercises:[
+    {
+      title:"1) Affirmative (So + auxiliary)",
+      questions:[
+        {
+          text:"I like English. — Я тоже.",
+          options:[
+            "So do I.",
+            "So I do."
+          ],
+          correct:0
+        },
+        {
+          text:"She is tired. — Я тоже.",
+          options:[
+            "So am I.",
+            "So I am."
+          ],
+          correct:0
+        },
+        {
+          text:"They will come tomorrow. — Мы тоже.",
+          options:[
+            "So will we.",
+            "We will so."
+          ],
+          correct:0
+        },
+        {
+          text:"He has finished the task. — Я тоже.",
+          options:[
+            "So have I.",
+            "I have so."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"2) Negative (Neither / Nor)",
+      questions:[
+        {
+          text:"I don’t like horror films. — Я тоже нет.",
+          options:[
+            "Neither do I.",
+            "So don’t I."
+          ],
+          correct:0
+        },
+        {
+          text:"He didn’t come yesterday. — Мы тоже не пришли.",
+          options:[
+            "Neither did we.",
+            "So didn’t we."
+          ],
+          correct:0
+        },
+        {
+          text:"She isn’t ready. — Он тоже.",
+          options:[
+            "Neither is he.",
+            "So isn’t he."
+          ],
+          correct:0
+        },
+        {
+          text:"They haven’t finished. — Мы тоже нет.",
+          options:[
+            "Neither have we.",
+            "Nor haven’t we."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"3) Questions (choose correct reply)",
+      questions:[
+        {
+          text:"I enjoy reading. — Как правильно ответить «Я тоже»?",
+          options:[
+            "So do I.",
+            "Neither do I."
+          ],
+          correct:0
+        },
+        {
+          text:"I didn’t understand the text. — Как правильно ответить «Я тоже нет»?",
+          options:[
+            "Neither did I.",
+            "So didn’t I."
+          ],
+          correct:0
+        },
+        {
+          text:"She can speak French. — Как правильно ответить «Я тоже»?",
+          options:[
+            "So can I.",
+            "So I can."
+          ],
+          correct:0
+        },
+        {
+          text:"We aren’t ready. — Как правильно ответить «Они тоже нет»?",
+          options:[
+            "Neither are they.",
+            "So aren’t they."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"4) Word order",
+      questions:[
+        {
+          text:"Выбери правильный порядок слов:",
+          options:[
+            "So do they.",
+            "Do so they."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок слов:",
+          options:[
+            "Neither was he.",
+            "Was neither he."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок слов:",
+          options:[
+            "Nor did we.",
+            "Did nor we."
+          ],
+          correct:0
+        },
+        {
+          text:"Выбери правильный порядок слов:",
+          options:[
+            "So will she.",
+            "Will so she."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"5) Build the sentence",
+      questions:[
+        {
+          text:"I love travelling. — (Я тоже.)",
+          options:[
+            "So do I.",
+            "Neither do I."
+          ],
+          correct:0
+        },
+        {
+          text:"I’m not hungry. — (Я тоже нет.)",
+          options:[
+            "Neither am I.",
+            "So am I not."
+          ],
+          correct:0
+        },
+        {
+          text:"We were late. — (Они тоже.)",
+          options:[
+            "So were they.",
+            "So they were."
+          ],
+          correct:0
+        },
+        {
+          text:"She hasn’t finished. — (Мы тоже нет.)",
+          options:[
+            "Neither have we.",
+            "So haven’t we."
+          ],
+          correct:0
+        }
+      ]
+    },
+    {
+      title:"6) Translate",
+      questions:[
+        {
+          text:"Я люблю английский. — Я тоже.",
+          options:[
+            "I love English. — So do I.",
+            "I love English. — Neither do I."
+          ],
+          correct:0
+        },
+        {
+          text:"Я не пью кофе. — Я тоже нет.",
+          options:[
+            "I don’t drink coffee. — Neither do I.",
+            "I don’t drink coffee. — So don’t I."
+          ],
+          correct:0
+        },
+        {
+          text:"Он устал. — Я тоже.",
+          options:[
+            "He is tired. — So am I.",
+            "He is tired. — So I am."
+          ],
+          correct:0
+        },
+        {
+          text:"Они не были готовы. — Мы тоже нет.",
+          options:[
+            "They weren’t ready. — Neither were we.",
+            "They weren’t ready. — Nor we were."
+          ],
+          correct:0
+        }
+      ]
+    }
+  ]
+}
 ];
 
 /* ---------- STATE & STORAGE ---------- */
