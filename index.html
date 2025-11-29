@@ -7,11 +7,11 @@
 
   <style>
     :root{
-      --main:#ff6f00;          /* НАСЫЩЕННЫЙ ОРАНЖЕВЫЙ */
-      --main-dark:#e65100;     /* ТЕМНЫЙ ОРАНЖЕВЫЙ */
-      --soft:#ff8f00;          /* МЯГКИЙ ОРАНЖЕВЫЙ */
+      --main:#ff6f00;          /* яркий оранжевый */
+      --main-dark:#e65100;     /* тёмный оранжевый */
+      --soft:#ff8f00;          /* мягкий оранжевый */
       --gold:#ffd54f;
-      --bg:#fff9f0;            /* ОЧЕНЬ СВЕТЛЫЙ ОРАНЖЕВЫЙ ФОН */
+      --bg:#fff9f0;            /* светлый фон */
       --topicColor:#ff6f00;
     }
 
@@ -222,6 +222,11 @@
       transform:translateY(-1px);
     }
 
+    .topic-card-title{
+      font-size:14px;
+      font-weight:600;
+    }
+
     /* AI PANEL ---------------------------------------------------------- */
     #aiPanel{
       background:#fff;
@@ -269,6 +274,12 @@
       background:#fffdf7;
     }
 
+    .chat-actions{
+      display:flex;
+      justify-content:flex-end;
+      margin-top:4px;
+    }
+
     /* TOPIC SCREEN ------------------------------------------------------ */
     #topicScreen{
       max-width:1000px;
@@ -295,6 +306,7 @@
     .topic-header-buttons{
       display:flex;
       gap:6px;
+      flex-wrap:wrap;
     }
 
     .btn-topic{
@@ -342,10 +354,45 @@
       margin-right:4px;
     }
 
+    .examples{
+      margin-top:8px;
+      font-size:13px;
+    }
     .examples li{
       margin-left:18px;
       margin-bottom:2px;
+    }
+
+    /* TEACHER SCREEN ---------------------------------------------------- */
+    .top-buttons{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin-bottom:8px;
+      align-items:center;
+    }
+
+    .table-wrapper{
+      overflow-x:auto;
+      margin-top:10px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
       font-size:13px;
+    }
+
+    th,td{
+      border:1px solid #eddcc8;
+      padding:6px 8px;
+      text-align:left;
+      white-space:nowrap;
+    }
+
+    th{
+      background:#fff3e0;
+      font-weight:600;
     }
 
     /* PRINT MODE -------------------------------------------------------- */
@@ -354,17 +401,16 @@
         display:none !important;
       }
       body{ background:#fff; }
-      #topicScreen{ display:block !important; }
+      #topicScreen{ display:block !important; margin:0; padding:0; }
       .topic-body{ box-shadow:none; border-radius:0; }
     }
-
   </style>
 </head>
 
 <body>
 <header>
   <div class="brand">
-    <img src="logo.png" class="logo-img" alt="">
+    <img src="logo.png" class="logo-img" alt="AI Bayan">
     <div class="brand-text">
       <h1>ENGLISH WITH AI BAYAN</h1>
       <span>Advanced · 30 grammar topics</span>
@@ -378,7 +424,7 @@
   <!-- LOGIN -->
   <section id="loginScreen" class="card">
     <h2 class="section-title">Login</h2>
-    <p class="muted">Enter your Name and Code.</p>
+    <p class="muted">Enter your <strong>Name</strong> and <strong>Code</strong>. Ask your teacher for the code.</p>
 
     <label class="field-label" for="loginName">Name</label>
     <input id="loginName" class="text-input" type="text" placeholder="Your name">
@@ -394,7 +440,7 @@
     <div id="loginError" class="error hidden"></div>
   </section>
 
-  <!-- MAIN MENU -->
+  <!-- MAIN MENU (STUDENT) -->
   <section id="mainMenuScreen" class="hidden">
     <section class="card">
       <div class="top-row">
@@ -420,7 +466,9 @@
           AI Bayan
           <span id="aiLimit"></span>
         </h3>
-        <p class="chat-note">AI chat will be available soon.</p>
+        <p class="chat-note">
+          Demo mode. AI chat will be added later.
+        </p>
       </div>
       <div id="chatBox" class="chat-box"></div>
       <div>
@@ -428,6 +476,9 @@
         <div class="chat-actions">
           <button class="btn btn-primary" id="askBtn" disabled>Ask</button>
         </div>
+        <p class="chat-note">
+          In the future your teacher will see your questions and answers here.
+        </p>
       </div>
     </aside>
   </section>
@@ -438,27 +489,29 @@
       <div class="topic-header-title" id="topicHeaderTitle">Topic</div>
       <div class="topic-header-buttons">
         <button class="btn-topic back" onclick="backToMenu()">← Back</button>
-        <button class="btn-topic menu" onclick="backToMenu()">🏠</button>
-        <button class="btn-topic menu" onclick="window.print()">🖨</button>
+        <button class="btn-topic menu" onclick="backToMenu()">🏠 Menu</button>
+        <button class="btn-topic menu" onclick="window.print()">🖨 Print</button>
       </div>
     </div>
 
     <div class="topic-body">
       <div id="topicRuleContainer"></div>
       <div id="topicExercisesContainer"></div>
-      <div id="topicStatus" class="muted"></div>
+      <div id="topicStatus" class="muted" style="margin-top:8px;"></div>
     </div>
   </section>
 
   <!-- TEACHER SCREEN -->
   <section id="teacherScreen" class="hidden card">
     <div class="top-buttons">
-      <button class="btn btn-ghost" onclick="backToLogin()">← Back</button>
+      <button class="btn btn-ghost" onclick="backToLogin()">← Back to login</button>
       <span class="tag">Teacher mode</span>
     </div>
 
     <h2 class="section-title">Teacher dashboard</h2>
-    <p class="muted">Shows attempt status + stars.</p>
+    <p class="muted">
+      Shows data saved in this browser: stars and last login (per code).
+    </p>
 
     <div class="table-wrapper">
       <table id="teacherTable">
@@ -469,7 +522,6 @@
             <th>Name</th>
             <th>Stars</th>
             <th>Last login</th>
-            <th>Attempts</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -478,6 +530,7 @@
   </section>
 
 </main>
+
 <script>
 /* ---------- CLASS RANGES (PIN) ---------- */
 
@@ -501,7 +554,7 @@ function getClassByCode(num){
   return null;
 }
 
-/* ---------- TOPIC COLORS (30 штук под оранжевую тему) ---------- */
+/* ---------- TOPIC COLORS (30) ---------- */
 
 const topicColors = {
   1:"#f4511e",
@@ -536,7 +589,8 @@ const topicColors = {
   30:"#ff6f00"
 };
 
-/* ---------- TOPICS (ПОКА ПУСТО, В ЧАСТИ 3 ЗАМЕНИМ) ---------- */
+/* ---------- TOPICS (30 ADVANCED) ---------- */
+
 const topics = [
   {
     id:1,
@@ -553,232 +607,8 @@ const topics = [
       "Never have I seen such chaos.",
       "Not until he left did she realise her mistake."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative (choose inversion)",
-        questions:[
-          {
-            text:"I have seen such chaos many times.",
-            options:[
-              "Never have I seen such chaos.",
-              "I never have seen such chaos."
-            ],
-            correct:0
-          },
-          {
-            text:"She realised the truth only then.",
-            options:[
-              "Only then did she realise the truth.",
-              "She realised the truth only then she did."
-            ],
-            correct:0
-          },
-          {
-            text:"We noticed the problem only after the test.",
-            options:[
-              "Only after the test did we notice the problem.",
-              "After the test only we noticed the problem."
-            ],
-            correct:0
-          },
-          {
-            text:"I heard such silence before.",
-            options:[
-              "Never before had I heard such silence.",
-              "I had never before heard such silence it."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative",
-        questions:[
-          {
-            text:"Я никогда не понимал эту тему.",
-            options:[
-              "Never have I understood this topic.",
-              "I have never understood this topic it."
-            ],
-            correct:0
-          },
-          {
-            text:"Он редко делает ошибки.",
-            options:[
-              "Rarely does he make mistakes.",
-              "He does rarely make mistakes."
-            ],
-            correct:0
-          },
-          {
-            text:"Они почти не замечали опасности.",
-            options:[
-              "Hardly did they notice the danger.",
-              "They did hardly notice the danger."
-            ],
-            correct:0
-          },
-          {
-            text:"Мало я ожидал такого результата.",
-            options:[
-              "Little did I expect such a result.",
-              "I did little expect such a result."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Составь правильный вопрос: you / ever / see / such a storm?",
-            options:[
-              "Have you ever seen such a storm?",
-              "Ever have you seen such a storm?"
-            ],
-            correct:0
-          },
-          {
-            text:"Составь правильный вопрос: she / often / arrive / late?",
-            options:[
-              "Does she often arrive late?",
-              "Often does she arrive late?"
-            ],
-            correct:0
-          },
-          {
-            text:"Составь правильный вопрос: they / rarely / visit / you?",
-            options:[
-              "Do they rarely visit you?",
-              "Rarely do they visit you?"
-            ],
-            correct:0
-          },
-          {
-            text:"Составь правильный вопрос: he / ever / tell / lies?",
-            options:[
-              "Does he ever tell lies?",
-              "Does he never tell lies?"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "Not until the end of the lesson did they understand it.",
-              "Did they understand it not until the end of the lesson."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Only then did she start to cry.",
-              "She started to cry only then did."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Never before had I heard this story.",
-              "Had I never before heard this story."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Little did I know about their plan.",
-              "I did little know about their plan."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence (inversion)",
-        questions:[
-          {
-            text:"(никогда / я / не видел / такой вид)",
-            options:[
-              "Never have I seen such a view.",
-              "I have never seen such a view it."
-            ],
-            correct:0
-          },
-          {
-            text:"(только тогда / я / понял / ошибку)",
-            options:[
-              "Only then did I understand the mistake.",
-              "I understood only then did the mistake."
-            ],
-            correct:0
-          },
-          {
-            text:"(не раньше чем / он пришёл / мы начали)",
-            options:[
-              "Not until he arrived did we start.",
-              "We started not until he arrived did."
-            ],
-            correct:0
-          },
-          {
-            text:"(редко / он / говорит / публично)",
-            options:[
-              "Rarely does he speak in public.",
-              "He rarely does speak in public."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English (with inversion)",
-        questions:[
-          {
-            text:"Никогда раньше я не был так занят.",
-            options:[
-              "Never before have I been so busy.",
-              "I have never been so busy before it."
-            ],
-            correct:0
-          },
-          {
-            text:"Только тогда я понял, что она права.",
-            options:[
-              "Only then did I realise that she was right.",
-              "I realised only then that she was right did."
-            ],
-            correct:0
-          },
-          {
-            text:"Редко он соглашается на такие условия.",
-            options:[
-              "Rarely does he agree to such conditions.",
-              "He does rarely agree to such conditions."
-            ],
-            correct:0
-          },
-          {
-            text:"Мало я знал о её планах.",
-            options:[
-              "Little did I know about her plans.",
-              "I knew little about her plans did."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
+    exercises:[]
   },
-
   {
     id:2,
     title:"Cleft sentences for emphasis",
@@ -793,238 +623,14 @@ const topics = [
       "It was my brother who broke the window.",
       "What I need is a short break."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative",
-        questions:[
-          {
-            text:"Подчеркни человека: My brother broke the window.",
-            options:[
-              "It was my brother who broke the window.",
-              "My brother it was who broke the window."
-            ],
-            correct:0
-          },
-          {
-            text:"Подчеркни объект: I need a short break.",
-            options:[
-              "What I need is a short break.",
-              "It is a short break what I need."
-            ],
-            correct:0
-          },
-          {
-            text:"Подчеркни место: We met in London.",
-            options:[
-              "It was in London that we met.",
-              "In London it was that we met."
-            ],
-            correct:0
-          },
-          {
-            text:"Подчеркни время: I saw her yesterday.",
-            options:[
-              "It was yesterday that I saw her.",
-              "Yesterday it was that I saw her."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative",
-        questions:[
-          {
-            text:"Не моя идея провалилась.",
-            options:[
-              "It was not my idea that failed.",
-              "Not my idea it was that failed."
-            ],
-            correct:0
-          },
-          {
-            text:"Это был не Джон, кто позвонил тебе.",
-            options:[
-              "It was not John who called you.",
-              "It not was John who called you."
-            ],
-            correct:0
-          },
-          {
-            text:"Мне не его характер не нравится, а поведение.",
-            options:[
-              "What I do not like is his behaviour.",
-              "It is his behaviour what I do not like."
-            ],
-            correct:0
-          },
-          {
-            text:"Я ушёл не из-за тебя.",
-            options:[
-              "It was not because of you that I left.",
-              "Because of you it was not that I left."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Сделай общий вопрос: It was my brother who broke the window.",
-            options:[
-              "Was it your brother who broke the window?",
-              "Did it your brother who broke the window?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай общий вопрос: It was in London that we met.",
-            options:[
-              "Was it in London that we met?",
-              "Did we in London that met?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай общий вопрос: What I need is a break.",
-            options:[
-              "Is a break what you need?",
-              "Is what you need a break?"
-            ],
-            correct:1
-          },
-          {
-            text:"Сделай общий вопрос: It was yesterday that she called you.",
-            options:[
-              "Was it yesterday that she called you?",
-              "Did it yesterday that she called you?"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери корректное cleft-предложение.",
-            options:[
-              "It was the manager who made the decision.",
-              "The manager was who made the decision it."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери корректное cleft-предложение.",
-            options:[
-              "It was in 2010 that the company was founded.",
-              "In 2010 was the company founded it."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери корректное cleft-предложение.",
-            options:[
-              "What surprised me was his honesty.",
-              "His honesty was what surprised me it."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери корректное cleft-предложение.",
-            options:[
-              "What I enjoy most is travelling.",
-              "Travelling is what I enjoy most it."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Подчеркни время: We met in 2015.",
-            options:[
-              "It was in 2015 that we met.",
-              "In 2015 it was that we met."
-            ],
-            correct:0
-          },
-          {
-            text:"Подчеркни человека: My teacher inspired me.",
-            options:[
-              "It was my teacher who inspired me.",
-              "My teacher was who inspired me."
-            ],
-            correct:0
-          },
-          {
-            text:"Подчеркни причину: I left because I was ill.",
-            options:[
-              "It was because I was ill that I left.",
-              "Because I was ill it was that I left."
-            ],
-            correct:0
-          },
-          {
-            text:"Подчеркни объект: I need your help.",
-            options:[
-              "What I need is your help.",
-              "It is your help what I need."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Именно мама помогла мне.",
-            options:[
-              "It was my mother who helped me.",
-              "My mother was who helped me."
-            ],
-            correct:0
-          },
-          {
-            text:"То, что мне нужно, — это отдых.",
-            options:[
-              "What I need is some rest.",
-              "That I need is some rest."
-            ],
-            correct:0
-          },
-          {
-            text:"Именно в этом городе я вырос.",
-            options:[
-              "It was in this city that I grew up.",
-              "In this city I grew up it."
-            ],
-            correct:0
-          },
-          {
-            text:"Именно эта идея изменила всё.",
-            options:[
-              "It was this idea that changed everything.",
-              "This idea it was that changed everything."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
+    exercises:[]
   },
-
   {
     id:3,
     title:"Mixed conditionals (advanced use)",
     level:"Advanced",
     explanation:"Mixed conditionals connect unreal past actions with present results or unreal present states with unreal past results.",
-    ruleRu:"Смешанные условные связывают нереальное прошлое с настоящим результатом (If + Past Perfect → would + V now) или нереальное настоящее с нереальным прошлым результатом (If + Past Simple → would have + V3).",
+    ruleRu:"Смешанные условные связывают нереальное прошлое с настоящим результатом или нереальное настоящее с нереальным прошлым результатом.",
     formulas:[
       "If + Past Perfect, would + V (now)",
       "If + Past Simple, would have + V3"
@@ -1033,237 +639,13 @@ const topics = [
       "If I had studied harder, I would be at university now.",
       "If she were more careful, she would not have lost the documents."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative",
-        questions:[
-          {
-            text:"(прошлое → сейчас) Я не копил деньги / сейчас я не в путешествии.",
-            options:[
-              "If I had saved more money, I would be travelling now.",
-              "If I saved more money, I would travel now."
-            ],
-            correct:0
-          },
-          {
-            text:"(настоящее → прошлое) Он неответственный / он пропустил дедлайн.",
-            options:[
-              "If he were more responsible, he would not have missed the deadline.",
-              "If he had been more responsible, he would not miss the deadline."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильно.",
-            options:[
-              "If she had gone to bed earlier, she would not be so tired now.",
-              "If she went to bed earlier, she would not have been so tired now."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильно.",
-            options:[
-              "If I had listened to you, I would not be in trouble now.",
-              "If I listened to you, I would not have been in trouble now."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative",
-        questions:[
-          {
-            text:"Если бы он не тратил время, сейчас он не был бы так напряжён.",
-            options:[
-              "If he had not wasted time, he would not be so stressed now.",
-              "If he did not waste time, he would not have been so stressed now."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы я не был таким застенчивым, я бы поговорил с ней на вечеринке.",
-            options:[
-              "If I were not so shy, I would have talked to her at the party.",
-              "If I had not been so shy, I would talk to her at the party."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы они не переехали, мы всё ещё часто встречались бы с ними сейчас.",
-            options:[
-              "If they had not moved abroad, we would still see them often now.",
-              "If they did not move abroad, we would have still seen them often now."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы она не заболела, она бы поехала в поездку.",
-            options:[
-              "If she had not been ill, she would have gone on the trip.",
-              "If she were not ill, she would have gone on the trip."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Если бы я слушал тебя, сейчас я был бы счастливее.",
-            options:[
-              "Would you be happier now if you had listened to me?",
-              "Would you be happier now if you listened to me?"
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы он больше учился, сейчас он был бы в университете.",
-            options:[
-              "Would he be at university now if he had studied harder?",
-              "Would he be at university now if he studied harder?"
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы она была аккуратнее, она не потеряла бы документы.",
-            options:[
-              "Would she have lost the documents if she were more careful?",
-              "Would she lose the documents if she had been more careful?"
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы мы жили ближе, раньше мы бы не опаздывали так часто.",
-            options:[
-              "Would we have been late so often before if we lived closer?",
-              "Would we be late so often before if we had lived closer?"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "If I had known about the meeting, I would be there now.",
-              "If I had known about the meeting, would be there now I."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "If she were more flexible, she would have accepted the new rules.",
-              "If more flexible she were, she would have accepted the new rules."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "If they had not sold the car, they would be using it now.",
-              "If they had not sold the car, would be using it they now."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "If I had taken that job, I would be living abroad now.",
-              "If I had taken that job, would be living abroad now I."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Жаль, что я не выучил английский раньше / сейчас было бы легче.",
-            options:[
-              "If I had learnt English earlier, it would be easier now.",
-              "If I learnt English earlier, it would have been easier now."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы он был осторожнее, он бы не попал в аварию вчера.",
-            options:[
-              "If he had been more careful, he would not have had an accident yesterday.",
-              "If he were more careful, he would not have an accident yesterday."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы я не потратил столько денег, сейчас я был бы богаче.",
-            options:[
-              "If I had not spent so much money, I would be richer now.",
-              "If I did not spend so much money, I would have been richer now."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы она была увереннее, она бы приняла предложение в прошлом году.",
-            options:[
-              "If she were more confident, she would have accepted the offer last year.",
-              "If she had been more confident, she would accept the offer last year."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Если бы я больше работал в школе, сейчас мне было бы легче в университете.",
-            options:[
-              "If I had worked harder at school, it would be easier for me at university now.",
-              "If I worked harder at school, it would have been easier for me at university now."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы он был более терпеливым, он бы не накричал на неё вчера.",
-            options:[
-              "If he were more patient, he would not have shouted at her yesterday.",
-              "If he had been more patient, he would not shout at her yesterday."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы они не уехали за границу, мы бы сейчас часто с ними встречались.",
-            options:[
-              "If they had not moved abroad, we would be meeting them often now.",
-              "If they did not move abroad, we would have met them often now."
-            ],
-            correct:0
-          },
-          {
-            text:"Если бы мы не потратили столько денег, сейчас у нас было бы больше свободы.",
-            options:[
-              "If we had not spent so much money, we would have more freedom now.",
-              "If we did not spend so much money, we would have had more freedom now."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
+    exercises:[]
   },
-
   {
     id:4,
     title:"Modal verbs of deduction (present & past)",
     level:"Advanced",
-    explanation:"We use must, might, may, could and can’t to talk about how sure we are about something (deduction) in the present and the past.",
+    explanation:"We use must, might, may, could and can’t to show how sure we are about something (deduction) in the present and the past.",
     ruleRu:"Must / can’t / might / may / could – модальные глаголы для предположений: must – почти уверены, can’t – уверены, что невозможно; might/may/could – возможно. Для прошлого добавляем have + V3.",
     formulas:[
       "must + V / must have + V3",
@@ -1274,1705 +656,445 @@ const topics = [
       "He must be at home – the lights are on.",
       "She can’t have finished already – it was too difficult."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative (present)",
-        questions:[
-          {
-            text:"The lights are on. He ___ be at home.",
-            options:[
-              "must",
-              "can’t"
-            ],
-            correct:0
-          },
-          {
-            text:"They left very early. They ___ be tired now.",
-            options:[
-              "must",
-              "might not"
-            ],
-            correct:0
-          },
-          {
-            text:"It’s dark and cloudy. It ___ rain later.",
-            options:[
-              "might",
-              "can’t"
-            ],
-            correct:0
-          },
-          {
-            text:"She studied a lot. She ___ know the answer.",
-            options:[
-              "must",
-              "couldn’t"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative / impossibility",
-        questions:[
-          {
-            text:"He is only 10. He ___ be at university.",
-            options:[
-              "can’t",
-              "must"
-            ],
-            correct:0
-          },
-          {
-            text:"The room is empty. They ___ be here now.",
-            options:[
-              "can’t",
-              "must"
-            ],
-            correct:0
-          },
-          {
-            text:"She never studies. She ___ be the best student.",
-            options:[
-              "can’t",
-              "must"
-            ],
-            correct:0
-          },
-          {
-            text:"It’s July and very hot. It ___ be snow.",
-            options:[
-              "can’t",
-              "might"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Past deduction",
-        questions:[
-          {
-            text:"His phone is off. He ___ have forgotten to charge it.",
-            options:[
-              "must",
-              "must have"
-            ],
-            correct:1
-          },
-          {
-            text:"The road is dry. It ___ have rained last night.",
-            options:[
-              "can’t",
-              "can’t have"
-            ],
-            correct:1
-          },
-          {
-            text:"She looked very happy yesterday. She ___ have got good news.",
-            options:[
-              "might have",
-              "can’t have"
-            ],
-            correct:0
-          },
-          {
-            text:"He doesn’t know about the meeting. He ___ have read the email.",
-            options:[
-              "can’t have",
-              "must have"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "He must have forgotten his keys.",
-              "He have must forgotten his keys."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "She can’t have finished already.",
-              "She have can’t finished already."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "They might be waiting outside.",
-              "They be might waiting outside."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "It may have been a mistake.",
-              "It have may been a mistake."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Наверняка он дома (виден его велосипед).",
-            options:[
-              "He must be at home.",
-              "He can’t be at home."
-            ],
-            correct:0
-          },
-          {
-            text:"Этого не может быть (это невозможно).",
-            options:[
-              "It can’t be true.",
-              "It must be true."
-            ],
-            correct:0
-          },
-          {
-            text:"Возможно, она забыла про встречу.",
-            options:[
-              "She might have forgotten about the meeting.",
-              "She must have forgotten about the meeting."
-            ],
-            correct:0
-          },
-          {
-            text:"Он точно не сделал домашнее задание.",
-            options:[
-              "He can’t have done his homework.",
-              "He mustn’t have done his homework."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Он наверняка устал (он работал весь день).",
-            options:[
-              "He must be tired.",
-              "He can’t be tired."
-            ],
-            correct:0
-          },
-          {
-            text:"Она наверняка уже ушла домой.",
-            options:[
-              "She must have gone home.",
-              "She can’t have gone home."
-            ],
-            correct:0
-          },
-          {
-            text:"Этого не может быть — он слишком честный.",
-            options:[
-              "It can’t be true – he is too honest.",
-              "It must be true – he is too honest."
-            ],
-            correct:0
-          },
-          {
-            text:"Возможно, они опоздали на автобус.",
-            options:[
-              "They might have missed the bus.",
-              "They must have missed the bus."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
+    exercises:[]
   },
-
   {
     id:5,
     title:"Wishes and regrets (I wish / If only / would rather)",
     level:"Advanced",
     explanation:"We use I wish / If only to talk about regrets and unreal wishes about the present, past or future. We use would rather to express preference.",
-    ruleRu:"I wish / If only + Past Simple – сожаление о настоящем; I wish / If only + Past Perfect – сожаление о прошлом; I wish + would – желание, чтобы кто-то изменил поведение; would rather – предпочтение.",
+    ruleRu:"I wish / If only + Past Simple – сожаление о настоящем; + Past Perfect – о прошлом; I wish + would – желание, чтобы кто-то изменил поведение; would rather – предпочтение.",
     formulas:[
-      "I wish / If only + Past Simple (now)",
-      "I wish / If only + Past Perfect (past)",
+      "I wish / If only + Past Simple",
+      "I wish / If only + Past Perfect",
       "I wish + would + V",
       "would rather + V / would rather + S + Past Simple"
     ],
     examples:[
       "I wish I spoke English better.",
-      "If only I had studied harder.",
-      "I wish you would stop shouting.",
-      "I would rather stay at home."
+      "If only I had studied harder."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative",
-        questions:[
-          {
-            text:"Мне жаль, что у меня нет больше свободного времени.",
-            options:[
-              "I wish I had more free time.",
-              "I wish I have more free time."
-            ],
-            correct:0
-          },
-          {
-            text:"Жаль, что я не живу у моря.",
-            options:[
-              "If only I lived by the sea.",
-              "If only I live by the sea."
-            ],
-            correct:0
-          },
-          {
-            text:"Жаль, что вчера я не был внимательнее.",
-            options:[
-              "I wish I had been more careful yesterday.",
-              "I wish I was more careful yesterday."
-            ],
-            correct:0
-          },
-          {
-            text:"Я предпочёл бы остаться дома сегодня.",
-            options:[
-              "I would rather stay at home today.",
-              "I would rather to stay at home today."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative",
-        questions:[
-          {
-            text:"Мне не жаль, что я не купил ту машину. (выбери неверное сожаление)",
-            options:[
-              "I wish I had bought that car.",
-              "I don’t wish I had bought that car."
-            ],
-            correct:1
-          },
-          {
-            text:"Выбери предложение, КОТОРОЕ НЕ ПОДХОДИТ как сожаление о прошлом.",
-            options:[
-              "If only I had told her the truth.",
-              "If only I tell her the truth."
-            ],
-            correct:1
-          },
-          {
-            text:"Выбери неправильный вариант.",
-            options:[
-              "I wish I didn’t have so much homework.",
-              "I wish I don’t have so much homework."
-            ],
-            correct:1
-          },
-          {
-            text:"Выбери неправильный вариант.",
-            options:[
-              "If only he wouldn’t shout so much.",
-              "If only he doesn’t shout so much."
-            ],
-            correct:1
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Сделай вопрос: You regret that you didn’t study harder.",
-            options:[
-              "Do you wish you had studied harder?",
-              "Do you wish you studied harder?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: You regret your friend’s behaviour.",
-            options:[
-              "Do you wish he would behave better?",
-              "Do you wish he behaves better?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: You prefer to stay at home.",
-            options:[
-              "Would you rather stay at home?",
-              "Would you rather to stay at home?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: You regret not telling her the truth.",
-            options:[
-              "Do you wish you had told her the truth?",
-              "Do you wish you told her the truth?"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "I wish I knew the answer.",
-              "I wish knew I the answer."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "If only I had listened to you.",
-              "If only had I listened to you."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "I would rather you stayed here.",
-              "I would rather stayed you here."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный порядок слов.",
-            options:[
-              "I wish he would stop talking.",
-              "I wish would he stop talking."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Жаль, что сейчас не лето.",
-            options:[
-              "I wish it was summer now.",
-              "I wish it had been summer now."
-            ],
-            correct:0
-          },
-          {
-            text:"Жаль, что вчера я не подготовился к тесту.",
-            options:[
-              "If only I had prepared for the test yesterday.",
-              "If only I prepared for the test yesterday."
-            ],
-            correct:0
-          },
-          {
-            text:"Я бы предпочёл пойти в кино.",
-            options:[
-              "I would rather go to the cinema.",
-              "I would rather to go to the cinema."
-            ],
-            correct:0
-          },
-          {
-            text:"Жаль, что он так много жалуется.",
-            options:[
-              "I wish he wouldn’t complain so much.",
-              "I wish he doesn’t complain so much."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Жаль, что я не выучил английский раньше.",
-            options:[
-              "I wish I had learnt English earlier.",
-              "I wish I learnt English earlier."
-            ],
-            correct:0
-          },
-          {
-            text:"Жаль, что сейчас у меня нет больше времени.",
-            options:[
-              "If only I had more time now.",
-              "If only I have more time now."
-            ],
-            correct:0
-          },
-          {
-            text:"Я предпочёл бы, чтобы ты остался дома.",
-            options:[
-              "I would rather you stayed at home.",
-              "I would rather you stay at home now."
-            ],
-            correct:0
-          },
-          {
-            text:"Жаль, что он не слушал нас вчера.",
-            options:[
-              "I wish he had listened to us yesterday.",
-              "I wish he listened to us yesterday."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
-  }
-];
-  ,
+    exercises:[]
+  },
   {
     id:6,
     title:"Passive reporting structures",
     level:"Advanced",
-    explanation:"We use passive reporting structures to sound more formal and impersonal, especially in news, academic and official style (It is said that..., He is believed to...).",
+    explanation:"We use passive reporting structures to sound more formal and impersonal, especially in news and academic style.",
     ruleRu:"Пассивные конструкции с глаголами сообщения (say, think, believe, report и др.) делают речь более формальной и безличной: It is said that..., He is believed to....",
     formulas:[
       "It is/was said that + clause",
-      "S is/was thought/believed/known to + V",
-      "It is believed that + clause"
+      "S is/was thought/believed/known to + V"
     ],
     examples:[
       "It is said that the company will close next year.",
       "He is believed to have left the country."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative (choose correct passive report)",
-        questions:[
-          {
-            text:"People say that he is very rich.",
-            options:[
-              "It is said that he is very rich.",
-              "He said to be very rich."
-            ],
-            correct:0
-          },
-          {
-            text:"Many people believe that the plan will work.",
-            options:[
-              "It is believed that the plan will work.",
-              "The plan is believe to work."
-            ],
-            correct:0
-          },
-          {
-            text:"Everybody knows that she is honest.",
-            options:[
-              "It is known that she is honest.",
-              "She is know to be honest."
-            ],
-            correct:0
-          },
-          {
-            text:"They think that the project is too expensive.",
-            options:[
-              "It is thought that the project is too expensive.",
-              "The project thought to be too expensive."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative",
-        questions:[
-          {
-            text:"Люди не думают, что эта идея безопасна.",
-            options:[
-              "It is not thought that this idea is safe.",
-              "This idea is not thought is safe."
-            ],
-            correct:0
-          },
-          {
-            text:"Не говорят, что он будет уволен.",
-            options:[
-              "It is not said that he will be fired.",
-              "He is not said that he will be fired."
-            ],
-            correct:0
-          },
-          {
-            text:"Не предполагается, что экзамен будет лёгким.",
-            options:[
-              "It is not expected that the exam will be easy.",
-              "The exam is not expected will be easy."
-            ],
-            correct:0
-          },
-          {
-            text:"Не верят, что она виновата.",
-            options:[
-              "It is not believed that she is guilty.",
-              "She is not believed that she is guilty."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Сделай вопрос: It is said that the prices will rise.",
-            options:[
-              "Is it said that the prices will rise?",
-              "Does it said that the prices will rise?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: He is thought to be very strict.",
-            options:[
-              "Is he thought to be very strict?",
-              "Does he thought to be very strict?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: It is believed that they left yesterday.",
-            options:[
-              "Is it believed that they left yesterday?",
-              "Does it believed that they left yesterday?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: She is known to have worked there.",
-            options:[
-              "Is she known to have worked there?",
-              "Does she known to have worked there?"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "He is said to be very talented.",
-              "He said is to be very talented."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "She is believed to have lied.",
-              "She believed is to have lied."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "They are reported to have arrived.",
-              "They reported are to have arrived."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "It is thought that the results are wrong.",
-              "It is thought the results are wrong that."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Люди говорят, что он честный. (It...)",
-            options:[
-              "It is said that he is honest.",
-              "It said that he is honest."
-            ],
-            correct:0
-          },
-          {
-            text:"Считается, что экзамен был сложным. (It...)",
-            options:[
-              "It is thought that the exam was difficult.",
-              "It thought that the exam was difficult."
-            ],
-            correct:0
-          },
-          {
-            text:"Считают, что она переехала за границу. (She...)",
-            options:[
-              "She is thought to have moved abroad.",
-              "She thought is to have moved abroad."
-            ],
-            correct:0
-          },
-          {
-            text:"Считается, что результаты неверные. (It...)",
-            options:[
-              "It is believed that the results are wrong.",
-              "It believed is that the results are wrong."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Считается, что этот город очень дорогой.",
-            options:[
-              "It is believed that this city is very expensive.",
-              "It believed that this city is very expensive."
-            ],
-            correct:0
-          },
-          {
-            text:"Говорят, что он выиграл конкурс.",
-            options:[
-              "It is said that he has won the competition.",
-              "He is said that he has won the competition."
-            ],
-            correct:0
-          },
-          {
-            text:"Считается, что учитель строгий.",
-            options:[
-              "The teacher is thought to be strict.",
-              "The teacher thought is to be strict."
-            ],
-            correct:0
-          },
-          {
-            text:"Сообщают, что поезд задержали.",
-            options:[
-              "The train is reported to have been delayed.",
-              "The train reported is to have been delayed."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
+    exercises:[]
   },
-
   {
     id:7,
     title:"Participle clauses",
     level:"Advanced",
     explanation:"Participle clauses (V-ing, V3, having V3) allow us to join ideas and make sentences more compact and formal.",
-    ruleRu:"Причастные конструкции с V-ing, V3 и having V3 заменяют придаточные предложения и делают текст более компактным: Walking along the street, I saw..., Built in 1990, the house..., Having finished, he left.",
+    ruleRu:"Причастные конструкции с V-ing, V3 и having V3 заменяют придаточные предложения и делают текст более компактным.",
     formulas:[
-      "V-ing ... , S + V",
-      "V3 (Past Participle) ... , S + V",
-      "Having V3 ... , S + V"
+      "V-ing ..., S + V",
+      "V3 ..., S + V",
+      "Having V3 ..., S + V"
     ],
     examples:[
       "Walking along the street, I met an old friend.",
-      "Built in 1990, the house needs renovation.",
       "Having finished his work, he went home."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative",
-        questions:[
-          {
-            text:"Когда он вошёл в комнату, он улыбался. (Entering...)",
-            options:[
-              "Entering the room, he was smiling.",
-              "Entered the room, he was smiling."
-            ],
-            correct:0
-          },
-          {
-            text:"Так как он знал ответ, он сразу поднял руку. (Knowing...)",
-            options:[
-              "Knowing the answer, he raised his hand immediately.",
-              "Known the answer, he raised his hand immediately."
-            ],
-            correct:0
-          },
-          {
-            text:"Когда она закончила отчёт, она отправила его. (Having...)",
-            options:[
-              "Having finished the report, she sent it.",
-              "Finished the report, she sent it."
-            ],
-            correct:0
-          },
-          {
-            text:"Построенный в 2000 году, мост до сих пор безопасен. (Built...)",
-            options:[
-              "Built in 2000, the bridge is still safe.",
-              "Building in 2000, the bridge is still safe."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative",
-        questions:[
-          {
-            text:"Не зная правил, он совершал ошибки. (Not...)",
-            options:[
-              "Not knowing the rules, he made mistakes.",
-              "Not known the rules, he made mistakes."
-            ],
-            correct:0
-          },
-          {
-            text:"Не закончив работу, она не ушла. (Not having...)",
-            options:[
-              "Not having finished the work, she didn’t leave.",
-              "Having not finished the work, she didn’t leave."
-            ],
-            correct:0
-          },
-          {
-            text:"Не предупреждённый заранее, он удивился. (Not...)",
-            options:[
-              "Not warned in advance, he was surprised.",
-              "Not warning in advance, he was surprised."
-            ],
-            correct:0
-          },
-          {
-            text:"Не зная, что сказать, он молчал. (Not knowing...)",
-            options:[
-              "Not knowing what to say, he kept silent.",
-              "Not known what to say, he kept silent."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Как можно сократить: When he finished, he left the room.",
-            options:[
-              "Finishing the work, he left the room.",
-              "Having finished the work, he left the room."
-            ],
-            correct:1
-          },
-          {
-            text:"Как можно сократить: Because she felt tired, she went to bed early.",
-            options:[
-              "Feeling tired, she went to bed early.",
-              "Felt tired, she went to bed early."
-            ],
-            correct:0
-          },
-          {
-            text:"Как можно сократить: As he didn’t know the answer, he stayed quiet.",
-            options:[
-              "Not knowing the answer, he stayed quiet.",
-              "Not known the answer, he stayed quiet."
-            ],
-            correct:0
-          },
-          {
-            text:"Как можно сократить: After he had spoken to the teacher, he felt better.",
-            options:[
-              "Having spoken to the teacher, he felt better.",
-              "Spoken to the teacher, he felt better."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Walking along the river, we saw a swan.",
-              "We walking along the river saw a swan."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Given more time, we could finish the project.",
-              "We could finish the project given more time."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Having lost his keys, he couldn’t enter the house.",
-              "He having lost his keys couldn’t enter the house."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Not knowing the way, they asked for help.",
-              "Knowing not the way, they asked for help."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Почувствовав холод, он закрыл окно.",
-            options:[
-              "Feeling cold, he closed the window.",
-              "Felt cold, he closed the window."
-            ],
-            correct:0
-          },
-          {
-            text:"Получив письмо, она сразу ответила.",
-            options:[
-              "Having received the letter, she answered at once.",
-              "Received the letter, she answered at once."
-            ],
-            correct:0
-          },
-          {
-            text:"Будучи занятым, он не смог прийти.",
-            options:[
-              "Being busy, he couldn’t come.",
-              "Been busy, he couldn’t come."
-            ],
-            correct:0
-          },
-          {
-            text:"Построенный много лет назад, дом нуждается в ремонте.",
-            options:[
-              "Built many years ago, the house needs repairing.",
-              "Building many years ago, the house needs repairing."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Не зная ответа, он посмотрел на учителя.",
-            options:[
-              "Not knowing the answer, he looked at the teacher.",
-              "Not known the answer, he looked at the teacher."
-            ],
-            correct:0
-          },
-          {
-            text:"Закончив тест, студенты сдали свои работы.",
-            options:[
-              "Having finished the test, the students handed in their papers.",
-              "Finished the test, the students handed in their papers."
-            ],
-            correct:0
-          },
-          {
-            text:"Читая книгу, он ничего не слышал вокруг.",
-            options:[
-              "Reading the book, he heard nothing around.",
-              "Read the book, he heard nothing around."
-            ],
-            correct:0
-          },
-          {
-            text:"Не подготовившись, он плохо написал экзамен.",
-            options:[
-              "Not having prepared, he did the exam badly.",
-              "Having not prepared, he did the exam badly."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
+    exercises:[]
   },
-
   {
     id:8,
     title:"Advanced linking words (contrast & concession)",
     level:"Advanced",
     explanation:"Advanced linking words show contrast and concession: although, even though, whereas, while, in spite of, despite, however, nevertheless.",
-    ruleRu:"Для противопоставления используем although / even though, whereas / while, in spite of / despite, however / nevertheless. Они делают речь более формальной и точной.",
+    ruleRu:"Для противопоставления используем although / even though, whereas / while, in spite of / despite, however / nevertheless.",
     formulas:[
       "Although / Even though + clause",
       "Whereas / While + clause",
-      "In spite of / Despite + noun / V-ing",
-      "..., however, ... / ..., nevertheless, ..."
+      "In spite of / Despite + noun / V-ing"
     ],
     examples:[
       "Although it was raining, we went out.",
-      "Despite the rain, we went out.",
-      "He is very strict, whereas his brother is easy-going."
+      "Despite the rain, we went out."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative",
-        questions:[
-          {
-            text:"Он устал, но продолжал работать.",
-            options:[
-              "Although he was tired, he continued working.",
-              "Despite he was tired, he continued working."
-            ],
-            correct:0
-          },
-          {
-            text:"Несмотря на дождь, они пошли гулять.",
-            options:[
-              "Despite the rain, they went for a walk.",
-              "Despite it was raining, they went for a walk."
-            ],
-            correct:0
-          },
-          {
-            text:"Хотя экзамен был сложным, она сдала его.",
-            options:[
-              "Even though the exam was difficult, she passed it.",
-              "In spite the exam was difficult, she passed it."
-            ],
-            correct:0
-          },
-          {
-            text:"Он хорошо готовился, однако получил невысокую оценку.",
-            options:[
-              "He had prepared well; however, he got a low mark.",
-              "He had prepared well; in spite, he got a low mark."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative / contrast",
-        questions:[
-          {
-            text:"Он высокий, а его брат невысокий.",
-            options:[
-              "He is tall, whereas his brother is short.",
-              "He is tall, despite his brother is short."
-            ],
-            correct:0
-          },
-          {
-            text:"Она не любит математику, в то время как её сестра обожает её.",
-            options:[
-              "She doesn’t like maths, while her sister loves it.",
-              "She doesn’t like maths, despite her sister loves it."
-            ],
-            correct:0
-          },
-          {
-            text:"Несмотря на то, что он не учился, он сдал экзамен.",
-            options:[
-              "In spite of not studying, he passed the exam.",
-              "In spite of he didn’t study, he passed the exam."
-            ],
-            correct:0
-          },
-          {
-            text:"Хотя они не были готовы, они выиграли.",
-            options:[
-              "Although they were not ready, they won.",
-              "Despite they were not ready, they won."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Какой союз подходит: ___ he was tired, he kept working.",
-            options:[
-              "Although",
-              "Despite"
-            ],
-            correct:0
-          },
-          {
-            text:"Какой союз подходит: ___ his illness, he came to school.",
-            options:[
-              "In spite of",
-              "Although"
-            ],
-            correct:0
-          },
-          {
-            text:"Какой союз подходит: He is serious, ___ his friend is very funny.",
-            options:[
-              "whereas",
-              "despite"
-            ],
-            correct:0
-          },
-          {
-            text:"Какой союз подходит: ___ the bad weather, the match was not cancelled.",
-            options:[
-              "Despite",
-              "Though it"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Despite the traffic, we arrived on time.",
-              "Despite of the traffic, we arrived on time."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Although it was late, they continued talking.",
-              "Although was it late, they continued talking."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "He was ill; nevertheless, he came to work.",
-              "He was ill; nevertheless he came to work."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "While he likes football, she prefers basketball.",
-              "He likes football, while she prefers basketball."
-            ],
-            correct:1
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Несмотря на усталость, он продолжал работать.",
-            options:[
-              "Despite his tiredness, he continued working.",
-              "Although his tiredness, he continued working."
-            ],
-            correct:0
-          },
-          {
-            text:"Хотя было холодно, они пошли купаться.",
-            options:[
-              "Although it was cold, they went swimming.",
-              "Despite it was cold, they went swimming."
-            ],
-            correct:0
-          },
-          {
-            text:"Она очень спокойная, тогда как её брат вспыльчивый.",
-            options:[
-              "She is very calm, whereas her brother is hot-tempered.",
-              "She is very calm, in spite her brother is hot-tempered."
-            ],
-            correct:0
-          },
-          {
-            text:"Было очень шумно; однако, он смог уснуть.",
-            options:[
-              "It was very noisy; however, he managed to fall asleep.",
-              "It was very noisy; despite, he managed to fall asleep."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Несмотря на дождь, мы не отменили поездку.",
-            options:[
-              "Despite the rain, we didn’t cancel the trip.",
-              "Though the rain, we didn’t cancel the trip."
-            ],
-            correct:0
-          },
-          {
-            text:"Хотя он устал, он не остановился.",
-            options:[
-              "Although he was tired, he didn’t stop.",
-              "In spite he was tired, he didn’t stop."
-            ],
-            correct:0
-          },
-          {
-            text:"Она много работает, а её коллега почти ничего не делает.",
-            options:[
-              "She works a lot, whereas her colleague does almost nothing.",
-              "She works a lot, despite her colleague does almost nothing."
-            ],
-            correct:0
-          },
-          {
-            text:"Он опоздал; тем не менее, его никто не ругал.",
-            options:[
-              "He was late; nevertheless, nobody scolded him.",
-              "He was late; in spite of, nobody scolded him."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
+    exercises:[]
   },
-
   {
     id:9,
     title:"Reporting verbs and patterns",
     level:"Advanced",
     explanation:"Different reporting verbs take different structures: say, tell, explain, suggest, deny, admit, accuse sb of, insist on, recommend etc.",
-    ruleRu:"Разные глаголы речи имеют разные схемы: say (say that), tell (tell sb that), suggest + V-ing / that, deny + V-ing, admit + V-ing, accuse sb of V-ing, insist on V-ing, recommend (that) + clause.",
+    ruleRu:"Say, tell, suggest, deny, admit, accuse sb of, insist on, recommend и др. имеют свои схемы: say (that), tell sb (that), suggest + V-ing / that и т.д.",
     formulas:[
       "say (that) + clause",
       "tell + object + (that) + clause",
-      "suggest / recommend + V-ing / that + clause",
-      "deny / admit + V-ing",
-      "accuse + object + of + V-ing",
-      "insist on + V-ing"
+      "suggest / recommend + V-ing / that + clause"
     ],
     examples:[
       "He suggested going to the cinema.",
-      "She denied taking the money.",
-      "They accused him of cheating."
+      "She denied taking the money."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative",
-        questions:[
-          {
-            text:"Он предложил пойти в кино.",
-            options:[
-              "He suggested going to the cinema.",
-              "He suggested to go to the cinema."
-            ],
-            correct:0
-          },
-          {
-            text:"Она призналась, что списала.",
-            options:[
-              "She admitted cheating.",
-              "She admitted to cheat."
-            ],
-            correct:0
-          },
-          {
-            text:"Они обвинили его в краже.",
-            options:[
-              "They accused him of stealing.",
-              "They accused him for stealing."
-            ],
-            correct:0
-          },
-          {
-            text:"Учитель настоял на том, чтобы мы сделали упражнение.",
-            options:[
-              "The teacher insisted on our doing the exercise.",
-              "The teacher insisted us to do the exercise."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative",
-        questions:[
-          {
-            text:"Она отрицала, что взяла деньги.",
-            options:[
-              "She denied taking the money.",
-              "She denied to take the money."
-            ],
-            correct:0
-          },
-          {
-            text:"Он не признавал свою ошибку.",
-            options:[
-              "He didn’t admit his mistake.",
-              "He denied his mistake to be."
-            ],
-            correct:0
-          },
-          {
-            text:"Он отрицал, что списывал на экзамене.",
-            options:[
-              "He denied cheating in the exam.",
-              "He denied to cheat in the exam."
-            ],
-            correct:0
-          },
-          {
-            text:"Они не рекомендовали менять план.",
-            options:[
-              "They didn’t recommend changing the plan.",
-              "They didn’t recommend to change the plan it."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Сделай вопрос: He suggested going home early.",
-            options:[
-              "What did he suggest?",
-              "What did he suggest to go?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: She denied taking the book.",
-            options:[
-              "Did she deny taking the book?",
-              "Did she deny to take the book?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: They accused him of lying.",
-            options:[
-              "Who did they accuse of lying?",
-              "Who did they accuse for lying?"
-            ],
-            correct:0
-          },
-          {
-            text:"Сделай вопрос: The doctor recommended having a rest.",
-            options:[
-              "What did the doctor recommend?",
-              "What did the doctor recommend to have?"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "He told me that he was busy.",
-              "He told that me he was busy."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "She explained that the task was difficult.",
-              "She explained me that the task was difficult."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "They suggested that we should stay.",
-              "They suggested us that we should stay."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "He insisted on doing it himself.",
-              "He insisted to do it himself."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Он объяснил, что автобус опоздал.",
-            options:[
-              "He explained that the bus was late.",
-              "He explained me that the bus was late."
-            ],
-            correct:0
-          },
-          {
-            text:"Она посоветовала нам начать раньше.",
-            options:[
-              "She recommended starting earlier.",
-              "She recommended to start earlier us."
-            ],
-            correct:0
-          },
-          {
-            text:"Они обвинили меня в нарушении правил.",
-            options:[
-              "They accused me of breaking the rules.",
-              "They accused me for breaking the rules."
-            ],
-            correct:0
-          },
-          {
-            text:"Он признался, что солгал.",
-            options:[
-              "He admitted lying.",
-              "He admitted to lie."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Он сказал, что опоздает.",
-            options:[
-              "He said that he would be late.",
-              "He told that he would be late."
-            ],
-            correct:0
-          },
-          {
-            text:"Она сказала мне, что не придёт.",
-            options:[
-              "She told me that she wouldn’t come.",
-              "She said me that she wouldn’t come."
-            ],
-            correct:0
-          },
-          {
-            text:"Учитель настоял на повторении правил.",
-            options:[
-              "The teacher insisted on revising the rules.",
-              "The teacher insisted to revise the rules."
-            ],
-            correct:0
-          },
-          {
-            text:"Он отрицал, что списывал.",
-            options:[
-              "He denied cheating.",
-              "He denied to cheat."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
+    exercises:[]
   },
-
   {
     id:10,
-    title:"Advanced relative clauses with prepositions",
+    title:"Relative clauses with prepositions",
     level:"Advanced",
-    explanation:"In formal English, prepositions can come before relative pronouns (to whom, with whom, about which). In spoken English, prepositions are usually at the end (who... with / which... about).",
-    ruleRu:"В формальном стиле предлог ставится перед относительным местоимением (to whom, with whom, about which). В разговорном – обычно в конце: the person who I spoke to.",
+    explanation:"In formal English prepositions can come before relative pronouns (to whom, with whom, about which). In spoken English, prepositions are usually at the end.",
+    ruleRu:"В формальном стиле предлог ставится перед относительным местоимением (to whom, with whom, about which). В разговорном – чаще в конце: the person who I spoke to.",
     formulas:[
       "the person to whom I spoke",
-      "the person who I spoke to",
-      "the problem about which we talked",
-      "the problem which we talked about"
+      "the person who I spoke to"
     ],
     examples:[
       "The professor to whom I spoke was very helpful.",
       "The girl who I was talking to is my cousin."
     ],
-    exercises:[
-      {
-        title:"1) Affirmative",
-        questions:[
-          {
-            text:"This is the man. I was talking to him yesterday.",
-            options:[
-              "This is the man who I was talking to yesterday.",
-              "This is the man to who I was talking yesterday."
-            ],
-            correct:0
-          },
-          {
-            text:"That is the teacher. I learned a lot from her.",
-            options:[
-              "That is the teacher from whom I learned a lot.",
-              "That is the teacher whom from I learned a lot."
-            ],
-            correct:0
-          },
-          {
-            text:"This is the topic. We talked about it.",
-            options:[
-              "This is the topic we talked about.",
-              "This is the topic about what we talked."
-            ],
-            correct:0
-          },
-          {
-            text:"He is the person. I can rely on him.",
-            options:[
-              "He is the person I can rely on.",
-              "He is the person on whom can I rely."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"2) Negative",
-        questions:[
-          {
-            text:"Это не тот человек, на которого я могу положиться.",
-            options:[
-              "He is not the person I can rely on.",
-              "He is not the person on whom can I rely."
-            ],
-            correct:0
-          },
-          {
-            text:"Это не та проблема, о которой мы должны говорить сейчас.",
-            options:[
-              "This is not the problem we should talk about now.",
-              "This is not the problem about which should we talk now."
-            ],
-            correct:0
-          },
-          {
-            text:"Это не тот студент, с которым я делил комнату.",
-            options:[
-              "He is not the student with whom I shared a room.",
-              "He is not the student whom with I shared a room."
-            ],
-            correct:0
-          },
-          {
-            text:"Это не та книга, из которой я узнал эту информацию.",
-            options:[
-              "This is not the book from which I learnt this information.",
-              "This is not the book which from I learnt this information."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"3) Questions",
-        questions:[
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Who is the person you were talking to?",
-              "Who is the person to whom were you talking?"
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Which is the project that you are responsible for?",
-              "Which is the project for which are you responsible?"
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "What is the problem you are worried about?",
-              "What is the problem about which are you worried?"
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "Who is the student the teacher is shouting at?",
-              "Who is the student at whom is the teacher shouting?"
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"4) Word order",
-        questions:[
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "The woman to whom I spoke was very polite.",
-              "The woman whom I spoke to was very polite to."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "The house in which I grew up is near here.",
-              "The house which I grew up in is near here in."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "The issue about which we are worried is serious.",
-              "The issue which we are worried about is serious about."
-            ],
-            correct:0
-          },
-          {
-            text:"Выбери правильный вариант.",
-            options:[
-              "The person with whom I work is very experienced.",
-              "The person whom I work with is very experienced with."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"5) Build the sentence",
-        questions:[
-          {
-            text:"Вот студент, с которым я делаю проект.",
-            options:[
-              "This is the student I am doing the project with.",
-              "This is the student with who I am doing the project."
-            ],
-            correct:0
-          },
-          {
-            text:"Вот женщина, с которой он путешествовал.",
-            options:[
-              "That is the woman he travelled with.",
-              "That is the woman with whom he travelled with."
-            ],
-            correct:0
-          },
-          {
-            text:"Это тема, о которой мы будем говорить завтра.",
-            options:[
-              "This is the topic we are going to talk about tomorrow.",
-              "This is the topic about which we are going to talk about tomorrow."
-            ],
-            correct:0
-          },
-          {
-            text:"Это человек, у которого я многому научился.",
-            options:[
-              "He is the person from whom I have learnt a lot.",
-              "He is the person who I have learnt a lot from him."
-            ],
-            correct:0
-          }
-        ]
-      },
-      {
-        title:"6) Translate into English",
-        questions:[
-          {
-            text:"Это учитель, у которого я учился в прошлом году.",
-            options:[
-              "This is the teacher whom I studied with last year.",
-              "This is the teacher with who I studied last year."
-            ],
-            correct:0
-          },
-          {
-            text:"Это компания, для которой он работает.",
-            options:[
-              "This is the company he works for.",
-              "This is the company for which he works for."
-            ],
-            correct:0
-          },
-          {
-            text:"Вот человек, о котором я тебе рассказывал.",
-            options:[
-              "This is the person I told you about.",
-              "This is the person about whom I told you about."
-            ],
-            correct:0
-          },
-          {
-            text:"Это тема, над которой мы сейчас работаем.",
-            options:[
-              "This is the topic we are working on now.",
-              "This is the topic on which we are working on now."
-            ],
-            correct:0
-          }
-        ]
-      }
-    ]
-  }        
+    exercises:[]
+  },
+  {
+    id:11,
+    title:"Reduced relative clauses",
+    level:"Advanced",
+    explanation:"We can shorten relative clauses when the subject is the same: the man who is standing → the man standing near the door.",
+    ruleRu:"Сокращённые относительные придаточные: убираем who/which и глагол be, когда подлежащее то же самое.",
+    formulas:[
+      "S who is V-ing → S V-ing",
+      "S which is V3 → S V3"
+    ],
+    examples:[
+      "Students who are taking the exam must be quiet → Students taking the exam must be quiet.",
+      "The books which are printed in colour are more expensive → The books printed in colour are more expensive."
+    ],
+    exercises:[]
+  },
+  {
+    id:12,
+    title:"Nominalisation (verbs → nouns)",
+    level:"Advanced",
+    explanation:"Nominalisation means using nouns instead of verbs to sound more formal and academic.",
+    ruleRu:"Nominalisation – превращаем глаголы и прилагательные в существительные: decide → decision, fail → failure, different → difference.",
+    formulas:[
+      "V → N (develop → development)",
+      "Adj → N (important → importance)"
+    ],
+    examples:[
+      "We decided to change the plan → We made a decision to change the plan.",
+      "The system failed → There was a failure in the system."
+    ],
+    exercises:[]
+  },
+  {
+    id:13,
+    title:"Future in the past",
+    level:"Advanced",
+    explanation:"Future in the past describes something that was in the future at a past time: was going to, would.",
+    ruleRu:"Future in the past – будущее из точки зрения прошлого: was/were going to, would + V.",
+    formulas:[
+      "was/were going to + V",
+      "would + V (future seen from the past)"
+    ],
+    examples:[
+      "I was going to call you, but I forgot.",
+      "He said he would help us."
+    ],
+    exercises:[]
+  },
+  {
+    id:14,
+    title:"Emphasis with do / did",
+    level:"Advanced",
+    explanation:"We use do/does/did to give emphasis in affirmative sentences.",
+    ruleRu:"Do / does / did в утвердительных предложениях используется для усиления: I do agree with you.",
+    formulas:[
+      "do/does + V",
+      "did + V (Past Simple)"
+    ],
+    examples:[
+      "I do understand your point.",
+      "She did try her best."
+    ],
+    exercises:[]
+  },
+  {
+    id:15,
+    title:"Subjunctive in formal English",
+    level:"Advanced",
+    explanation:"The present subjunctive is used after verbs like suggest, recommend, insist, demand in formal style.",
+    ruleRu:"Subjunctive (конъюнктив) в современном английском: insist, demand, suggest, recommend + that + S + base form.",
+    formulas:[
+      "They suggested that he go.",
+      "The teacher insisted that she stay."
+    ],
+    examples:[
+      "I suggest that he see a doctor.",
+      "The manager insisted that the report be ready by Monday."
+    ],
+    exercises:[]
+  },
+  {
+    id:16,
+    title:"Hedging and tentative language",
+    level:"Advanced",
+    explanation:"Hedging makes statements less direct: seem, appear, tend to, kind of, a bit, perhaps, probably.",
+    ruleRu:"Hedging делает высказывания мягче: It seems that..., It appears that..., He tends to..., It is kind of difficult.",
+    formulas:[
+      "It seems/appears that + clause",
+      "S tends to + V"
+    ],
+    examples:[
+      "It seems that we need more time.",
+      "He tends to forget names."
+    ],
+    exercises:[]
+  },
+  {
+    id:17,
+    title:"Complex noun phrases",
+    level:"Advanced",
+    explanation:"Complex noun phrases combine nouns, adjectives and prepositional phrases: a long-term educational development plan.",
+    ruleRu:"Сложные именные группы объединяют прилагательные, существительные и предлоги: a highly efficient public transport system.",
+    formulas:[
+      "Adj + N + of + N",
+      "Adv + Adj + N"
+    ],
+    examples:[
+      "A highly effective learning strategy.",
+      "A long-term environmental protection programme."
+    ],
+    exercises:[]
+  },
+  {
+    id:18,
+    title:"Advanced gerund & infinitive patterns",
+    level:"Advanced",
+    explanation:"Some verbs change meaning with gerund vs infinitive: remember doing / remember to do, stop doing / stop to do.",
+    ruleRu:"Герундий и инфинитив после некоторых глаголов меняют значение: remember doing (прошлый опыт), remember to do (не забыть сделать).",
+    formulas:[
+      "remember doing / remember to do",
+      "stop doing / stop to do"
+    ],
+    examples:[
+      "I remember meeting her at the conference.",
+      "Remember to lock the door."
+    ],
+    exercises:[]
+  },
+  {
+    id:19,
+    title:"Fronting and thematisation",
+    level:"Advanced",
+    explanation:"We can move information to the front for emphasis: This book I really enjoyed.",
+    ruleRu:"Fronting – выносим элемент в начало предложения для акцента: What I need most is rest.",
+    formulas:[
+      "Object / phrase to front + clause",
+      "What-clause for focus"
+    ],
+    examples:[
+      "This problem we cannot ignore.",
+      "What I like most is the atmosphere."
+    ],
+    exercises:[]
+  },
+  {
+    id:20,
+    title:"Ellipsis and substitution",
+    level:"Advanced",
+    explanation:"We can avoid repetition using ellipsis (leaving words out) and substitution (do so, one, ones).",
+    ruleRu:"Ellipsis – опускание повторяющихся слов; substitution – замена на do (so), one, ones и др.",
+    formulas:[
+      "do so / do it",
+      "one / ones"
+    ],
+    examples:[
+      "I haven’t finished my project yet, but she has.",
+      "I prefer the red one."
+    ],
+    exercises:[]
+  },
+  {
+    id:21,
+    title:"Inversion in conditionals (Had I known...)",
+    level:"Advanced",
+    explanation:"In formal style we can invert if-clauses: Had I known, I would have told you.",
+    ruleRu:"В формальном стиле условные можно писать с инверсией без if: Had I known..., Were I you..., Should you need help....",
+    formulas:[
+      "Had + S + V3, ...",
+      "Were + S + to V, ..."
+    ],
+    examples:[
+      "Had I known about the problem, I would have helped.",
+      "Were I you, I would apologise."
+    ],
+    exercises:[]
+  },
+  {
+    id:22,
+    title:"Advanced passive (get-passive, passive modals)",
+    level:"Advanced",
+    explanation:"We use get-passive in informal English for change or something unexpected, and passive with modals to focus on the action.",
+    ruleRu:"Get-passive: He got promoted. Passive с модальными: The work must be finished today.",
+    formulas:[
+      "S + get + V3",
+      "modal + be + V3"
+    ],
+    examples:[
+      "He got fired last week.",
+      "The report must be submitted by Friday."
+    ],
+    exercises:[]
+  },
+  {
+    id:23,
+    title:"Idiomatic phrasal verbs",
+    level:"Advanced",
+    explanation:"Many phrasal verbs have idiomatic meanings not clear from the words: bring up, come up with, look forward to.",
+    ruleRu:"Фразовые глаголы с переносным значением: bring up (воспитывать), come up with (придумать), look forward to (с нетерпением ждать).",
+    formulas:[
+      "verb + particle → new meaning"
+    ],
+    examples:[
+      "They came up with a brilliant idea.",
+      "I’m looking forward to seeing you."
+    ],
+    exercises:[]
+  },
+  {
+    id:24,
+    title:"Collocations with make / do / take / have",
+    level:"Advanced",
+    explanation:"Some verbs naturally go together with certain nouns: make a decision, do homework, take a risk, have a rest.",
+    ruleRu:"Устойчивые сочетания: make a mistake, do research, take responsibility, have a shower и т.д.",
+    formulas:[
+      "make + decision / mistake / effort",
+      "do + homework / research / work"
+    ],
+    examples:[
+      "She made an important decision.",
+      "He did a lot of research."
+    ],
+    exercises:[]
+  },
+  {
+    id:25,
+    title:"Approximation and vague language",
+    level:"Advanced",
+    explanation:"Approximation makes speech softer: sort of, kind of, more or less, around, roughly, something like that.",
+    ruleRu:"Размытые выражения: kind of, sort of, more or less, around ten people, roughly 50%, and stuff like that.",
+    formulas:[
+      "around / roughly + number",
+      "kind of / sort of + Adj / N"
+    ],
+    examples:[
+      "There were around twenty students.",
+      "It’s kind of difficult to explain."
+    ],
+    exercises:[]
+  },
+  {
+    id:26,
+    title:"Adverbial inversion (So do I / Neither do I)",
+    level:"Advanced",
+    explanation:"We use so/neither with inversion to show agreement: So do I, Neither did we.",
+    ruleRu:"So / neither + auxiliary + subject: I like it. – So do I. I don’t like it. – Neither do I.",
+    formulas:[
+      "So + AUX + S",
+      "Neither / Nor + AUX + S"
+    ],
+    examples:[
+      "I love jazz. – So do I.",
+      "I didn’t enjoy the film. – Neither did they."
+    ],
+    exercises:[]
+  },
+  {
+    id:27,
+    title:"Emphatic what- and all- clauses",
+    level:"Advanced",
+    explanation:"We can focus on a whole idea using what- and all- clauses: What I need is…, All I want is….",
+    ruleRu:"What / all-клаузы подчёркивают идею: What I need is time. All I want is to rest.",
+    formulas:[
+      "What + clause + is + N / to V",
+      "All + clause + is + N / to V"
+    ],
+    examples:[
+      "What matters most is your health.",
+      "All I want is to relax."
+    ],
+    exercises:[]
+  },
+  {
+    id:28,
+    title:"Concessive clauses (even if, whether or not)",
+    level:"Advanced",
+    explanation:"Concessive clauses show that something happens despite a condition: even if, whether or not, no matter what/where/when.",
+    ruleRu:"Уступительные придаточные: even if, whether or not, no matter what/where/when – действие произойдёт несмотря ни на что.",
+    formulas:[
+      "Even if + clause, ...",
+      "No matter + wh-word + clause"
+    ],
+    examples:[
+      "Even if it rains, we will go.",
+      "No matter what you say, I’ll try."
+    ],
+    exercises:[]
+  },
+  {
+    id:29,
+    title:"Linking devices in essays",
+    level:"Advanced",
+    explanation:"We use formal linking devices to organise essays: firstly, moreover, on the other hand, in conclusion.",
+    ruleRu:"Формальные связки для эссе: firstly, secondly, moreover, however, on the one hand / on the other hand, in conclusion.",
+    formulas:[
+      "Firstly / Secondly, ...",
+      "On the one hand, ... On the other hand, ..."
+    ],
+    examples:[
+      "Firstly, the government should invest more in education.",
+      "On the one hand, cars are convenient; on the other hand, they cause pollution."
+    ],
+    exercises:[]
+  },
+  {
+    id:30,
+    title:"Formal vs informal style",
+    level:"Advanced",
+    explanation:"Advanced learners should choose formal or informal style depending on context: contractions, phrasal verbs, vocabulary and structures.",
+    ruleRu:"Формальный стиль (no contractions, более сложные структуры) и неформальный (сокращения, фразовые глаголы) зависят от ситуации.",
+    formulas:[
+      "Formal: children → offspring, buy → purchase",
+      "Informal: kids, pick up, get"
+    ],
+    examples:[
+      "The results indicate a significant increase in sales. (formal)",
+      "The results show a big jump in sales. (informal)"
+    ],
+    exercises:[]
+  }
 ];
-          
+
 /* ---------- STATE & STORAGE ---------- */
 
-let currentUser = null;   // {name, code, classLabel, stars, lastLogin, attempts:{}}
+let currentUser = null; // {name, code, classLabel, stars, lastLogin}
 let currentTopicId = null;
 
 function todayStr(){
   return new Date().toISOString().slice(0,10);
-}function loadStudent(code, name, classLabel){
+}
 
 function studentKey(code){
   // отдельный namespace для Advanced
   return "bayan_adv_student_" + code;
 }
 
+function loadStudent(code, name, classLabel){
   const key = studentKey(code);
   let data = null;
   try{
@@ -2986,16 +1108,12 @@ function studentKey(code){
       code,
       classLabel,
       stars: 0,
-      lastLogin: null,
-      attempts: {} // topicId: true (использована 1 попытка)
+      lastLogin: null
     };
   }else{
     if(name) data.name = name;
     data.classLabel = classLabel;
     if(typeof data.stars !== "number") data.stars = 0;
-    if(!data.attempts || typeof data.attempts !== "object"){
-      data.attempts = {};
-    }
   }
   data.lastLogin = todayStr();
   localStorage.setItem(key, JSON.stringify(data));
@@ -3038,7 +1156,7 @@ function handleLogin(){
     return;
   }
 
-  // Учитель
+  // TEACHER
   if(codeStr === "6678"){
     currentUser = null;
     setTopInfo(`Logged in as <strong>TEACHER</strong> · code 6678`);
@@ -3060,6 +1178,7 @@ function handleLogin(){
     errorEl.classList.remove("hidden");
     return;
   }
+
   if(!name){
     errorEl.textContent = "Enter your name.";
     errorEl.classList.remove("hidden");
@@ -3090,8 +1209,8 @@ function backToLogin(){
 
 function buildMainMenu(){
   if(!currentUser) return;
-  const menuInfo = document.getElementById("menuInfo");
-  menuInfo.innerHTML =
+
+  document.getElementById("menuInfo").innerHTML =
     `Class <strong>${currentUser.classLabel}</strong>, student <strong>${currentUser.name}</strong> (code ${currentUser.code})`;
 
   document.getElementById("menuStars").textContent = currentUser.stars ?? 0;
@@ -3114,22 +1233,19 @@ function buildMainMenu(){
     grid.appendChild(div);
   });
 
-  // AI панель – простое demo-сообщение
   const chat = document.getElementById("chatBox");
   chat.innerHTML = "";
   const msg = document.createElement("div");
   msg.className = "chat-msg";
-  msg.textContent = "AI Bayan chat will be added later. Now use grammar topics and exercises.";
+  msg.textContent = "AI Bayan chat will be added later. Now use grammar topics and explanations.";
   chat.appendChild(msg);
   document.getElementById("aiLimit").textContent = "· demo mode";
 }
 
-/* ---------- TOPIC SCREEN + 1 попытка ---------- */
+/* ---------- TOPIC SCREEN ---------- */
 
 function openTopic(id){
-  if(!currentUser) return;
   currentTopicId = id;
-
   const t = topics.find(x => x.id === id);
   if(!t) return;
 
@@ -3138,9 +1254,9 @@ function openTopic(id){
 
   document.getElementById("topicHeaderTitle").textContent = `${id}. ${t.title}`;
 
-  // правило
   const rc = document.getElementById("topicRuleContainer");
   rc.innerHTML = "";
+
   const gbox = document.createElement("div");
   gbox.className = "grammar-box";
   gbox.innerHTML = `
@@ -3171,7 +1287,6 @@ function openTopic(id){
     rc.appendChild(ul);
   }
 
-  // упражнения
   const ec = document.getElementById("topicExercisesContainer");
   ec.innerHTML = "";
 
@@ -3181,119 +1296,10 @@ function openTopic(id){
     p.style.marginTop = "10px";
     p.textContent = "Exercises for this topic will be added later.";
     ec.appendChild(p);
-  }else{
-    const wrapper = document.createElement("div");
-    wrapper.className = "exercises";
-
-    t.exercises.forEach((ex, exIndex) => {
-      const block = document.createElement("div");
-      block.className = "exercise-block";
-      block.style.border = "1px solid #ffe0b2";
-      block.style.borderRadius = "12px";
-      block.style.background = "#fffdf7";
-      block.style.padding = "10px 12px";
-      block.style.marginBottom = "10px";
-
-      const title = document.createElement("div");
-      title.className = "exercise-title";
-      title.textContent = ex.title || `Exercise ${exIndex+1}`;
-      block.appendChild(title);
-
-      ex.questions.forEach((q, qIndex) => {
-        const row = document.createElement("div");
-        row.className = "question-row";
-        row.style.fontSize = "13px";
-        row.style.marginBottom = "6px";
-        row.style.display = "flex";
-        row.style.flexWrap = "wrap";
-        row.style.gap = "6px";
-        row.style.alignItems = "center";
-
-        const qText = document.createElement("div");
-        qText.className = "question-text";
-        qText.style.flex = "1 1 160px";
-        qText.textContent = `${qIndex+1}) ${q.text}`;
-        row.appendChild(qText);
-
-        const opts = document.createElement("div");
-        opts.className = "options";
-        opts.style.display = "flex";
-        opts.style.flexWrap = "wrap";
-        opts.style.gap = "6px";
-
-        if(q.options && q.options.length){
-          q.options.forEach((opt, optIndex) => {
-            const label = document.createElement("label");
-            label.style.background = "#ffffff";
-            label.style.borderRadius = "999px";
-            label.style.border = "1px solid #ffd180";
-            label.style.padding = "2px 8px";
-            label.style.cursor = "pointer";
-            label.style.display = "inline-flex";
-            label.style.alignItems = "center";
-            label.style.gap = "3px";
-
-            const radio = document.createElement("input");
-            radio.type = "radio";
-            const gname = `t${id}_e${exIndex}_q${qIndex}`;
-            radio.name = gname;
-            radio.value = optIndex;
-
-            label.appendChild(radio);
-            label.appendChild(document.createTextNode(" " + opt));
-            opts.appendChild(label);
-          });
-        }
-
-        row.appendChild(opts);
-
-        const mark = document.createElement("span");
-        mark.className = "mark";
-        mark.id = `mark_t${id}_e${exIndex}_q${qIndex}`;
-        mark.style.width = "18px";
-        mark.style.textAlign = "center";
-        mark.style.fontSize = "16px";
-        mark.style.fontWeight = "700";
-        row.appendChild(mark);
-
-        block.appendChild(row);
-      });
-
-      const footer = document.createElement("div");
-      footer.className = "exercise-footer";
-      footer.style.marginTop = "6px";
-      footer.style.display = "flex";
-      footer.style.justifyContent = "space-between";
-      footer.style.alignItems = "center";
-      footer.style.gap = "8px";
-
-      const small = document.createElement("small");
-      small.style.fontSize = "11px";
-      small.style.color = "#6b5f55";
-      small.textContent = "Each correct answer gives you 1 star. Only ONE attempt for this topic.";
-      footer.appendChild(small);
-
-      const btn = document.createElement("button");
-      btn.className = "btn btn-primary";
-      btn.textContent = "Check";
-      btn.addEventListener("click", () => checkExercise(id, exIndex));
-      footer.appendChild(btn);
-
-      block.appendChild(footer);
-      wrapper.appendChild(block);
-    });
-
-    ec.appendChild(wrapper);
   }
 
   const status = document.getElementById("topicStatus");
   status.textContent = "";
-  if(currentUser && currentUser.attempts && currentUser.attempts[id]){
-    status.textContent = "You have already used your attempt for this topic.";
-  }else{
-    status.textContent = "You still have 1 attempt for this topic.";
-  }
-
   showOnly("topicScreen");
 }
 
@@ -3304,69 +1310,6 @@ function backToMenu(){
   }
   buildMainMenu();
   showOnly("mainMenuScreen");
-}
-
-/* ---------- CHECK EXERCISE (1 попытка на тему) ---------- */
-
-function checkExercise(topicId, exIndex){
-  if(!currentUser) return;
-
-  const status = document.getElementById("topicStatus") || { textContent:"" };
-
-  // Уже использовал попытку?
-  if(currentUser.attempts && currentUser.attempts[topicId]){
-    status.textContent = "You have already used your attempt for this topic.";
-    return;
-  }
-
-  const t = topics.find(x => x.id === topicId);
-  if(!t) return;
-
-  const ex = t.exercises[exIndex];
-  if(!ex) return;
-
-  let gained = 0;
-
-  ex.questions.forEach((q, qIndex) => {
-    const gname = `t${topicId}_e${exIndex}_q${qIndex}`;
-    const selected = document.querySelector(`input[name="${gname}"]:checked`);
-    const markEl = document.getElementById(`mark_t${topicId}_e${exIndex}_q${qIndex}`);
-
-    if(!markEl) return;
-    markEl.textContent = "";
-    markEl.style.color = "#3a2b1f";
-
-    if(!selected){
-      markEl.textContent = "•";
-      return;
-    }
-
-    const chosen = Number(selected.value);
-    if(chosen === q.correct){
-      markEl.textContent = "✓";
-      markEl.style.color = "#2e7d32";
-      gained++;
-    }else{
-      markEl.textContent = "✗";
-      markEl.style.color = "#c62828";
-    }
-  });
-
-  // Помечаем, что попытка для ВСЕЙ темы использована
-  if(!currentUser.attempts || typeof currentUser.attempts !== "object"){
-    currentUser.attempts = {};
-  }
-  currentUser.attempts[topicId] = true;
-
-  if(gained > 0){
-    currentUser.stars += gained;
-    saveCurrent();
-    updateTopStars();
-    status.textContent = `Well done! You gained ${gained} star(s). Your attempt for this topic is now used.`;
-  }else{
-    saveCurrent();
-    status.textContent = "No correct answers this time. Your attempt for this topic is used.";
-  }
 }
 
 /* ---------- TEACHER TABLE ---------- */
@@ -3387,9 +1330,6 @@ function renderTeacherTable(){
         data = null;
       }
       if(data){
-        if(!data.attempts || typeof data.attempts !== "object"){
-          data.attempts = {};
-        }
         allStudents.push(data);
       }
     }
@@ -3398,7 +1338,7 @@ function renderTeacherTable(){
   if(allStudents.length === 0){
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-    td.colSpan = 6;
+    td.colSpan = 5;
     td.textContent = "No student data in this browser yet.";
     tr.appendChild(td);
     tbody.appendChild(tr);
@@ -3421,16 +1361,11 @@ function renderTeacherTable(){
     const loginTd = document.createElement("td");
     loginTd.textContent = s.lastLogin || "";
 
-    const attemptsTd = document.createElement("td");
-    const cnt = s.attempts ? Object.keys(s.attempts).length : 0;
-    attemptsTd.textContent = `${cnt} topic(s)`;
-
     tr.appendChild(clsTd);
     tr.appendChild(codeTd);
     tr.appendChild(nameTd);
     tr.appendChild(starsTd);
     tr.appendChild(loginTd);
-    tr.appendChild(attemptsTd);
 
     tbody.appendChild(tr);
   });
